@@ -1,25 +1,25 @@
 
 public class EmployeeInfo {
-	protected int employeeNumber;
+	protected int employeeNum;
 	protected String firstName;
 	protected String lastName;
 	protected int workLocation;
 	protected double deductionRate;
 
 	public EmployeeInfo(int eN, String fN, String lN, int wL, double dR) {
-		employeeNumber = eN;
+		employeeNum = eN;
 		firstName = fN;
 		lastName = lN;
 		workLocation = wL;
 		deductionRate = dR;
 	}
 
-	public int getEmployeeNumber() {
-		return employeeNumber;
+	public int getEmployeeNum() {
+		return employeeNum;
 	}
 
-	public void setEmployeeNumber(int employeeNumber) {
-		this.employeeNumber = employeeNumber;
+	public void setEmployeeNum(int employeeNumber) {
+		this.employeeNum = employeeNumber;
 	}
 
 	public String getFirstName() {
