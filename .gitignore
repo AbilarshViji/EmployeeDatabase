@@ -10,7 +10,7 @@ nbproject/
 *.log
 
 # Package files
-*.jar
+
 *.zip
 *.rar
 *.tar.gz
