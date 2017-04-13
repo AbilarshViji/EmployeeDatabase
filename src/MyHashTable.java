@@ -9,11 +9,11 @@ public class MyHashTable {
 	// CONSTRUCTOR
 	public MyHashTable(int howManyBuckets) {
 		// Construct the hash table (open hashing/closed addressing) as an array
-		// of howManyBuckets ArrayLists.
         
 		// Instantiate an array to have an ArrayList as each element of the
 		// array.
 		buckets = new ArrayList[howManyBuckets];
+		// of howManyBuckets ArrayLists.
 
 		// For each element in the array, instantiate its ArrayList.
 		for (int i = 0; i < howManyBuckets; i++) {
@@ -62,10 +62,10 @@ public class MyHashTable {
 	public void displayContents() {
 		for(int i=0; i<buckets.length;i++) {
 			for (int x=0; x<buckets[i].size();x++) {
-				System.out.println(buckets[i].get(x).getEmployeeName());
+				System.out.println(buckets[i].get(x).getFirstName());
 			}
 		}
-		// Print the employee numbers for the employees stored in each bucket's
+		// Print the employee's first name for the employees stored in each bucket's
 		// ArrayList,
 		// starting with bucket 0, then bucket 1, and so on.
 	}
