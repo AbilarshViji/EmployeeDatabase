@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author vabil
- */
 public class MainMenu extends javax.swing.JFrame {
 
     /**
@@ -30,9 +21,11 @@ public class MainMenu extends javax.swing.JFrame {
         editEmpButton = new javax.swing.JButton();
         viewEmpButton = new javax.swing.JButton();
         removeEmpButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        addEmpButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         addEmpButton.setText("Add Employee");
         addEmpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -40,6 +33,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        editEmpButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         editEmpButton.setText("Edit Employee");
         editEmpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,6 +41,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        viewEmpButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         viewEmpButton.setText("View Employees");
         viewEmpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +49,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        removeEmpButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         removeEmpButton.setText("Remove Employee");
         removeEmpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,37 +57,40 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Employee Database");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewEmpButton)
-                    .addComponent(addEmpButton))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(editEmpButton)
-                        .addContainerGap(35, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(removeEmpButton)
-                        .addGap(21, 21, 21))))
+                .addGap(272, 272, 272)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(viewEmpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addEmpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editEmpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeEmpButton, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(280, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(280, 280, 280))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addEmpButton)
-                    .addComponent(editEmpButton))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewEmpButton)
-                    .addComponent(removeEmpButton))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(viewEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(editEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(removeEmpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         pack();
@@ -106,7 +105,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editEmpButtonActionPerformed
 
     private void viewEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEmpButtonActionPerformed
-        // TODO add your handling code here:
+                
     }//GEN-LAST:event_viewEmpButtonActionPerformed
 
     private void removeEmpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeEmpButtonActionPerformed
@@ -151,6 +150,7 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addEmpButton;
     private javax.swing.JButton editEmpButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton removeEmpButton;
     private javax.swing.JButton viewEmpButton;
     // End of variables declaration//GEN-END:variables
