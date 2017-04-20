@@ -8,15 +8,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author vabil
  */
 public class FileIO {
-//try catch
 
     public void readFile(String fileName) throws FileNotFoundException, IOException {
         try (CSVReader csvReader = new CSVReader(new FileReader(fileName), ',', '"', 2)) {
@@ -30,23 +27,28 @@ public class FileIO {
                     hashTable.add(read);
                 }
             }
+            csvReader.close();
         } catch (Exception ee) {
             ee.printStackTrace();
         }
-
     }
 
     public void writeFile(String fileName) throws IOException {
         CSVWriter writer = new CSVWriter(new FileWriter(fileName), '\t');
-        //see display contemts
-        //TODO need some function that returns all contents so can write in string
         for (int i = 0; i < buckets.length; i++) {
             for (int x = 0; x < buckets[i].size(); x++) {
-                String[] temp = new String[]{"F",buckets[i].get(x).getEmployeeNum(),buckets[i].get(x).getFirstName(),buckets[i].get(x).getLastName(),buckets[i].get(x).getFirstName(),buckets[i].get(x).getFirstName(),buckets[i].get(x).getFirstName()};
-                writer.writeNext(temp);
+                if (buckets[i].get(x).getHourlyWage() == null) {
+                    String[] temp = new String[]{"F", buckets[i].get(x).getEmployeeNum(), buckets[i].get(x).getFirstName(), buckets[i].get(x).getLastName(), buckets[i].get(x).getWorkLocation(), buckets[i].get(x).getDeductionRate(), buckets[i].get(x).getAnnualSalary()};
+                    writer.writeNext(temp);
+                } else {
+                    String[] temp = new String[]{"P", buckets[i].get(x).getEmployeeNum(), buckets[i].get(x).getFirstName(), buckets[i].get(x).getLastName(), buckets[i].get(x).getWorkLocation(), buckets[i].get(x).getDeductionRate(), buckets[i].get(x).getHourlyWage(), buckets[i].get(x).getHoursPerWeek(), buckets[i].get(x).getWeeksPerYear()};
+                    writer.writeNext(temp);
+                }
 
             }
+
         }
         writer.close();
     }
+
 }

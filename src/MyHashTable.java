@@ -70,12 +70,4 @@ public class MyHashTable {
         // ArrayList,
         // starting with bucket 0, then bucket 1, and so on.
     }
-
-        public void stringOut() {
-        for (int i = 0; i < buckets.length; i++) {
-            for (int x = 0; x < buckets[i].size(); x++) {
-                System.out.println(buckets[i].get(x).getFirstName());
-            }
-        }
-    }
 }
