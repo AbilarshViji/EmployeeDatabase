@@ -3,16 +3,10 @@ import java.util.*;
 
 public class MyHashTable {
 
-    // buckets is an array of ArrayList. Each item in an ArrayList is an
-    // EmployeeInfo object.
-    private ArrayList<EmployeeInfo>[] buckets;
 
-    // CONSTRUCTOR
+    public ArrayList<EmployeeInfo>[] buckets;
+
     public MyHashTable(int howManyBuckets) {
-        // Construct the hash table (open hashing/closed addressing) as an array
-
-        // Instantiate an array to have an ArrayList as each element of the
-        // array.
         buckets = new ArrayList[howManyBuckets];
         // of howManyBuckets ArrayLists.
 
@@ -67,8 +61,6 @@ public class MyHashTable {
                 System.out.println(buckets[i].get(x).getFirstName());
             }
         }
-        // Print the employee's first name for the employees stored in each bucket's
-        // ArrayList,
-        // starting with bucket 0, then bucket 1, and so on.
 
+    }
 }
