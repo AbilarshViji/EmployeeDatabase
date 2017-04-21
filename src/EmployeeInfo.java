@@ -1,56 +1,57 @@
 
 public class EmployeeInfo {
-	protected int employeeNum;
-	protected String firstName;
-	protected String lastName;
-	protected int workLocation;
-	protected double deductionRate;
 
-	public EmployeeInfo(int eN, String fN, String lN, int wL, double dR) {
-		employeeNum = eN;
-		firstName = fN;
-		lastName = lN;
-		workLocation = wL;
-		deductionRate = dR;
-	}
+    protected int employeeNum;
+    protected String firstName;
+    protected String lastName;
+    protected int workLocation;
+    protected double deductionRate;
 
-	public int getEmployeeNum() {
-		return employeeNum;
-	}
+    public EmployeeInfo(int eN, String fN, String lN, int wL, double dR) {
+        employeeNum = eN;
+        firstName = fN;
+        lastName = lN;
+        workLocation = wL;
+        deductionRate = dR;
+    }
 
-	public void setEmployeeNum(int employeeNumber) {
-		this.employeeNum = employeeNumber;
-	}
+    public int getEmployeeNum() {
+        return employeeNum;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public void setEmployeeNum(int employeeNumber) {
+        this.employeeNum = employeeNumber;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public int getWorkLocation() {
-		return workLocation;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public void setWorkLocation(int workLocation) {
-		this.workLocation = workLocation;
-	}
+    public int getWorkLocation() {
+        return workLocation;
+    }
 
-	public double getDeductionRate() {
-		return deductionRate;
-	}
+    public void setWorkLocation(int workLocation) {
+        this.workLocation = workLocation;
+    }
 
-	public void setDeductionRate(double deductionRate) {
-		this.deductionRate = deductionRate;
-	}
+    public double getDeductionRate() {
+        return deductionRate;
+    }
+
+    public void setDeductionRate(double deductionRate) {
+        this.deductionRate = deductionRate;
+    }
 }
