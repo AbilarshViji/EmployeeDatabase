@@ -16,6 +16,7 @@ public class MyHashTable {
         buckets = new ArrayList[howManyBuckets];
         // of howManyBuckets ArrayLists.
 
+
         // For each element in the array, instantiate its ArrayList.
         for (int i = 0; i < howManyBuckets; i++) {
             buckets[i] = new ArrayList(); // Instantiate the ArrayList for
@@ -69,5 +70,5 @@ public class MyHashTable {
         // Print the employee's first name for the employees stored in each bucket's
         // ArrayList,
         // starting with bucket 0, then bucket 1, and so on.
-    }
+
 }
