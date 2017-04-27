@@ -4,7 +4,8 @@ import java.util.*;
 public class MyHashTable {
 
 
-    public ArrayList<EmployeeInfo>[] buckets;
+    public ArrayList<FullTimeEmployee>[] buckets;
+    
 
     public MyHashTable(int howManyBuckets) {
         buckets = new ArrayList[howManyBuckets];
@@ -24,7 +25,7 @@ public class MyHashTable {
         return (keyValue % buckets.length);
     }
 
-    public boolean addEmployee(EmployeeInfo theEmployee) {
+    public boolean addEmployee(FullTimeEmployee theEmployee) {
         int i = calcBucket(theEmployee.getEmployeeNum());
         return buckets[i].add(theEmployee);
 
@@ -44,10 +45,10 @@ public class MyHashTable {
         return 0; //never will be reached
     }
 
-    public EmployeeInfo removeEmployee(int employeeNum) {
+    public FullTimeEmployee removeEmployee(int employeeNum) {
         int num = searchEmployee(employeeNum);
         if (num != -1) {
-            EmployeeInfo removed = buckets[calcBucket(employeeNum)].get(num);
+            FullTimeEmployee removed = buckets[calcBucket(employeeNum)].get(num);
             buckets[calcBucket(employeeNum)].remove(num);
             return removed;
         } else {

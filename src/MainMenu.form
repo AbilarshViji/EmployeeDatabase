@@ -112,13 +112,6 @@
                               <Component id="jComboBox2" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="FullTimeRadio" min="-2" max="-2" attributes="0"/>
-                                      <Component id="PartTimeRadio" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -126,6 +119,13 @@
                                       <Component id="EmployeeNumField" pref="191" max="32767" attributes="0"/>
                                       <Component id="LastNameField" max="32767" attributes="0"/>
                                       <Component id="FirstNameField" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="PartTimeRadio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FullTimeRadio" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -224,8 +224,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="EditEmployeeNumField" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="694" max="32767" attributes="0"/>
+                      <Component id="EditEmployeeNumField" min="-2" pref="158" max="-2" attributes="0"/>
+                      <EmptySpace pref="673" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -244,6 +244,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Employee Number"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditEmployeeNumFieldActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -262,10 +265,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="DelEmployeeNumField" pref="186" max="32767" attributes="0"/>
                           <Component id="jButton1" max="32767" attributes="0"/>
-                          <Component id="DelEmployeeNumField" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="674" max="32767" attributes="0"/>
+                      <EmptySpace pref="625" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

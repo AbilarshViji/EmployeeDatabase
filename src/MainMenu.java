@@ -2,7 +2,7 @@
 import javax.swing.JFrame;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers in Project Propert8ies.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -105,17 +105,17 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(23, 23, 23)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(FullTimeRadio)
-                                .addComponent(PartTimeRadio)))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(AddEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(EmployeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                                 .addComponent(LastNameField)
-                                .addComponent(FirstNameField)))))
+                                .addComponent(FirstNameField)))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(PartTimeRadio)
+                                .addComponent(FullTimeRadio)))))
                 .addGap(192, 640, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -141,6 +141,11 @@ public class MainMenu extends javax.swing.JFrame {
         jTabbedPane1.addTab("Add Employee", jPanel3);
 
         EditEmployeeNumField.setText("Employee Number");
+        EditEmployeeNumField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditEmployeeNumFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,8 +153,8 @@ public class MainMenu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EditEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(694, Short.MAX_VALUE))
+                .addComponent(EditEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(673, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,9 +182,9 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DelEmployeeNumField))
-                .addContainerGap(674, Short.MAX_VALUE))
+                    .addComponent(DelEmployeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(625, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +217,18 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void DelEmployeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelEmployeeNumFieldActionPerformed
         // TODO add your handling code here:
+        String text = EditEmployeeNumField.getText();
+        int numberToDelete = Integer.parseInt(text);
+
     }//GEN-LAST:event_DelEmployeeNumFieldActionPerformed
+
+    private void EditEmployeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditEmployeeNumFieldActionPerformed
+        String text = EditEmployeeNumField.getText();
+        int numberToEdit = Integer.parseInt(text);
+        
+        
+    // TODO add your handling code here:
+    }//GEN-LAST:event_EditEmployeeNumFieldActionPerformed
 
     /**
      * @param args the command line arguments
