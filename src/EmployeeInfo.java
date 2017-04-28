@@ -4,10 +4,10 @@ public class EmployeeInfo {
     protected int employeeNum;
     protected String firstName;
     protected String lastName;
-    protected int workLocation;
+    protected String workLocation;
     protected double deductionRate;
 
-    public EmployeeInfo(int eN, String fN, String lN, int wL, double dR) {
+    public EmployeeInfo(int eN, String fN, String lN, String wL, double dR) {
         employeeNum = eN;
         firstName = fN;
         lastName = lN;
@@ -39,11 +39,11 @@ public class EmployeeInfo {
         this.lastName = lastName;
     }
 
-    public int getWorkLocation() {
+    public String getWorkLocation() {
         return workLocation;
     }
 
-    public void setWorkLocation(int workLocation) {
+    public void setWorkLocation(String workLocation) {
         this.workLocation = workLocation;
     }
 
