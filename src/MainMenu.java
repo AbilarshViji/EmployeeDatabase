@@ -17,10 +17,11 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        EditEmployeeNumField = new javax.swing.JTextField();
+        numberToEdit = new javax.swing.JTextField();
+        editButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         DelEmployeeNumField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        delButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         FirstNameField = new javax.swing.JTextField();
         LastNameField = new javax.swing.JTextField();
@@ -62,10 +63,17 @@ public class MainMenu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("View Employees", jPanel2);
 
-        EditEmployeeNumField.setText("Employee Number");
-        EditEmployeeNumField.addActionListener(new java.awt.event.ActionListener() {
+        numberToEdit.setText("Employee Number");
+        numberToEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditEmployeeNumFieldActionPerformed(evt);
+                numberToEditActionPerformed(evt);
+            }
+        });
+
+        editButton.setText("jButton1");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
             }
         });
 
@@ -75,15 +83,19 @@ public class MainMenu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EditEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(numberToEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
                 .addContainerGap(697, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(EditEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(452, Short.MAX_VALUE))
+                .addComponent(numberToEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(363, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Edit Employee", jPanel1);
@@ -95,7 +107,12 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Delete");
+        delButton.setText("Delete");
+        delButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -105,7 +122,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(DelEmployeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(delButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(649, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -114,7 +131,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(DelEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(368, Short.MAX_VALUE))
         );
 
@@ -252,15 +269,14 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void DelEmployeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelEmployeeNumFieldActionPerformed
         // TODO add your handling `code here: 
-        String text = EditEmployeeNumField.getText();
+        String text = numberToEdit.getText();
         int numberToDelete = Integer.parseInt(text);
     }//GEN-LAST:event_DelEmployeeNumFieldActionPerformed
 
-    private void EditEmployeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditEmployeeNumFieldActionPerformed
-        String text = EditEmployeeNumField.getText();
-        int numberToEdit = Integer.parseInt(text);
+    private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
+
     // TODO add your handling code here:
-    }//GEN-LAST:event_EditEmployeeNumFieldActionPerformed
+    }//GEN-LAST:event_numberToEditActionPerformed
 
     private void locationBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxActionPerformed
         String location = (String)locationBox.getSelectedItem();
@@ -308,8 +324,20 @@ public class MainMenu extends javax.swing.JFrame {
         if (FullTimeRadio.isSelected()) {
             FullTimeEmployee toBeAdded= new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
             System.out.println("Employee added");
+            //this goes into the fileIO class and gets added in to the .csv
         }
     }//GEN-LAST:event_AddEmployeeActionPerformed
+
+    private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
+        int employeeNumber = Integer.parseInt(DelEmployeeNumField.getText());
+        //based on the employee number the employee is deleted from the .csv
+    // TODO add your handling code here:
+    }//GEN-LAST:event_delButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        int employeeNumber = Integer.parseInt(numberToEdit.getText());
+    // TODO add your handling code here:
+    }//GEN-LAST:event_editButtonActionPerformed
 
 
     public static void main(String args[]) {
@@ -341,14 +369,14 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField AnnualSalaryText;
     private javax.swing.JTextField DRText;
     private javax.swing.JTextField DelEmployeeNumField;
-    private javax.swing.JTextField EditEmployeeNumField;
     private javax.swing.JTextField EmployeeNumField;
     private javax.swing.JTextField FirstNameField;
     private javax.swing.JRadioButton FullTimeRadio;
     private javax.swing.JTextField LastNameField;
     private javax.swing.JRadioButton PartTimeRadio;
     private javax.swing.ButtonGroup TypeOfEmployee;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton delButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -357,5 +385,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JComboBox<String> locationBox;
+    private javax.swing.JTextField numberToEdit;
     // End of variables declaration//GEN-END:variables
 }
