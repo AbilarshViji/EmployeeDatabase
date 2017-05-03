@@ -29,19 +29,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="viewPane" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="1" max="32767" attributes="0"/>
+          <Component id="viewPane" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+    <Container class="javax.swing.JTabbedPane" name="viewPane">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -161,7 +161,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="DelEmployeeNumField" pref="186" max="32767" attributes="0"/>
+                          <Component id="delEmployeeNumField" pref="186" max="32767" attributes="0"/>
                           <Component id="delButton" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="649" max="32767" attributes="0"/>
@@ -172,7 +172,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="DelEmployeeNumField" min="-2" max="-2" attributes="0"/>
+                      <Component id="delEmployeeNumField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="delButton" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace pref="368" max="32767" attributes="0"/>
@@ -181,12 +181,12 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="DelEmployeeNumField">
+            <Component class="javax.swing.JTextField" name="delEmployeeNumField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Employee Number"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelEmployeeNumFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delEmployeeNumFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="delButton">
@@ -214,21 +214,21 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="384" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PartTimeRadio" min="-2" max="-2" attributes="0"/>
-                          <Component id="FullTimeRadio" min="-2" max="-2" attributes="0"/>
+                          <Component id="partTimeRadio" min="-2" max="-2" attributes="0"/>
+                          <Component id="fullTimeRadio" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="192" pref="385" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="DRText" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                          <Component id="AnnualSalaryText" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                          <Component id="AddEmployee" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="dRText" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="annualSalaryText" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="addEmployee" min="-2" pref="191" max="-2" attributes="0"/>
                           <Component id="locationBox" min="-2" pref="191" max="-2" attributes="0"/>
-                          <Component id="EmployeeNumField" min="-2" pref="191" max="-2" attributes="0"/>
-                          <Component id="LastNameField" min="-2" pref="191" max="-2" attributes="0"/>
-                          <Component id="FirstNameField" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="employeeNumField" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="lastNameField" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="firstNameField" min="-2" pref="191" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
                   </Group>
@@ -238,62 +238,62 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="FullTimeRadio" min="-2" max="-2" attributes="0"/>
+                      <Component id="fullTimeRadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PartTimeRadio" min="-2" max="-2" attributes="0"/>
+                      <Component id="partTimeRadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="FirstNameField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="firstNameField" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="LastNameField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="lastNameField" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="EmployeeNumField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="employeeNumField" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="locationBox" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="AnnualSalaryText" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="annualSalaryText" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="DRText" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="dRText" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace pref="64" max="32767" attributes="0"/>
-                      <Component id="AddEmployee" min="-2" pref="57" max="-2" attributes="0"/>
+                      <Component id="addEmployee" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="FirstNameField">
+            <Component class="javax.swing.JTextField" name="firstNameField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="First name"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FirstNameFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameFieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="LastNameField">
+            <Component class="javax.swing.JTextField" name="lastNameField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Last name"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastNameFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastNameFieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="EmployeeNumField">
+            <Component class="javax.swing.JTextField" name="employeeNumField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Employee number"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmployeeNumFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="employeeNumFieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="AddEmployee">
+            <Component class="javax.swing.JButton" name="addEmployee">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Button"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddEmployeeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addEmployeeActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="FullTimeRadio">
+            <Component class="javax.swing.JRadioButton" name="fullTimeRadio">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="TypeOfEmployee"/>
@@ -301,10 +301,10 @@
                 <Property name="text" type="java.lang.String" value="Full Time"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FullTimeRadioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullTimeRadioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="PartTimeRadio">
+            <Component class="javax.swing.JRadioButton" name="partTimeRadio">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="TypeOfEmployee"/>
@@ -312,7 +312,7 @@
                 <Property name="text" type="java.lang.String" value="Part Time"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PartTimeRadioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="partTimeRadioActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="locationBox">
@@ -333,20 +333,20 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="AnnualSalaryText">
+            <Component class="javax.swing.JTextField" name="annualSalaryText">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Annual Salary"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnnualSalaryTextActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="annualSalaryTextActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="DRText">
+            <Component class="javax.swing.JTextField" name="dRText">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Deduction Rate"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DRTextActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dRTextActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
