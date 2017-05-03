@@ -3,16 +3,11 @@ import java.util.*;
 
 public class MyHashTable {
 
-    // buckets is an array of ArrayList. Each item in an ArrayList is an
-    // EmployeeInfo object.
-    private ArrayList<EmployeeInfo>[] buckets;
 
-    // CONSTRUCTOR
+    public ArrayList<FullTimeEmployee>[] buckets;
+    
+
     public MyHashTable(int howManyBuckets) {
-        // Construct the hash table (open hashing/closed addressing) as an array
-
-        // Instantiate an array to have an ArrayList as each element of the
-        // array.
         buckets = new ArrayList[howManyBuckets];
         // of howManyBuckets ArrayLists.
 
@@ -30,7 +25,7 @@ public class MyHashTable {
         return (keyValue % buckets.length);
     }
 
-    public boolean addEmployee(EmployeeInfo theEmployee) {
+    public boolean addEmployee(FullTimeEmployee theEmployee) {
         int i = calcBucket(theEmployee.getEmployeeNum());
         return buckets[i].add(theEmployee);
 
@@ -50,10 +45,10 @@ public class MyHashTable {
         return 0; //never will be reached
     }
 
-    public EmployeeInfo removeEmployee(int employeeNum) {
+    public FullTimeEmployee removeEmployee(int employeeNum) {
         int num = searchEmployee(employeeNum);
         if (num != -1) {
-            EmployeeInfo removed = buckets[calcBucket(employeeNum)].get(num);
+            FullTimeEmployee removed = buckets[calcBucket(employeeNum)].get(num);
             buckets[calcBucket(employeeNum)].remove(num);
             return removed;
         } else {
@@ -67,8 +62,6 @@ public class MyHashTable {
                 System.out.println(buckets[i].get(x).getFirstName());
             }
         }
-        // Print the employee's first name for the employees stored in each bucket's
-        // ArrayList,
-        // starting with bucket 0, then bucket 1, and so on.
 
+    }
 }
