@@ -1,8 +1,8 @@
 
 import javax.swing.JFrame;
-
+    
 public class MainMenu extends javax.swing.JFrame {
-
+    
     public MainMenu() {
         initComponents();
     }
@@ -70,7 +70,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        editButton.setText("jButton1");
+        editButton.setText("Edit Employee");
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
@@ -322,7 +322,7 @@ public class MainMenu extends javax.swing.JFrame {
         double annualSalary = Double.parseDouble(AnnualSalaryText.getText());
         double deductionRate = Double.parseDouble(DRText.getText());
         if (FullTimeRadio.isSelected()) {
-            FullTimeEmployee toBeAdded= new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
+            FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
             System.out.println("Employee added");
             //this goes into the fileIO class and gets added in to the .csv
         }
@@ -336,6 +336,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         int employeeNumber = Integer.parseInt(numberToEdit.getText());
+        
     // TODO add your handling code here:
     }//GEN-LAST:event_editButtonActionPerformed
 
