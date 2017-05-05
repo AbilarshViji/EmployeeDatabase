@@ -1,16 +1,13 @@
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class MyHashTable {
 
-
-    public ArrayList<FullTimeEmployee>[] buckets;
-    
+    public ArrayList<EmployeeInfo>[] buckets;
 
     public MyHashTable(int howManyBuckets) {
         buckets = new ArrayList[howManyBuckets];
         // of howManyBuckets ArrayLists.
-
 
         // For each element in the array, instantiate its ArrayList.
         for (int i = 0; i < howManyBuckets; i++) {
@@ -25,9 +22,9 @@ public class MyHashTable {
         return (keyValue % buckets.length);
     }
 
-    public boolean addEmployee(FullTimeEmployee theEmployee) {
-        int i = calcBucket(theEmployee.getEmployeeNum());
-        return buckets[i].add(theEmployee);
+    public void addEmployee(EmployeeInfo theEmployee) { //used to be boolean
+        int targetBucket = calcBucket(theEmployee.getEmployeeNum());
+        buckets[targetBucket].add(theEmployee);
 
     }
 
@@ -45,10 +42,10 @@ public class MyHashTable {
         return 0; //never will be reached
     }
 
-    public FullTimeEmployee removeEmployee(int employeeNum) {
+    public EmployeeInfo removeEmployee(int employeeNum) {
         int num = searchEmployee(employeeNum);
         if (num != -1) {
-            FullTimeEmployee removed = buckets[calcBucket(employeeNum)].get(num);
+            EmployeeInfo removed = buckets[calcBucket(employeeNum)].get(num);
             buckets[calcBucket(employeeNum)].remove(num);
             return removed;
         } else {
