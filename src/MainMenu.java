@@ -309,6 +309,7 @@ public class MainMenu extends javax.swing.JFrame {
         wPYField.setVisible(true);
         hourlyWageField.setVisible(true);
         
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_partTimeRadioActionPerformed
 
