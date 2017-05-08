@@ -6,7 +6,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
     }
-
+    MyHashTable hashTable = new MyHashTable(2);
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -351,6 +351,7 @@ public class MainMenu extends javax.swing.JFrame {
             double annualSalary = Double.parseDouble(annualSalaryText.getText());
             FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
             System.out.println("Full time employee added");
+            hashTable.addEmployee(toBeAdded);
             //this goes into the fileIO class and gets added in to the .csv
         }
         else if (partTimeRadio.isSelected()) {
@@ -359,12 +360,14 @@ public class MainMenu extends javax.swing.JFrame {
             int weeksPerYear = Integer.parseInt(wPYField.getText());
             PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
             System.out.println("Part time employee added");
+            hashTable.addEmployee(toBeAdded);
         }
         
     }//GEN-LAST:event_addEmployeeActionPerformed
 
     private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
         int employeeNumber = Integer.parseInt(delEmployeeNumField.getText());
+        hashTable.removeEmployee(employeeNumber);
         //based on the employee number the employee is deleted from the .csv
     // TODO add your handling code here:
     }//GEN-LAST:event_delButtonActionPerformed
