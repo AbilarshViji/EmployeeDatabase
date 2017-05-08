@@ -1,4 +1,7 @@
 
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
     
 public class MainMenu extends javax.swing.JFrame {
@@ -35,18 +38,28 @@ public class MainMenu extends javax.swing.JFrame {
         hPWField = new javax.swing.JTextField();
         hourlyWageField = new javax.swing.JTextField();
         wPYField = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
@@ -59,9 +72,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         viewPanelLayout.setVerticalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 84, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
 
         viewPane.addTab("View Employees", viewPanel);
@@ -98,7 +109,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(numberToEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
 
         viewPane.addTab("Edit Employee", editPanel);
@@ -135,7 +146,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(delEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         viewPane.addTab("Delete Employee", delPanel);
@@ -211,6 +222,13 @@ public class MainMenu extends javax.swing.JFrame {
 
         wPYField.setText("Weeks per year");
 
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
         addPanel.setLayout(addPanelLayout);
         addPanelLayout.setHorizontalGroup(
@@ -218,9 +236,12 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addGap(384, 384, 384)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(partTimeRadio)
+                    .addGroup(addPanelLayout.createSequentialGroup()
+                        .addComponent(partTimeRadio)
+                        .addGap(117, 117, 117)
+                        .addComponent(saveButton))
                     .addComponent(fullTimeRadio))
-                .addGap(192, 385, Short.MAX_VALUE))
+                .addGap(192, 203, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -243,7 +264,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(fullTimeRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(partTimeRadio)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(partTimeRadio)
+                    .addComponent(saveButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -350,8 +373,8 @@ public class MainMenu extends javax.swing.JFrame {
         if (fullTimeRadio.isSelected()) {
             double annualSalary = Double.parseDouble(annualSalaryText.getText());
             FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
-            System.out.println("Full time employee added");
             hashTable.addEmployee(toBeAdded);
+            System.out.println("Full time employee added");
             //this goes into the fileIO class and gets added in to the .csv
         }
         else if (partTimeRadio.isSelected()) {
@@ -378,6 +401,16 @@ public class MainMenu extends javax.swing.JFrame {
         
     // TODO add your handling code here:
     }//GEN-LAST:event_editButtonActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        FileIO file = new FileIO();
+        try {
+            file.writeFile("data.csv", hashTable);
+            // TODO add your handling code here:
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_saveButtonActionPerformed
 
 
     public static void main(String args[]) {
@@ -426,6 +459,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> locationBox;
     private javax.swing.JTextField numberToEdit;
     private javax.swing.JRadioButton partTimeRadio;
+    private javax.swing.JButton saveButton;
     private javax.swing.JTabbedPane viewPane;
     private javax.swing.JPanel viewPanel;
     private javax.swing.JTextField wPYField;

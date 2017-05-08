@@ -19,7 +19,7 @@ public class FileIO {
 
     MyHashTable hashTable = new MyHashTable(2);
 
-    public void readFile(String fileName) throws FileNotFoundException, IOException {
+    public void readFile(String fileName, MyHashTable hashTable) throws FileNotFoundException, IOException {
         BufferedReader br = null;
         FileReader fr = null;
         String data;
@@ -47,51 +47,56 @@ public class FileIO {
         }
     }
 
-    public void writeFile(String fileName) throws FileNotFoundException {
-        PrintWriter writer = new PrintWriter(new File(fileName));
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < hashTable.buckets.length; i++) {
-            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
-                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
-                    sb.setLength(0);
-                    sb.append("F");
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getEmployeeNum());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getFirstName());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getLastName());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getWorkLocation());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getDeductionRate());
-                    sb.append(",");
-                    sb.append(((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary());
-                    writer.write(sb.toString());
-                } else {
-                    sb.append("P");
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getEmployeeNum());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getFirstName());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getLastName());
-                    sb.append(",");
-                    sb.append(hashTable.buckets[i].get(x).getWorkLocation());
-                    sb.append(",");
-                    sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getDeductionRate());
-                    sb.append(",");
-                    sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage());
-                    sb.append(",");
-                    sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek());
-                    sb.append(",");
-                    sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear());
-                    writer.write(sb.toString());
+    public void writeFile(String fileName, MyHashTable hashTable) throws FileNotFoundException {
+        try {
+            PrintWriter writer = new PrintWriter(new File(fileName));
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashTable.buckets.length; i++) {
+                for (int x = 0; x < hashTable.buckets[i].size(); x++) {
+                    if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
+                        sb.setLength(0);
+                        sb.append("F");
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getEmployeeNum());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getFirstName());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getLastName());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getWorkLocation());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getDeductionRate());
+                        sb.append(",");
+                        sb.append(((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary());
+                        writer.write(sb.toString());
+                        writer.close();
+                    } else {
+                        sb.append("P");
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getEmployeeNum());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getFirstName());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getLastName());
+                        sb.append(",");
+                        sb.append(hashTable.buckets[i].get(x).getWorkLocation());
+                        sb.append(",");
+                        sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getDeductionRate());
+                        sb.append(",");
+                        sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage());
+                        sb.append(",");
+                        sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek());
+                        sb.append(",");
+                        sb.append(((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear());
+                        writer.write(sb.toString());
+                        writer.close();
+                    }
+
                 }
 
             }
-
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-
     }
 }
