@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class MyHashTable {
 
+    int numInTable = 0;
     public ArrayList<EmployeeInfo>[] buckets;
 
     public MyHashTable(int howManyBuckets) {
@@ -25,6 +26,7 @@ public class MyHashTable {
     public void addEmployee(EmployeeInfo theEmployee) { //used to be boolean
         int targetBucket = calcBucket(theEmployee.getEmployeeNum());
         buckets[targetBucket].add(theEmployee);
+        numInTable++;
 
     }
 
@@ -47,6 +49,7 @@ public class MyHashTable {
         if (num != -1) {
             EmployeeInfo removed = buckets[calcBucket(employeeNum)].get(num);
             buckets[calcBucket(employeeNum)].remove(num);
+            numInTable--;
             return removed;
         } else {
             return null;
