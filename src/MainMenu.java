@@ -10,6 +10,8 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
     }
     MyHashTable hashTable = new MyHashTable(2);
+
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,7 +30,7 @@ public class MainMenu extends javax.swing.JFrame {
         fullTimeRadio1 = new javax.swing.JRadioButton();
         partTimeRadio1 = new javax.swing.JRadioButton();
         locationBox1 = new javax.swing.JComboBox<>();
-        annualSalaryField1 = new javax.swing.JTextField();
+        annualSalaryText1 = new javax.swing.JTextField();
         dRText1 = new javax.swing.JTextField();
         hPWField1 = new javax.swing.JTextField();
         hourlyWageField1 = new javax.swing.JTextField();
@@ -133,17 +135,17 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        locationBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "randomplace" }));
+        locationBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
         locationBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 locationBox1ActionPerformed(evt);
             }
         });
 
-        annualSalaryField1.setText("Annual Salary");
-        annualSalaryField1.addActionListener(new java.awt.event.ActionListener() {
+        annualSalaryText1.setText("Annual Salary");
+        annualSalaryText1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annualSalaryField1ActionPerformed(evt);
+                annualSalaryText1ActionPerformed(evt);
             }
         });
 
@@ -177,7 +179,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(hourlyWageField1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dRText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                     .addComponent(addEmployee1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(annualSalaryField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                    .addComponent(annualSalaryText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                     .addComponent(employeeNumField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                     .addComponent(lastNameField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                     .addComponent(firstNameField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
@@ -214,7 +216,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(editButton)
                 .addGap(1, 1, 1)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(annualSalaryField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(annualSalaryText1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hPWField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,12 +368,9 @@ public class MainMenu extends javax.swing.JFrame {
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addGap(384, 384, 384)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(partTimeRadio)
-                        .addGap(117, 117, 117)
-                        .addComponent(saveButton))
-                    .addComponent(fullTimeRadio))
+                .addComponent(partTimeRadio)
+                .addGap(117, 117, 117)
+                .addComponent(saveButton)
                 .addGap(192, 350, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -388,6 +387,10 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(firstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(wPYField)))
                 .addGap(339, 339, 339))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(fullTimeRadio)
+                .addGap(435, 435, 435))
         );
         addPanelLayout.setVerticalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,8 +444,6 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void delEmployeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEmployeeNumFieldActionPerformed
         // TODO add your handling `code here: 
-        String text = numberToEdit.getText();
-        int numberToDelete = Integer.parseInt(text);
         // take numberToDelete into fileio program
     }//GEN-LAST:event_delEmployeeNumFieldActionPerformed
 
@@ -560,9 +561,9 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_locationBox1ActionPerformed
 
-    private void annualSalaryField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryField1ActionPerformed
+    private void annualSalaryText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryText1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_annualSalaryField1ActionPerformed
+    }//GEN-LAST:event_annualSalaryText1ActionPerformed
 
     private void dRText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRText1ActionPerformed
         // TODO add your handling code here:
@@ -576,9 +577,13 @@ public class MainMenu extends javax.swing.JFrame {
         String numberToDisplay = Integer.toString(numberToEdit);
         employeeNumField1.setText(numberToDisplay);
         firstNameField1.setVisible(true);
+        firstNameField1.setText("first name");
         lastNameField1.setVisible(true);
+        lastNameField1.setText("last name");
         locationBox1.setVisible(true);
-        annualSalaryField1.setVisible(true);
+        annualSalaryText1.setVisible(true);
+        annualSalaryText1.setText("salary");
+        
         
     // TODO add your handling code here:
     }//GEN-LAST:event_editButtonActionPerformed
@@ -614,8 +619,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton addEmployee1;
     private javax.swing.JPanel addPanel;
     private javax.swing.JPanel addPanel1;
-    private javax.swing.JTextField annualSalaryField1;
     private javax.swing.JTextField annualSalaryText;
+    private javax.swing.JTextField annualSalaryText1;
     private javax.swing.JTextField dRText;
     private javax.swing.JTextField dRText1;
     private javax.swing.JButton delButton;
