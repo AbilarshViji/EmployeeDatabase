@@ -545,13 +545,6 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_delButtonActionPerformed
 
 
-    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        int employeeNumber = Integer.parseInt(numberToEdit.getText());
-        viewPane.setSelectedIndex(3);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_editButtonActionPerformed
-
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         FileIO file = new FileIO();
         try {
