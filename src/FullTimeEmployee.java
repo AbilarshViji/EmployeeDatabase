@@ -14,8 +14,4 @@ public class FullTimeEmployee extends EmployeeInfo {
 		this.annualSalary = annualSalary;
 	}
         
-        public double getHourlyWage() {
-            return (annualSalary/(2080));
-        }
-
 }
