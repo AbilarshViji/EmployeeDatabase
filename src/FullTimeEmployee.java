@@ -13,7 +13,7 @@ public class FullTimeEmployee extends EmployeeInfo {
     }
 
     public double getNetSalary(double dR) {
-        return annualSalary * dR;
+        return annualSalary * (1-(dR/100));
     }
 
     public void setAnnualSalary(double annualSalary) {
