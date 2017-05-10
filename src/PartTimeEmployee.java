@@ -12,6 +12,10 @@ public class PartTimeEmployee extends EmployeeInfo {
         weeksPerYear = wPY;
     }
 
+    public double getAnnualSalary(double hW, double hPW, double wPY) {
+        return hW * hPW * wPY;
+    }
+
     public double getHourlyWage() {
         return hourlyWage;
     }

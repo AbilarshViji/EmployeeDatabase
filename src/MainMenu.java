@@ -1,15 +1,19 @@
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
-    
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 public class MainMenu extends javax.swing.JFrame {
-    
+
     public MainMenu() {
         initComponents();
     }
     MyHashTable hashTable = new MyHashTable(2);
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -18,7 +22,7 @@ public class MainMenu extends javax.swing.JFrame {
         viewPane = new javax.swing.JTabbedPane();
         viewPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        viewTable = new javax.swing.JTable();
         editPanel = new javax.swing.JPanel();
         numberToEdit = new javax.swing.JTextField();
         editButton = new javax.swing.JButton();
@@ -42,27 +46,41 @@ public class MainMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        viewPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewPaneMouseClicked(evt);
+            }
+        });
+
+        viewTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+                "Employee Number", "First Name", "Last Name", "Work Location", "Annual Salary", "Deductions Rate", "Net Salary"
             }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(viewTable);
 
         javax.swing.GroupLayout viewPanelLayout = new javax.swing.GroupLayout(viewPanel);
         viewPanel.setLayout(viewPanelLayout);
@@ -317,11 +335,11 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
 
-    // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_numberToEditActionPerformed
 
     private void locationBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxActionPerformed
-        String location = (String)locationBox.getSelectedItem();
+        String location = (String) locationBox.getSelectedItem();
         // TODO add your handling code here:
     }//GEN-LAST:event_locationBoxActionPerformed
 
@@ -331,8 +349,7 @@ public class MainMenu extends javax.swing.JFrame {
         hPWField.setVisible(true);
         wPYField.setVisible(true);
         hourlyWageField.setVisible(true);
-        
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_partTimeRadioActionPerformed
 
@@ -341,7 +358,7 @@ public class MainMenu extends javax.swing.JFrame {
         hPWField.setVisible(false);
         wPYField.setVisible(false);
         hourlyWageField.setVisible(false);
-    // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_fullTimeRadioActionPerformed
 
     private void employeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumFieldActionPerformed
@@ -365,7 +382,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_dRTextActionPerformed
 
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
-        String location = (String)locationBox.getSelectedItem();
+        String location = (String) locationBox.getSelectedItem();
         int employeeNumber = Integer.parseInt(employeeNumField.getText());
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
@@ -376,8 +393,7 @@ public class MainMenu extends javax.swing.JFrame {
             hashTable.addEmployee(toBeAdded);
             System.out.println("Full time employee added");
             //this goes into the fileIO class and gets added in to the .csv
-        }
-        else if (partTimeRadio.isSelected()) {
+        } else if (partTimeRadio.isSelected()) {
             int hoursPerWeek = Integer.parseInt(hPWField.getText());
             double hourlyWage = Double.parseDouble(hourlyWageField.getText());
             int weeksPerYear = Integer.parseInt(wPYField.getText());
@@ -385,21 +401,21 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("Part time employee added");
             hashTable.addEmployee(toBeAdded);
         }
-        
+
     }//GEN-LAST:event_addEmployeeActionPerformed
 
     private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
         int employeeNumber = Integer.parseInt(delEmployeeNumField.getText());
         hashTable.removeEmployee(employeeNumber);
         //based on the employee number the employee is deleted from the .csv
-    // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_delButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         int employeeNumber = Integer.parseInt(numberToEdit.getText());
         viewPane.setSelectedIndex(3);
-        
-    // TODO add your handling code here:
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
@@ -412,6 +428,20 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_saveButtonActionPerformed
 
+    private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
+        for (int i = 0; i < hashTable.buckets.length; i++) {
+            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
+                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
+                    DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
+                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(), hashTable.buckets[i].get(x).getDeductionRate(),5.0 });
+                } else {
+                    DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
+                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear()), hashTable.buckets[i].get(x).getDeductionRate(),5.0});
+                }
+            }
+
+
+}    }//GEN-LAST:event_viewPaneMouseClicked
 
     public static void main(String args[]) {
         try {
@@ -419,16 +449,24 @@ public class MainMenu extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenu.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -454,7 +492,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField hPWField;
     private javax.swing.JTextField hourlyWageField;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField lastNameField;
     private javax.swing.JComboBox<String> locationBox;
     private javax.swing.JTextField numberToEdit;
@@ -462,6 +499,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton saveButton;
     private javax.swing.JTabbedPane viewPane;
     private javax.swing.JPanel viewPanel;
+    private javax.swing.JTable viewTable;
     private javax.swing.JTextField wPYField;
     // End of variables declaration//GEN-END:variables
 }
