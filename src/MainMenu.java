@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -384,13 +385,11 @@ public class MainMenu extends javax.swing.JFrame {
         addPanelLayout.setHorizontalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(384, 384, 384)
+                .addGap(483, 483, 483)
                 .addComponent(partTimeRadio)
-                .addGap(117, 117, 117)
-                .addComponent(saveButton)
-                .addGap(192, 350, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 392, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -403,21 +402,23 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(lastNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(firstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(wPYField)))
-                .addGap(339, 339, 339))
+                .addGap(392, 392, 392))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fullTimeRadio)
-                .addGap(435, 435, 435))
+                .addGap(184, 184, 184)
+                .addComponent(saveButton)
+                .addGap(186, 186, 186))
         );
         addPanelLayout.setVerticalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(fullTimeRadio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(partTimeRadio)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fullTimeRadio)
                     .addComponent(saveButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(partTimeRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -544,14 +545,6 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_delButtonActionPerformed
 
-
-    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        int employeeNumber = Integer.parseInt(numberToEdit.getText());
-        viewPane.setSelectedIndex(3);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_editButtonActionPerformed
-
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         FileIO file = new FileIO();
         try {
@@ -629,6 +622,8 @@ public class MainMenu extends javax.swing.JFrame {
         locationBox1.setVisible(true);
         annualSalaryText1.setVisible(true);
         annualSalaryText1.setText("salary");
+        editButton.setVisible(false);
+        //if statement based on parttime/fulltime employee
         
         
     // TODO add your handling code here:
@@ -637,7 +632,9 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     public static void main(String args[]) {
+        
         try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -661,6 +658,7 @@ public class MainMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainMenu.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainMenu().setVisible(true);
