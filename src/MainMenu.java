@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
+
 public class MainMenu extends javax.swing.JFrame {
 
     public MainMenu() {
@@ -672,13 +673,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-
-                }
-            }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
