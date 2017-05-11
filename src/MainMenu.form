@@ -178,7 +178,7 @@
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="hourlyWageField1" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
                               <Component id="dRText1" alignment="0" pref="338" max="32767" attributes="0"/>
-                              <Component id="addEmployee1" alignment="0" pref="338" max="32767" attributes="0"/>
+                              <Component id="editEmployeeConfirm" alignment="0" pref="338" max="32767" attributes="0"/>
                               <Component id="annualSalaryText1" alignment="0" pref="338" max="32767" attributes="0"/>
                               <Component id="employeeNumField1" alignment="0" pref="338" max="32767" attributes="0"/>
                               <Component id="lastNameField1" alignment="0" pref="338" max="32767" attributes="0"/>
@@ -232,7 +232,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="dRText1" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
-                          <Component id="addEmployee1" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="editEmployeeConfirm" min="-2" pref="57" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -262,12 +262,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="employeeNumField1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="addEmployee1">
+                <Component class="javax.swing.JButton" name="editEmployeeConfirm">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Confirm changes"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addEmployee1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editEmployeeConfirmActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="fullTimeRadio1">
