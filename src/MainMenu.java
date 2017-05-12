@@ -1,5 +1,6 @@
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -7,10 +8,13 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainMenu extends javax.swing.JFrame {
 
+    MyHashTable hashTable = new MyHashTable(2);
+
     public MainMenu() {
         initComponents();
+        read();
+        viewUpdate();
     }
-    MyHashTable hashTable = new MyHashTable(2);
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -368,12 +372,8 @@ public class MainMenu extends javax.swing.JFrame {
         addPanel.setLayout(addPanelLayout);
         addPanelLayout.setHorizontalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addComponent(partTimeRadio)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addGap(0, 392, Short.MAX_VALUE)
+                .addGap(0, 434, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -387,20 +387,25 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(firstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(wPYField)))
                 .addGap(392, 392, 392))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(fullTimeRadio)
-                .addGap(184, 184, 184)
-                .addComponent(saveButton)
-                .addGap(186, 186, 186))
+            .addGroup(addPanelLayout.createSequentialGroup()
+                .addGap(483, 483, 483)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addPanelLayout.createSequentialGroup()
+                        .addComponent(fullTimeRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(saveButton)
+                        .addGap(186, 186, 186))
+                    .addGroup(addPanelLayout.createSequentialGroup()
+                        .addComponent(partTimeRadio)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         addPanelLayout.setVerticalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fullTimeRadio)
-                    .addComponent(saveButton))
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveButton)
+                    .addComponent(fullTimeRadio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(partTimeRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -421,7 +426,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(wPYField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dRText, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -526,14 +531,13 @@ public class MainMenu extends javax.swing.JFrame {
         int employeeNumber = Integer.parseInt(delEmployeeNumField.getText());
         hashTable.removeEmployee(employeeNumber);
         //based on the employee number the employee is deleted from the .csv
-        // TODO add your handling code here:
     }//GEN-LAST:event_delButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         FileIO file = new FileIO();
         try {
             file.writeFile("data.csv", hashTable);
-            // TODO add your handling code here:
+            System.out.println("saved");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -541,17 +545,8 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
-        DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
-        model.setRowCount(0);
-        for (int i = 0; i < hashTable.buckets.length; i++) {
-            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
-                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
-                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(), hashTable.buckets[i].get(x).getDeductionRate(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
-                } else {
-                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear()), hashTable.buckets[i].get(x).getDeductionRate(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
-                }
-            }
-}    }//GEN-LAST:event_viewPaneMouseClicked
+        viewUpdate();
+    }//GEN-LAST:event_viewPaneMouseClicked
 
     private void firstNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameField1ActionPerformed
 
@@ -581,9 +576,9 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("Full time employee added");
             //this goes into the fileIO class and gets added in to the .csv
         } else if (partTimeRadio1.isSelected()) {
-            int hoursPerWeek = Integer.parseInt(hPWField1.getText());
+            double hoursPerWeek = Double.parseDouble(hPWField1.getText());
             double hourlyWage = Double.parseDouble(hourlyWageField1.getText());
-            int weeksPerYear = Integer.parseInt(wPYField1.getText());
+            double weeksPerYear = Double.parseDouble(wPYField1.getText());
             PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
             System.out.println("Part time employee added");
             hashTable.addEmployee(toBeAdded);
@@ -667,6 +662,28 @@ public class MainMenu extends javax.swing.JFrame {
             dRText1.setText(Double.toString(toBeAdded.getDeductionRate()));
         }
     }//GEN-LAST:event_editButtonActionPerformed
+    public void read() {
+        FileIO file = new FileIO();
+        try {
+            file.readFile("data.csv", hashTable);
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void viewUpdate() {
+        DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
+        model.setRowCount(0);
+        for (int i = 0; i < hashTable.buckets.length; i++) {
+            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
+                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
+                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(), hashTable.buckets[i].get(x).getDeductionRate(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
+                } else {
+                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear()), hashTable.buckets[i].get(x).getDeductionRate(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
+                }
+            }
+        }
+    }
 
     public static void main(String args[]) {
 
@@ -701,6 +718,7 @@ public class MainMenu extends javax.swing.JFrame {
                 new MainMenu().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
