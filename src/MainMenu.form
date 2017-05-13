@@ -27,11 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="viewPane" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="viewPane" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -60,7 +56,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="1038" max="32767" attributes="0"/>
+
+                  <Component id="jScrollPane2" alignment="0" pref="1047" max="32767" attributes="0"/>
+
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -168,6 +166,9 @@
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="addPanel1">
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addPanel1MouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -186,7 +187,7 @@
                               <Component id="hPWField1" alignment="1" max="32767" attributes="0"/>
                               <Component id="locationBox1" alignment="0" pref="338" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -373,7 +374,10 @@
                           <Component id="delEmployeeNumField" pref="186" max="32767" attributes="0"/>
                           <Component id="delButton" max="32767" attributes="0"/>
                       </Group>
+
+
                       <EmptySpace pref="817" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
@@ -409,6 +413,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="addPanel">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addPanelMouseClicked"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Add Employee">
@@ -421,7 +428,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="455" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="464" max="32767" attributes="0"/>
+
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="hPWField" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
                           <Component id="hourlyWageField" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
@@ -439,8 +447,9 @@
                       <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="488" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="483" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+
                           <Component id="fullTimeRadio" min="-2" max="-2" attributes="0"/>
                           <Component id="partTimeRadio" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -454,6 +463,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="saveButton" min="-2" max="-2" attributes="0"/>
