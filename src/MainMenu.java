@@ -5,11 +5,11 @@ import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
-
 public class MainMenu extends javax.swing.JFrame {
 
     public MainMenu() {
         initComponents();
+
     }
     MyHashTable hashTable = new MyHashTable(2);
 
@@ -85,7 +85,7 @@ public class MainMenu extends javax.swing.JFrame {
         viewPanel.setLayout(viewPanelLayout);
         viewPanelLayout.setHorizontalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1017, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
         );
         viewPanelLayout.setVerticalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,6 +93,12 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         viewPane.addTab("View Employees", viewPanel);
+
+        addPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addPanel1MouseClicked(evt);
+            }
+        });
 
         firstNameField1.setText("First name");
         firstNameField1.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +195,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(wPYField1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hPWField1)
                     .addComponent(locationBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 338, Short.MAX_VALUE))
-                .addGap(339, 339, 339))
+                .addGap(340, 340, 340))
             .addGroup(addPanel1Layout.createSequentialGroup()
                 .addGap(384, 384, 384)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,7 +279,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(delEmployeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                     .addComponent(delButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(796, Short.MAX_VALUE))
+                .addContainerGap(826, Short.MAX_VALUE))
         );
         delPanelLayout.setVerticalGroup(
             delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,6 +292,12 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         viewPane.addTab("Delete Employee", delPanel);
+
+        addPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addPanelMouseClicked(evt);
+            }
+        });
 
         firstNameField.setText("First name");
         firstNameField.addActionListener(new java.awt.event.ActionListener() {
@@ -369,12 +381,8 @@ public class MainMenu extends javax.swing.JFrame {
         addPanel.setLayout(addPanelLayout);
         addPanelLayout.setHorizontalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addComponent(partTimeRadio)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addGap(0, 392, Short.MAX_VALUE)
+                .addGap(0, 464, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -388,10 +396,12 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(firstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(wPYField)))
                 .addGap(392, 392, 392))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(fullTimeRadio)
-                .addGap(184, 184, 184)
+            .addGroup(addPanelLayout.createSequentialGroup()
+                .addGap(483, 483, 483)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fullTimeRadio)
+                    .addComponent(partTimeRadio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(saveButton)
                 .addGap(186, 186, 186))
         );
@@ -399,9 +409,9 @@ public class MainMenu extends javax.swing.JFrame {
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fullTimeRadio)
-                    .addComponent(saveButton))
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveButton)
+                    .addComponent(fullTimeRadio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(partTimeRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -432,10 +442,7 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(viewPane)
-                .addContainerGap())
+            .addComponent(viewPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -669,8 +676,25 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editButtonActionPerformed
 
-    public static void main(String args[]) {
+    private void addPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanelMouseClicked
+        fullTimeRadio.setSelected(true);
+        partTimeRadio.setSelected(false);
+        hPWField.setVisible(false);
+        hourlyWageField.setVisible(false);
+        wPYField.setVisible(false);
+        annualSalaryText.setVisible(true);
+        annualSalaryText.setText("Annual Salary");
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPanelMouseClicked
 
+    private void addPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanel1MouseClicked
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addPanel1MouseClicked
+
+    public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
