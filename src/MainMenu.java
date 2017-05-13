@@ -12,7 +12,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     public MainMenu() {
         initComponents();
-
+        resetEdit();
+        resetAdd();
         read();
         viewUpdate();
     }
@@ -27,7 +28,7 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         viewTable = new javax.swing.JTable();
         editPanel = new javax.swing.JPanel();
-        addPanel1 = new javax.swing.JPanel();
+        editButtonPanel = new javax.swing.JPanel();
         firstNameField1 = new javax.swing.JTextField();
         lastNameField1 = new javax.swing.JTextField();
         employeeNumField1 = new javax.swing.JTextField();
@@ -67,6 +68,12 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        viewPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewPanelMouseClicked(evt);
+            }
+        });
+
         viewTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -89,8 +96,7 @@ public class MainMenu extends javax.swing.JFrame {
         viewPanel.setLayout(viewPanelLayout);
         viewPanelLayout.setHorizontalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1038, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
         );
         viewPanelLayout.setVerticalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,9 +105,15 @@ public class MainMenu extends javax.swing.JFrame {
 
         viewPane.addTab("View Employees", viewPanel);
 
-        addPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        editPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addPanel1MouseClicked(evt);
+                editPanelMouseClicked(evt);
+            }
+        });
+
+        editButtonPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editButtonPanelMouseClicked(evt);
             }
         });
 
@@ -183,49 +195,41 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout addPanel1Layout = new javax.swing.GroupLayout(addPanel1);
-        addPanel1.setLayout(addPanel1Layout);
-        addPanel1Layout.setHorizontalGroup(
-            addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
-                .addGap(0, 338, Short.MAX_VALUE)
-                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+        javax.swing.GroupLayout editButtonPanelLayout = new javax.swing.GroupLayout(editButtonPanel);
+        editButtonPanel.setLayout(editButtonPanelLayout);
+        editButtonPanelLayout.setHorizontalGroup(
+            editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editButtonPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(hourlyWageField1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dRText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                    .addComponent(dRText1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editEmployeeConfirm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(annualSalaryText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(employeeNumField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(lastNameField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(firstNameField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                    .addComponent(annualSalaryText1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(employeeNumField1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lastNameField1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(firstNameField1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(wPYField1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hPWField1)
-                    .addComponent(locationBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 338, Short.MAX_VALUE))
+                    .addComponent(locationBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(340, 340, 340))
-            .addGroup(addPanel1Layout.createSequentialGroup()
-                .addGap(384, 384, 384)
-                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editButtonPanelLayout.createSequentialGroup()
+                .addContainerGap(472, Short.MAX_VALUE)
+                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(437, 437, 437))
+            .addGroup(editButtonPanelLayout.createSequentialGroup()
+                .addGap(456, 456, 456)
+                .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(partTimeRadio1)
                     .addComponent(fullTimeRadio1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
-                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(437, 437, 437))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
-                        .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fullTimeRadio1)
-                            .addComponent(partTimeRadio1))
-                        .addGap(468, 468, 468))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        addPanel1Layout.setVerticalGroup(
-            addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanel1Layout.createSequentialGroup()
-                .addComponent(partTimeRadio1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        editButtonPanelLayout.setVerticalGroup(
+            editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editButtonPanelLayout.createSequentialGroup()
                 .addComponent(fullTimeRadio1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(partTimeRadio1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(firstNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -237,7 +241,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addComponent(editButton)
                 .addGap(1, 1, 1)
-                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(annualSalaryText1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -246,7 +250,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(wPYField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dRText1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(editEmployeeConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -254,19 +258,20 @@ public class MainMenu extends javax.swing.JFrame {
         editPanel.setLayout(editPanelLayout);
         editPanelLayout.setHorizontalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPanelLayout.createSequentialGroup()
-                .addGap(0, 23, Short.MAX_VALUE)
-                .addComponent(addPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(editButtonPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         editPanelLayout.setVerticalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPanelLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(addPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+            .addComponent(editButtonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         viewPane.addTab("Edit Employee", editPanel);
+
+        delPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delPanelMouseClicked(evt);
+            }
+        });
 
         delEmployeeNumField.setText("Employee Number");
         delEmployeeNumField.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +296,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(delEmployeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                     .addComponent(delButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(826, Short.MAX_VALUE))
+                .addContainerGap(817, Short.MAX_VALUE))
         );
         delPanelLayout.setVerticalGroup(
             delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,7 +400,7 @@ public class MainMenu extends javax.swing.JFrame {
         addPanelLayout.setHorizontalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addGap(0, 455, Short.MAX_VALUE)
+                .addGap(0, 464, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -409,28 +414,26 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(firstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(wPYField)))
                 .addGap(392, 392, 392))
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(483, 483, 483)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(fullTimeRadio)
-                    .addComponent(partTimeRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(saveButton)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(partTimeRadio)
+                    .addGroup(addPanelLayout.createSequentialGroup()
+                        .addComponent(fullTimeRadio)
+                        .addGap(219, 219, 219)
+                        .addComponent(saveButton)))
                 .addGap(186, 186, 186))
         );
         addPanelLayout.setVerticalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(saveButton)
-                        .addGap(29, 29, 29))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                        .addComponent(partTimeRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fullTimeRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveButton)
+                    .addComponent(fullTimeRadio))
+                .addGap(1, 1, 1)
+                .addComponent(partTimeRadio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -561,8 +564,50 @@ public class MainMenu extends javax.swing.JFrame {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_saveButtonActionPerformed
-
-
+    public void resetEdit() {
+        employeeNumField1.setText("Employee number");
+        firstNameField1.setText("First name");
+        lastNameField1.setText("Last name");
+        annualSalaryText1.setText("Annual salary");
+        locationBox1.setSelectedIndex(0);
+        hourlyWageField1.setText("Hourly wage");
+        hPWField1.setText("Hours per week");
+        wPYField1.setText("Weeks per year");
+        dRText1.setText("Deduction Rate");
+        fullTimeRadio1.setVisible(false);
+        partTimeRadio1.setVisible(false);
+        firstNameField1.setVisible(false);
+        lastNameField1.setVisible(false);
+        dRText1.setVisible(false);
+        locationBox1.setVisible(false);
+        editButton.setVisible(true);
+        hourlyWageField1.setVisible(false);
+        hPWField1.setVisible(false);
+        wPYField1.setVisible(false);
+        annualSalaryText1.setVisible(false);
+        
+    }
+    
+    public void resetAdd() {
+        employeeNumField.setText("Employee number");
+        firstNameField.setText("First name");
+        lastNameField.setText("Last name");
+        annualSalaryText.setText("Annual salary");
+        locationBox.setSelectedIndex(0);
+        hourlyWageField.setText("Hourly wage");
+        hPWField.setText("Hours per week");
+        wPYField.setText("Weeks per year");
+        dRText.setText("Deduction Rate");
+        fullTimeRadio.setSelected(true);
+        partTimeRadio.setSelected(false);
+        hourlyWageField.setVisible(false);
+        hPWField.setVisible(false);
+        wPYField.setVisible(false);
+        annualSalaryText.setVisible(true);
+    }
+    public void resetDelete() {
+        delEmployeeNumField.setText("Employee Number");
+    }
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
         viewUpdate();
     }//GEN-LAST:event_viewPaneMouseClicked
@@ -706,11 +751,27 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
 
-    private void addPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanel1MouseClicked
-        
+    private void editButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonPanelMouseClicked
+        resetAdd();
+        resetDelete();
+    }//GEN-LAST:event_editButtonPanelMouseClicked
 
+    private void delPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delPanelMouseClicked
+        resetEdit();
+        resetAdd();
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_delPanelMouseClicked
+
+    private void editPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editPanelMouseClicked
+     
+    }//GEN-LAST:event_editPanelMouseClicked
+
+    private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
+        resetAdd();
+        resetEdit();
         // TODO add your handling code here:
-    }//GEN-LAST:event_addPanel1MouseClicked
+    }//GEN-LAST:event_viewPanelMouseClicked
 
     public static void main(String args[]) {
         try {
@@ -744,7 +805,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup TypeOfEmployee;
     private javax.swing.JButton addEmployee;
     private javax.swing.JPanel addPanel;
-    private javax.swing.JPanel addPanel1;
     private javax.swing.JTextField annualSalaryText;
     private javax.swing.JTextField annualSalaryText1;
     private javax.swing.JTextField dRText;
@@ -753,6 +813,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField delEmployeeNumField;
     private javax.swing.JPanel delPanel;
     private javax.swing.JButton editButton;
+    private javax.swing.JPanel editButtonPanel;
     private javax.swing.JButton editEmployeeConfirm;
     private javax.swing.JPanel editPanel;
     private javax.swing.JTextField employeeNumField;
