@@ -705,7 +705,6 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
-    public static void main(String args[]) {
 
     private void addPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanel1MouseClicked
         
