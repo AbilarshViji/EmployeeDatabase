@@ -1,7 +1,7 @@
 bin/
 build/
 dist/
-nbproject/
+
 
 # Compiled class file
 *.class
@@ -16,7 +16,6 @@ nbproject/
 *.tar.gz
 *.class
 
-*.xml
 *.mf
 
 

@@ -1,5 +1,6 @@
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -7,11 +8,14 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainMenu extends javax.swing.JFrame {
 
+    MyHashTable hashTable = new MyHashTable(2);
+
     public MainMenu() {
         initComponents();
 
+        read();
+        viewUpdate();
     }
-    MyHashTable hashTable = new MyHashTable(2);
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -65,7 +69,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         viewTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Employee Number", "First Name", "Last Name", "Work Location", "Annual Salary", "Deductions Rate", "Net Salary"
@@ -85,7 +89,8 @@ public class MainMenu extends javax.swing.JFrame {
         viewPanel.setLayout(viewPanelLayout);
         viewPanelLayout.setHorizontalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
+
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1038, Short.MAX_VALUE)
         );
         viewPanelLayout.setVerticalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +188,7 @@ public class MainMenu extends javax.swing.JFrame {
         addPanel1Layout.setHorizontalGroup(
             addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
-                .addGap(0, 340, Short.MAX_VALUE)
+                .addGap(0, 338, Short.MAX_VALUE)
                 .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(hourlyWageField1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dRText1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
@@ -202,17 +207,25 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(partTimeRadio1)
                     .addComponent(fullTimeRadio1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(437, 437, 437))
+                .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
+                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(437, 437, 437))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanel1Layout.createSequentialGroup()
+                        .addGroup(addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fullTimeRadio1)
+                            .addComponent(partTimeRadio1))
+                        .addGap(468, 468, 468))))
         );
         addPanel1Layout.setVerticalGroup(
             addPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanel1Layout.createSequentialGroup()
-                .addComponent(fullTimeRadio1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(partTimeRadio1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fullTimeRadio1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(firstNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -241,17 +254,16 @@ public class MainMenu extends javax.swing.JFrame {
         editPanel.setLayout(editPanelLayout);
         editPanelLayout.setHorizontalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(editPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(addPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPanelLayout.createSequentialGroup()
+                .addGap(0, 23, Short.MAX_VALUE)
+                .addComponent(addPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         editPanelLayout.setVerticalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(editPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPanelLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(addPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         viewPane.addTab("Edit Employee", editPanel);
@@ -336,6 +348,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(partTimeRadio);
+        partTimeRadio.setSelected(true);
         partTimeRadio.setText("Part Time");
         partTimeRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,7 +395,7 @@ public class MainMenu extends javax.swing.JFrame {
         addPanelLayout.setHorizontalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addGap(0, 464, Short.MAX_VALUE)
+                .addGap(0, 455, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -409,12 +422,15 @@ public class MainMenu extends javax.swing.JFrame {
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveButton)
-                    .addComponent(fullTimeRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(partTimeRadio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addPanelLayout.createSequentialGroup()
+                        .addComponent(saveButton)
+                        .addGap(29, 29, 29))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
+                        .addComponent(partTimeRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fullTimeRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -432,7 +448,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(wPYField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dRText, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -534,14 +550,13 @@ public class MainMenu extends javax.swing.JFrame {
         int employeeNumber = Integer.parseInt(delEmployeeNumField.getText());
         hashTable.removeEmployee(employeeNumber);
         //based on the employee number the employee is deleted from the .csv
-        // TODO add your handling code here:
     }//GEN-LAST:event_delButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         FileIO file = new FileIO();
         try {
             file.writeFile("data.csv", hashTable);
-            // TODO add your handling code here:
+            System.out.println("saved");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -549,80 +564,8 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
-        DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
-        model.setRowCount(0);
-        for (int i = 0; i < hashTable.buckets.length; i++) {
-            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
-                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
-                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(), hashTable.buckets[i].get(x).getDeductionRate(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
-                } else {
-                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear()), hashTable.buckets[i].get(x).getDeductionRate(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
-                }
-            }
-}    }//GEN-LAST:event_viewPaneMouseClicked
-
-    private void firstNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameField1ActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameField1ActionPerformed
-
-    private void lastNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameField1ActionPerformed
-
-    private void employeeNumField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeNumField1ActionPerformed
-
-    private void editEmployeeConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeConfirmActionPerformed
-        int numToEdit = Integer.parseInt(employeeNumField1.getText());
-        hashTable.removeEmployee(numToEdit);
-        String location = (String) locationBox1.getSelectedItem();
-        int employeeNumber = Integer.parseInt(employeeNumField1.getText());
-        String firstName = firstNameField1.getText();
-        String lastName = lastNameField1.getText();
-        double deductionRate = Double.parseDouble(dRText1.getText());
-        if (fullTimeRadio1.isSelected()) {
-            double annualSalary = Double.parseDouble(annualSalaryText1.getText());
-            FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
-            hashTable.addEmployee(toBeAdded);
-            System.out.println("Full time employee added");
-            //this goes into the fileIO class and gets added in to the .csv
-        } else if (partTimeRadio1.isSelected()) {
-            int hoursPerWeek = Integer.parseInt(hPWField1.getText());
-            double hourlyWage = Double.parseDouble(hourlyWageField1.getText());
-            int weeksPerYear = Integer.parseInt(wPYField1.getText());
-            PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
-            System.out.println("Part time employee added");
-            hashTable.addEmployee(toBeAdded);
-        }
-    }//GEN-LAST:event_editEmployeeConfirmActionPerformed
-
-    private void fullTimeRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadio1ActionPerformed
-        annualSalaryText1.setVisible(true);
-        hPWField1.setVisible(false);
-        wPYField1.setVisible(false);
-        hourlyWageField1.setVisible(false);
-    }//GEN-LAST:event_fullTimeRadio1ActionPerformed
-
-    private void partTimeRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadio1ActionPerformed
-        annualSalaryText1.setVisible(false);
-        hPWField1.setVisible(true);
-        wPYField1.setVisible(true);
-        hourlyWageField1.setVisible(true);
-    }//GEN-LAST:event_partTimeRadio1ActionPerformed
-
-    private void locationBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locationBox1ActionPerformed
-
-    private void annualSalaryText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryText1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_annualSalaryText1ActionPerformed
-
-    private void dRText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRText1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dRText1ActionPerformed
+        viewUpdate();
+    }//GEN-LAST:event_viewPaneMouseClicked
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         int numberToEdit = Integer.parseInt(employeeNumField1.getText());
@@ -676,17 +619,93 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editButtonActionPerformed
 
-    private void addPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanelMouseClicked
-        fullTimeRadio.setSelected(true);
-        partTimeRadio.setSelected(false);
-        hPWField.setVisible(false);
-        hourlyWageField.setVisible(false);
-        wPYField.setVisible(false);
-        annualSalaryText.setVisible(true);
-        annualSalaryText.setText("Annual Salary");
-        
+
+    private void dRText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRText1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addPanelMouseClicked
+    }//GEN-LAST:event_dRText1ActionPerformed
+
+    private void annualSalaryText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryText1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_annualSalaryText1ActionPerformed
+
+    private void locationBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locationBox1ActionPerformed
+
+    private void partTimeRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadio1ActionPerformed
+        annualSalaryText1.setVisible(false);
+        hPWField1.setVisible(true);
+        wPYField1.setVisible(true);
+        hourlyWageField1.setVisible(true);
+    }//GEN-LAST:event_partTimeRadio1ActionPerformed
+
+    private void fullTimeRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadio1ActionPerformed
+        annualSalaryText1.setVisible(true);
+        hPWField1.setVisible(false);
+        wPYField1.setVisible(false);
+        hourlyWageField1.setVisible(false);
+    }//GEN-LAST:event_fullTimeRadio1ActionPerformed
+
+    private void editEmployeeConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeConfirmActionPerformed
+        int numToEdit = Integer.parseInt(employeeNumField1.getText());
+        hashTable.removeEmployee(numToEdit);
+        String location = (String) locationBox1.getSelectedItem();
+        int employeeNumber = Integer.parseInt(employeeNumField1.getText());
+        String firstName = firstNameField1.getText();
+        String lastName = lastNameField1.getText();
+        double deductionRate = Double.parseDouble(dRText1.getText());
+        if (fullTimeRadio1.isSelected()) {
+            double annualSalary = Double.parseDouble(annualSalaryText1.getText());
+            FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
+            hashTable.addEmployee(toBeAdded);
+            System.out.println("Full time employee added");
+            //this goes into the fileIO class and gets added in to the .csv
+        } else if (partTimeRadio1.isSelected()) {
+            double hoursPerWeek = Double.parseDouble(hPWField1.getText());
+            double hourlyWage = Double.parseDouble(hourlyWageField1.getText());
+            double weeksPerYear = Double.parseDouble(wPYField1.getText());
+            PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
+            System.out.println("Part time employee added");
+            hashTable.addEmployee(toBeAdded);
+        }
+    }//GEN-LAST:event_editEmployeeConfirmActionPerformed
+
+    private void employeeNumField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeeNumField1ActionPerformed
+
+    private void lastNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameField1ActionPerformed
+
+    private void firstNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameField1ActionPerformed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameField1ActionPerformed
+    public void read() {
+        FileIO file = new FileIO();
+        try {
+            file.readFile("data.csv", hashTable);
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void viewUpdate() {
+        DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
+        model.setRowCount(0);
+        for (int i = 0; i < hashTable.buckets.length; i++) {
+            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
+                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
+                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(), hashTable.buckets[i].get(x).getDeductionRate(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
+                } else {
+                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear()), hashTable.buckets[i].get(x).getDeductionRate(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
+                }
+            }
+        }
+    }
+
+    public static void main(String args[]) {
 
     private void addPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanel1MouseClicked
         
@@ -719,6 +738,7 @@ public class MainMenu extends javax.swing.JFrame {
                 new MainMenu().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
