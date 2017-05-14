@@ -610,6 +610,9 @@ public class MainMenu extends javax.swing.JFrame {
     }
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
         viewUpdate();
+        resetEdit();
+        resetAdd();
+        resetDelete();
     }//GEN-LAST:event_viewPaneMouseClicked
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
@@ -752,13 +755,11 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     private void editButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonPanelMouseClicked
-        resetAdd();
-        resetDelete();
+        
     }//GEN-LAST:event_editButtonPanelMouseClicked
 
     private void delPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delPanelMouseClicked
-        resetEdit();
-        resetAdd();
+        
 
 // TODO add your handling code here:
     }//GEN-LAST:event_delPanelMouseClicked
@@ -768,8 +769,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-        resetAdd();
-        resetEdit();
+        ;
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 
