@@ -706,7 +706,8 @@ public class MainMenu extends javax.swing.JFrame {
     
     }
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        int numberToEdit = Integer.parseInt(employeeNumField1.getText());
+        int numberToEdit = -1;
+            numberToEdit = Integer.parseInt(employeeNumField1.getText());
         //if statement based on parttime/fulltime employee
         int loc = hashTable.searchEmployee(numberToEdit);
         int num = hashTable.calcBucket(numberToEdit);
@@ -755,6 +756,7 @@ public class MainMenu extends javax.swing.JFrame {
             dRText1.setVisible(true);
             dRText1.setText(Double.toString(toBeAdded.getDeductionRate()));
         }
+    hashTable.removeEmployee(numberToEdit);
     }//GEN-LAST:event_editButtonActionPerformed
 
 
@@ -786,7 +788,6 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void editEmployeeConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeConfirmActionPerformed
         int numToEdit = Integer.parseInt(employeeNumField1.getText());
-        hashTable.removeEmployee(numToEdit);
         String location = (String) locationBox1.getSelectedItem();
         int employeeNumber = Integer.parseInt(employeeNumField1.getText());
         String firstName = firstNameField1.getText();
