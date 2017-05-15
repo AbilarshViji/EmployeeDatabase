@@ -286,7 +286,7 @@
                     <StringItem index="0" value="Mississauga"/>
                     <StringItem index="1" value="Toronto"/>
                     <StringItem index="2" value="Ottawa"/>
-                    <StringItem index="3" value="randomplace"/>
+                    <StringItem index="3" value="Vancouver"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -608,7 +608,7 @@
                       <Component id="delEmployeeNumField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="delButton" min="-2" pref="51" max="-2" attributes="0"/>
-                      <EmptySpace pref="394" max="32767" attributes="0"/>
+                      <EmptySpace pref="435" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
