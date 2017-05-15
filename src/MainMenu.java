@@ -807,7 +807,7 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("Part time employee added");
             hashTable.addEmployee(toBeAdded);
         }
-    resetEdit();
+        resetEdit();
     }//GEN-LAST:event_editEmployeeConfirmActionPerformed
 
     private void employeeNumField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumField1ActionPerformed
