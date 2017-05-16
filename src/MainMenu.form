@@ -379,7 +379,7 @@
                           <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="472" max="32767" attributes="0"/>
+                          <EmptySpace pref="477" max="32767" attributes="0"/>
                           <Component id="editButton" min="-2" pref="138" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="437" max="-2" attributes="0"/>
                       </Group>
@@ -420,8 +420,9 @@
                           <Component id="wPYFieldEdit" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="dRTextEdit" min="-2" pref="38" max="-2" attributes="0"/>
-                          <EmptySpace pref="91" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="editEmployeeConfirm" min="-2" pref="57" max="-2" attributes="0"/>
+                          <EmptySpace pref="52" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
