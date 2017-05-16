@@ -26,7 +26,7 @@ public class MainMenu extends javax.swing.JFrame {
         TypeOfEmployee = new javax.swing.ButtonGroup();
         viewPane = new javax.swing.JTabbedPane();
         viewPanel = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        viewScrollPane = new javax.swing.JScrollPane();
         viewTable = new javax.swing.JTable();
         addPanel = new javax.swing.JPanel();
         firstNameFieldAdd = new javax.swing.JTextField();
@@ -41,7 +41,6 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldAdd = new javax.swing.JTextField();
         hourlyWageFieldAdd = new javax.swing.JTextField();
         wPYFieldAdd = new javax.swing.JTextField();
-        saveButton = new javax.swing.JButton();
         editPanel = new javax.swing.JPanel();
         editButtonPanel = new javax.swing.JPanel();
         firstNameFieldEdit = new javax.swing.JTextField();
@@ -59,10 +58,15 @@ public class MainMenu extends javax.swing.JFrame {
         editButton = new javax.swing.JButton();
         delPanel = new javax.swing.JPanel();
         delButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        deleteScrollPane = new javax.swing.JScrollPane();
         deleteTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         viewPane.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -92,17 +96,17 @@ public class MainMenu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(viewTable);
+        viewScrollPane.setViewportView(viewTable);
 
         javax.swing.GroupLayout viewPanelLayout = new javax.swing.GroupLayout(viewPanel);
         viewPanel.setLayout(viewPanelLayout);
         viewPanelLayout.setHorizontalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
+            .addComponent(viewScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE)
         );
         viewPanelLayout.setVerticalGroup(
             viewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+            .addComponent(viewScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
 
         viewPane.addTab("View Employees", viewPanel);
@@ -225,13 +229,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setText("Save");
-        saveButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
         addPanel.setLayout(addPanelLayout);
         addPanelLayout.setHorizontalGroup(
@@ -255,19 +252,14 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(partTimeRadioAdd)
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(fullTimeRadioAdd)
-                        .addGap(219, 219, 219)
-                        .addComponent(saveButton)))
-                .addGap(186, 186, 186))
+                    .addComponent(fullTimeRadioAdd))
+                .addGap(458, 458, 458))
         );
         addPanelLayout.setVerticalGroup(
             addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveButton)
-                    .addComponent(fullTimeRadioAdd))
+                .addComponent(fullTimeRadioAdd)
                 .addGap(1, 1, 1)
                 .addComponent(partTimeRadioAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -290,7 +282,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(dRTextAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         viewPane.addTab("Add Employee", addPanel);
@@ -526,7 +518,7 @@ public class MainMenu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(deleteTable);
+        deleteScrollPane.setViewportView(deleteTable);
 
         javax.swing.GroupLayout delPanelLayout = new javax.swing.GroupLayout(delPanel);
         delPanel.setLayout(delPanelLayout);
@@ -534,7 +526,7 @@ public class MainMenu extends javax.swing.JFrame {
             delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(deleteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(717, Short.MAX_VALUE))
@@ -545,7 +537,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(deleteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(122, Short.MAX_VALUE))
         );
 
@@ -635,10 +627,9 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("Part time employee added");
             hashTable.addEmployee(toBeAdded);
         }
-
     }//GEN-LAST:event_addEmployeeActionPerformed
-
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+  
+    public void saveToFile() {
         FileIO file = new FileIO();
         try {
             file.writeFile("data.csv", hashTable);
@@ -646,7 +637,8 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_saveButtonActionPerformed
+    }
+
     public void resetEdit() {
         employeeNumFieldEdit.setText("Employee number");
         firstNameFieldEdit.setText("First name");
@@ -955,6 +947,10 @@ public class MainMenu extends javax.swing.JFrame {
         //based on the employee number the employee is deleted from the .csv
     }//GEN-LAST:event_delButtonActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        saveToFile();
+    }//GEN-LAST:event_formWindowClosing
+
     public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -993,6 +989,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField dRTextEdit;
     private javax.swing.JButton delButton;
     private javax.swing.JPanel delPanel;
+    private javax.swing.JScrollPane deleteScrollPane;
     private javax.swing.JTable deleteTable;
     private javax.swing.JButton editButton;
     private javax.swing.JPanel editButtonPanel;
@@ -1008,17 +1005,15 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField hPWFieldEdit;
     private javax.swing.JTextField hourlyWageFieldAdd;
     private javax.swing.JTextField hourlyWageFieldEdit;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField lastNameFieldAdd;
     private javax.swing.JTextField lastNameFieldEdit;
     private javax.swing.JComboBox<String> locationBoxAdd;
     private javax.swing.JComboBox<String> locationBoxEdit;
     private javax.swing.JRadioButton partTimeRadioAdd;
     private javax.swing.JRadioButton partTimeRadioEdit;
-    private javax.swing.JButton saveButton;
     private javax.swing.JTabbedPane viewPane;
     private javax.swing.JPanel viewPanel;
+    private javax.swing.JScrollPane viewScrollPane;
     private javax.swing.JTable viewTable;
     private javax.swing.JTextField wPYFieldAdd;
     private javax.swing.JTextField wPYFieldEdit;
