@@ -3,7 +3,8 @@ A database program for storing employee information.
 
 ## Prerequisites
 A version of JRE 8. Can be downloaded from https://www.java.com.
-Any IDE (Eclipse, Netbeans, IntelliJ, etc.)
+
+Any IDE (Eclipse, Netbeans, IntelliJ, etc.) to compile the source code.
 
 ## Viewing Employees
 To view the list of current employees press the ‘View Employee’ pane at the top of the program.
