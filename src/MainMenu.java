@@ -123,11 +123,6 @@ public class MainMenu extends javax.swing.JFrame {
                 firstNameFieldAddMouseClicked(evt);
             }
         });
-        firstNameFieldAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameFieldAddActionPerformed(evt);
-            }
-        });
 
         lastNameFieldAdd.setText("Last name");
         lastNameFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,21 +130,11 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldAddMouseClicked(evt);
             }
         });
-        lastNameFieldAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameFieldAddActionPerformed(evt);
-            }
-        });
 
         employeeNumFieldAdd.setText("Employee number");
         employeeNumFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 employeeNumFieldAddMouseClicked(evt);
-            }
-        });
-        employeeNumFieldAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeeNumFieldAddActionPerformed(evt);
             }
         });
 
@@ -178,11 +163,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         locationBoxAdd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
-        locationBoxAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locationBoxAddActionPerformed(evt);
-            }
-        });
 
         annualSalaryTextAdd.setText("Annual Salary");
         annualSalaryTextAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -190,21 +170,11 @@ public class MainMenu extends javax.swing.JFrame {
                 annualSalaryTextAddMouseClicked(evt);
             }
         });
-        annualSalaryTextAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annualSalaryTextAddActionPerformed(evt);
-            }
-        });
 
         dRTextAdd.setText("Deduction Rate");
         dRTextAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dRTextAddMouseClicked(evt);
-            }
-        });
-        dRTextAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dRTextAddActionPerformed(evt);
             }
         });
 
@@ -305,11 +275,6 @@ public class MainMenu extends javax.swing.JFrame {
                 firstNameFieldEditMouseClicked(evt);
             }
         });
-        firstNameFieldEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameFieldEditActionPerformed(evt);
-            }
-        });
 
         lastNameFieldEdit.setText("Last name");
         lastNameFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -317,21 +282,11 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldEditMouseClicked(evt);
             }
         });
-        lastNameFieldEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameFieldEditActionPerformed(evt);
-            }
-        });
 
         employeeNumFieldEdit.setText("Employee number");
         employeeNumFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 employeeNumFieldEditMouseClicked(evt);
-            }
-        });
-        employeeNumFieldEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeeNumFieldEditActionPerformed(evt);
             }
         });
 
@@ -359,11 +314,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         locationBoxEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
-        locationBoxEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locationBoxEditActionPerformed(evt);
-            }
-        });
 
         annualSalaryTextEdit.setText("Annual Salary");
         annualSalaryTextEdit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -371,21 +321,11 @@ public class MainMenu extends javax.swing.JFrame {
                 annualSalaryTextEditMouseClicked(evt);
             }
         });
-        annualSalaryTextEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annualSalaryTextEditActionPerformed(evt);
-            }
-        });
 
         dRTextEdit.setText("Deduction Rate");
         dRTextEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dRTextEditMouseClicked(evt);
-            }
-        });
-        dRTextEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dRTextEditActionPerformed(evt);
             }
         });
 
@@ -564,11 +504,6 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_numberToEditActionPerformed
 
 
-    private void locationBoxAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxAddActionPerformed
-        String location = (String) locationBoxAdd.getSelectedItem();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locationBoxAddActionPerformed
-
     private void partTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioAddActionPerformed
         boolean partTime = true;
         annualSalaryTextAdd.setVisible(false);
@@ -586,26 +521,6 @@ public class MainMenu extends javax.swing.JFrame {
         hourlyWageFieldAdd.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_fullTimeRadioAddActionPerformed
-
-    private void employeeNumFieldAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumFieldAddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeNumFieldAddActionPerformed
-
-    private void lastNameFieldAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldAddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameFieldAddActionPerformed
-
-    private void firstNameFieldAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameFieldAddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameFieldAddActionPerformed
-
-    private void annualSalaryTextAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryTextAddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_annualSalaryTextAddActionPerformed
-
-    private void dRTextAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRTextAddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dRTextAddActionPerformed
 
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
         String location = (String) locationBoxAdd.getSelectedItem();
@@ -746,18 +661,6 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editButtonActionPerformed
 
 
-    private void dRTextEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRTextEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dRTextEditActionPerformed
-
-    private void annualSalaryTextEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryTextEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_annualSalaryTextEditActionPerformed
-
-    private void locationBoxEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locationBoxEditActionPerformed
-
     private void partTimeRadioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioEditActionPerformed
         annualSalaryTextEdit.setVisible(false);
         hPWFieldEdit.setVisible(true);
@@ -795,19 +698,6 @@ public class MainMenu extends javax.swing.JFrame {
         }
         resetEdit();
     }//GEN-LAST:event_editEmployeeConfirmActionPerformed
-
-    private void employeeNumFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumFieldEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeNumFieldEditActionPerformed
-
-    private void lastNameFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameFieldEditActionPerformed
-
-    private void firstNameFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameFieldEditActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameFieldEditActionPerformed
     public void read() {
         FileIO file = new FileIO();
         try {
