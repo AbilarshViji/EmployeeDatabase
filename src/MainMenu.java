@@ -29,33 +29,33 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         viewTable = new javax.swing.JTable();
         addPanel = new javax.swing.JPanel();
-        firstNameField = new javax.swing.JTextField();
-        lastNameField = new javax.swing.JTextField();
-        employeeNumField = new javax.swing.JTextField();
+        firstNameFieldAdd = new javax.swing.JTextField();
+        lastNameFieldAdd = new javax.swing.JTextField();
+        employeeNumFieldAdd = new javax.swing.JTextField();
         addEmployee = new javax.swing.JButton();
-        fullTimeRadio = new javax.swing.JRadioButton();
-        partTimeRadio = new javax.swing.JRadioButton();
-        locationBox = new javax.swing.JComboBox<>();
-        annualSalaryText = new javax.swing.JTextField();
-        dRText = new javax.swing.JTextField();
-        hPWField = new javax.swing.JTextField();
-        hourlyWageField = new javax.swing.JTextField();
-        wPYField = new javax.swing.JTextField();
+        fullTimeRadioAdd = new javax.swing.JRadioButton();
+        partTimeRadioAdd = new javax.swing.JRadioButton();
+        locationBoxAdd = new javax.swing.JComboBox<>();
+        annualSalaryTextAdd = new javax.swing.JTextField();
+        dRTextAdd = new javax.swing.JTextField();
+        hPWFieldAdd = new javax.swing.JTextField();
+        hourlyWageFieldAdd = new javax.swing.JTextField();
+        wPYFieldAdd = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
         editPanel = new javax.swing.JPanel();
         editButtonPanel = new javax.swing.JPanel();
-        firstNameField1 = new javax.swing.JTextField();
-        lastNameField1 = new javax.swing.JTextField();
-        employeeNumField1 = new javax.swing.JTextField();
+        firstNameFieldEdit = new javax.swing.JTextField();
+        lastNameFieldEdit = new javax.swing.JTextField();
+        employeeNumFieldEdit = new javax.swing.JTextField();
         editEmployeeConfirm = new javax.swing.JButton();
-        fullTimeRadio1 = new javax.swing.JRadioButton();
-        partTimeRadio1 = new javax.swing.JRadioButton();
-        locationBox1 = new javax.swing.JComboBox<>();
-        annualSalaryText1 = new javax.swing.JTextField();
-        dRText1 = new javax.swing.JTextField();
-        hPWField1 = new javax.swing.JTextField();
-        hourlyWageField1 = new javax.swing.JTextField();
-        wPYField1 = new javax.swing.JTextField();
+        fullTimeRadioEdit = new javax.swing.JRadioButton();
+        partTimeRadioEdit = new javax.swing.JRadioButton();
+        locationBoxEdit = new javax.swing.JComboBox<>();
+        annualSalaryTextEdit = new javax.swing.JTextField();
+        dRTextEdit = new javax.swing.JTextField();
+        hPWFieldEdit = new javax.swing.JTextField();
+        hourlyWageFieldEdit = new javax.swing.JTextField();
+        wPYFieldEdit = new javax.swing.JTextField();
         editButton = new javax.swing.JButton();
         delPanel = new javax.swing.JPanel();
         delButton = new javax.swing.JButton();
@@ -113,39 +113,39 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        firstNameField.setText("First name");
-        firstNameField.addMouseListener(new java.awt.event.MouseAdapter() {
+        firstNameFieldAdd.setText("First name");
+        firstNameFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                firstNameFieldMouseClicked(evt);
+                firstNameFieldAddMouseClicked(evt);
             }
         });
-        firstNameField.addActionListener(new java.awt.event.ActionListener() {
+        firstNameFieldAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameFieldActionPerformed(evt);
+                firstNameFieldAddActionPerformed(evt);
             }
         });
 
-        lastNameField.setText("Last name");
-        lastNameField.addMouseListener(new java.awt.event.MouseAdapter() {
+        lastNameFieldAdd.setText("Last name");
+        lastNameFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lastNameFieldMouseClicked(evt);
+                lastNameFieldAddMouseClicked(evt);
             }
         });
-        lastNameField.addActionListener(new java.awt.event.ActionListener() {
+        lastNameFieldAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameFieldActionPerformed(evt);
+                lastNameFieldAddActionPerformed(evt);
             }
         });
 
-        employeeNumField.setText("Employee number");
-        employeeNumField.addMouseListener(new java.awt.event.MouseAdapter() {
+        employeeNumFieldAdd.setText("Employee number");
+        employeeNumFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                employeeNumFieldMouseClicked(evt);
+                employeeNumFieldAddMouseClicked(evt);
             }
         });
-        employeeNumField.addActionListener(new java.awt.event.ActionListener() {
+        employeeNumFieldAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeeNumFieldActionPerformed(evt);
+                employeeNumFieldAddActionPerformed(evt);
             }
         });
 
@@ -156,72 +156,72 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        TypeOfEmployee.add(fullTimeRadio);
-        fullTimeRadio.setText("Full Time");
-        fullTimeRadio.addActionListener(new java.awt.event.ActionListener() {
+        TypeOfEmployee.add(fullTimeRadioAdd);
+        fullTimeRadioAdd.setText("Full Time");
+        fullTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fullTimeRadioActionPerformed(evt);
+                fullTimeRadioAddActionPerformed(evt);
             }
         });
 
-        TypeOfEmployee.add(partTimeRadio);
-        partTimeRadio.setSelected(true);
-        partTimeRadio.setText("Part Time");
-        partTimeRadio.addActionListener(new java.awt.event.ActionListener() {
+        TypeOfEmployee.add(partTimeRadioAdd);
+        partTimeRadioAdd.setSelected(true);
+        partTimeRadioAdd.setText("Part Time");
+        partTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                partTimeRadioActionPerformed(evt);
+                partTimeRadioAddActionPerformed(evt);
             }
         });
 
-        locationBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
-        locationBox.addActionListener(new java.awt.event.ActionListener() {
+        locationBoxAdd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
+        locationBoxAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locationBoxActionPerformed(evt);
+                locationBoxAddActionPerformed(evt);
             }
         });
 
-        annualSalaryText.setText("Annual Salary");
-        annualSalaryText.addMouseListener(new java.awt.event.MouseAdapter() {
+        annualSalaryTextAdd.setText("Annual Salary");
+        annualSalaryTextAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                annualSalaryTextMouseClicked(evt);
+                annualSalaryTextAddMouseClicked(evt);
             }
         });
-        annualSalaryText.addActionListener(new java.awt.event.ActionListener() {
+        annualSalaryTextAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annualSalaryTextActionPerformed(evt);
+                annualSalaryTextAddActionPerformed(evt);
             }
         });
 
-        dRText.setText("Deduction Rate");
-        dRText.addMouseListener(new java.awt.event.MouseAdapter() {
+        dRTextAdd.setText("Deduction Rate");
+        dRTextAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dRTextMouseClicked(evt);
+                dRTextAddMouseClicked(evt);
             }
         });
-        dRText.addActionListener(new java.awt.event.ActionListener() {
+        dRTextAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dRTextActionPerformed(evt);
+                dRTextAddActionPerformed(evt);
             }
         });
 
-        hPWField.setText("Hours per week");
-        hPWField.addMouseListener(new java.awt.event.MouseAdapter() {
+        hPWFieldAdd.setText("Hours per week");
+        hPWFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                hPWFieldMouseClicked(evt);
+                hPWFieldAddMouseClicked(evt);
             }
         });
 
-        hourlyWageField.setText("Hourly Wage");
-        hourlyWageField.addMouseListener(new java.awt.event.MouseAdapter() {
+        hourlyWageFieldAdd.setText("Hourly Wage");
+        hourlyWageFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                hourlyWageFieldMouseClicked(evt);
+                hourlyWageFieldAddMouseClicked(evt);
             }
         });
 
-        wPYField.setText("Weeks per year");
-        wPYField.addMouseListener(new java.awt.event.MouseAdapter() {
+        wPYFieldAdd.setText("Weeks per year");
+        wPYFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                wPYFieldMouseClicked(evt);
+                wPYFieldAddMouseClicked(evt);
             }
         });
 
@@ -239,24 +239,24 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                 .addGap(0, 464, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hPWFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hourlyWageFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(dRText, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                        .addComponent(dRTextAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                         .addComponent(addEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                        .addComponent(annualSalaryText, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                        .addComponent(locationBox, 0, 191, Short.MAX_VALUE)
-                        .addComponent(employeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                        .addComponent(lastNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                        .addComponent(firstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                        .addComponent(wPYField)))
+                        .addComponent(annualSalaryTextAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                        .addComponent(locationBoxAdd, 0, 191, Short.MAX_VALUE)
+                        .addComponent(employeeNumFieldAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                        .addComponent(lastNameFieldAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                        .addComponent(firstNameFieldAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                        .addComponent(wPYFieldAdd)))
                 .addGap(392, 392, 392))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(partTimeRadio)
+                    .addComponent(partTimeRadioAdd)
                     .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(fullTimeRadio)
+                        .addComponent(fullTimeRadioAdd)
                         .addGap(219, 219, 219)
                         .addComponent(saveButton)))
                 .addGap(186, 186, 186))
@@ -267,27 +267,27 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
-                    .addComponent(fullTimeRadio))
+                    .addComponent(fullTimeRadioAdd))
                 .addGap(1, 1, 1)
-                .addComponent(partTimeRadio)
+                .addComponent(partTimeRadioAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(firstNameFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lastNameFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(employeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(employeeNumFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(locationBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(locationBoxAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(annualSalaryText, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hourlyWageField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(annualSalaryTextAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hourlyWageFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(hPWFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(wPYField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(wPYFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dRText, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dRTextAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -307,39 +307,39 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        firstNameField1.setText("First name");
-        firstNameField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        firstNameFieldEdit.setText("First name");
+        firstNameFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                firstNameField1MouseClicked(evt);
+                firstNameFieldEditMouseClicked(evt);
             }
         });
-        firstNameField1.addActionListener(new java.awt.event.ActionListener() {
+        firstNameFieldEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameField1ActionPerformed(evt);
+                firstNameFieldEditActionPerformed(evt);
             }
         });
 
-        lastNameField1.setText("Last name");
-        lastNameField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lastNameFieldEdit.setText("Last name");
+        lastNameFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lastNameField1MouseClicked(evt);
+                lastNameFieldEditMouseClicked(evt);
             }
         });
-        lastNameField1.addActionListener(new java.awt.event.ActionListener() {
+        lastNameFieldEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameField1ActionPerformed(evt);
+                lastNameFieldEditActionPerformed(evt);
             }
         });
 
-        employeeNumField1.setText("Employee number");
-        employeeNumField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        employeeNumFieldEdit.setText("Employee number");
+        employeeNumFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                employeeNumField1MouseClicked(evt);
+                employeeNumFieldEditMouseClicked(evt);
             }
         });
-        employeeNumField1.addActionListener(new java.awt.event.ActionListener() {
+        employeeNumFieldEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeeNumField1ActionPerformed(evt);
+                employeeNumFieldEditActionPerformed(evt);
             }
         });
 
@@ -350,71 +350,71 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        TypeOfEmployee.add(fullTimeRadio1);
-        fullTimeRadio1.setText("Full Time");
-        fullTimeRadio1.addActionListener(new java.awt.event.ActionListener() {
+        TypeOfEmployee.add(fullTimeRadioEdit);
+        fullTimeRadioEdit.setText("Full Time");
+        fullTimeRadioEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fullTimeRadio1ActionPerformed(evt);
+                fullTimeRadioEditActionPerformed(evt);
             }
         });
 
-        TypeOfEmployee.add(partTimeRadio1);
-        partTimeRadio1.setText("Part Time");
-        partTimeRadio1.addActionListener(new java.awt.event.ActionListener() {
+        TypeOfEmployee.add(partTimeRadioEdit);
+        partTimeRadioEdit.setText("Part Time");
+        partTimeRadioEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                partTimeRadio1ActionPerformed(evt);
+                partTimeRadioEditActionPerformed(evt);
             }
         });
 
-        locationBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
-        locationBox1.addActionListener(new java.awt.event.ActionListener() {
+        locationBoxEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
+        locationBoxEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locationBox1ActionPerformed(evt);
+                locationBoxEditActionPerformed(evt);
             }
         });
 
-        annualSalaryText1.setText("Annual Salary");
-        annualSalaryText1.addMouseListener(new java.awt.event.MouseAdapter() {
+        annualSalaryTextEdit.setText("Annual Salary");
+        annualSalaryTextEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                annualSalaryText1MouseClicked(evt);
+                annualSalaryTextEditMouseClicked(evt);
             }
         });
-        annualSalaryText1.addActionListener(new java.awt.event.ActionListener() {
+        annualSalaryTextEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annualSalaryText1ActionPerformed(evt);
+                annualSalaryTextEditActionPerformed(evt);
             }
         });
 
-        dRText1.setText("Deduction Rate");
-        dRText1.addMouseListener(new java.awt.event.MouseAdapter() {
+        dRTextEdit.setText("Deduction Rate");
+        dRTextEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dRText1MouseClicked(evt);
+                dRTextEditMouseClicked(evt);
             }
         });
-        dRText1.addActionListener(new java.awt.event.ActionListener() {
+        dRTextEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dRText1ActionPerformed(evt);
+                dRTextEditActionPerformed(evt);
             }
         });
 
-        hPWField1.setText("Hours per week");
-        hPWField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        hPWFieldEdit.setText("Hours per week");
+        hPWFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                hPWField1MouseClicked(evt);
+                hPWFieldEditMouseClicked(evt);
             }
         });
 
-        hourlyWageField1.setText("Hourly Wage");
-        hourlyWageField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        hourlyWageFieldEdit.setText("Hourly Wage");
+        hourlyWageFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                hourlyWageField1MouseClicked(evt);
+                hourlyWageFieldEditMouseClicked(evt);
             }
         });
 
-        wPYField1.setText("Weeks per year");
-        wPYField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        wPYFieldEdit.setText("Weeks per year");
+        wPYFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                wPYField1MouseClicked(evt);
+                wPYFieldEditMouseClicked(evt);
             }
         });
 
@@ -432,16 +432,16 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editButtonPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(dRText1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dRTextEdit, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editEmployeeConfirm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(annualSalaryText1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(employeeNumField1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lastNameField1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(firstNameField1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(wPYField1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hPWField1)
-                    .addComponent(locationBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(hourlyWageField1))
+                    .addComponent(annualSalaryTextEdit, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(employeeNumFieldEdit, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lastNameFieldEdit, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(firstNameFieldEdit, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(wPYFieldEdit, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hPWFieldEdit)
+                    .addComponent(locationBoxEdit, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hourlyWageFieldEdit))
                 .addGap(340, 340, 340))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editButtonPanelLayout.createSequentialGroup()
                 .addContainerGap(472, Short.MAX_VALUE)
@@ -449,38 +449,38 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(437, 437, 437))
             .addGroup(editButtonPanelLayout.createSequentialGroup()
                 .addGap(456, 456, 456)
-                .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(partTimeRadio1)
-                    .addComponent(fullTimeRadio1))
+                .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(partTimeRadioEdit)
+                    .addComponent(fullTimeRadioEdit))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         editButtonPanelLayout.setVerticalGroup(
             editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editButtonPanelLayout.createSequentialGroup()
-                .addComponent(fullTimeRadio1)
+                .addComponent(fullTimeRadioEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(partTimeRadio1)
+                .addComponent(partTimeRadioEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(firstNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(firstNameFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lastNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lastNameFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(employeeNumField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(employeeNumFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(locationBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(locationBoxEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(editButton)
                 .addGap(1, 1, 1)
                 .addGroup(editButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(annualSalaryText1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hourlyWageField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(annualSalaryTextEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hourlyWageFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hPWField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(hPWFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(wPYField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(wPYFieldEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dRText1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(dRTextEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(editEmployeeConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -572,78 +572,71 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_numberToEditActionPerformed
 
 
-    private void locationBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxActionPerformed
-        String location = (String) locationBox.getSelectedItem();
+    private void locationBoxAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxAddActionPerformed
+        String location = (String) locationBoxAdd.getSelectedItem();
         // TODO add your handling code here:
-    }//GEN-LAST:event_locationBoxActionPerformed
+    }//GEN-LAST:event_locationBoxAddActionPerformed
 
-    private void partTimeRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioActionPerformed
+    private void partTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioAddActionPerformed
         boolean partTime = true;
-        annualSalaryText.setVisible(false);
-        hPWField.setVisible(true);
-        wPYField.setVisible(true);
-        hourlyWageField.setVisible(true);
+        annualSalaryTextAdd.setVisible(false);
+        hPWFieldAdd.setVisible(true);
+        wPYFieldAdd.setVisible(true);
+        hourlyWageFieldAdd.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_partTimeRadioActionPerformed
+    }//GEN-LAST:event_partTimeRadioAddActionPerformed
 
-    private void fullTimeRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioActionPerformed
-        annualSalaryText.setVisible(true);
-        hPWField.setVisible(false);
-        wPYField.setVisible(false);
-        hourlyWageField.setVisible(false);
+    private void fullTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioAddActionPerformed
+        annualSalaryTextAdd.setVisible(true);
+        hPWFieldAdd.setVisible(false);
+        wPYFieldAdd.setVisible(false);
+        hourlyWageFieldAdd.setVisible(false);
         // TODO add your handling code here:
-    }//GEN-LAST:event_fullTimeRadioActionPerformed
+    }//GEN-LAST:event_fullTimeRadioAddActionPerformed
 
-    private void employeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumFieldActionPerformed
+    private void employeeNumFieldAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumFieldAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_employeeNumFieldActionPerformed
+    }//GEN-LAST:event_employeeNumFieldAddActionPerformed
 
-    private void lastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldActionPerformed
+    private void lastNameFieldAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameFieldActionPerformed
+    }//GEN-LAST:event_lastNameFieldAddActionPerformed
 
-    private void firstNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameFieldActionPerformed
+    private void firstNameFieldAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameFieldAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameFieldActionPerformed
+    }//GEN-LAST:event_firstNameFieldAddActionPerformed
 
-    private void annualSalaryTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryTextActionPerformed
+    private void annualSalaryTextAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryTextAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_annualSalaryTextActionPerformed
+    }//GEN-LAST:event_annualSalaryTextAddActionPerformed
 
-    private void dRTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRTextActionPerformed
+    private void dRTextAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRTextAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dRTextActionPerformed
+    }//GEN-LAST:event_dRTextAddActionPerformed
 
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
-        String location = (String) locationBox.getSelectedItem();
-        int employeeNumber = Integer.parseInt(employeeNumField.getText());
-        String firstName = firstNameField.getText();
-        String lastName = lastNameField.getText();
-        double deductionRate = Double.parseDouble(dRText.getText());
-        if (fullTimeRadio.isSelected()) {
-            double annualSalary = Double.parseDouble(annualSalaryText.getText());
+        String location = (String) locationBoxAdd.getSelectedItem();
+        int employeeNumber = Integer.parseInt(employeeNumFieldAdd.getText());
+        String firstName = firstNameFieldAdd.getText();
+        String lastName = lastNameFieldAdd.getText();
+        double deductionRate = Double.parseDouble(dRTextAdd.getText());
+        if (fullTimeRadioAdd.isSelected()) {
+            double annualSalary = Double.parseDouble(annualSalaryTextAdd.getText());
             FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
             hashTable.addEmployee(toBeAdded);
             System.out.println("Full time employee added");
             //this goes into the fileIO class and gets added in to the .csv
-        } else if (partTimeRadio.isSelected()) {
-            int hoursPerWeek = Integer.parseInt(hPWField.getText());
-            double hourlyWage = Double.parseDouble(hourlyWageField.getText());
-            int weeksPerYear = Integer.parseInt(wPYField.getText());
+        } else if (partTimeRadioAdd.isSelected()) {
+            int hoursPerWeek = Integer.parseInt(hPWFieldAdd.getText());
+            double hourlyWage = Double.parseDouble(hourlyWageFieldAdd.getText());
+            int weeksPerYear = Integer.parseInt(wPYFieldAdd.getText());
             PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
             System.out.println("Part time employee added");
             hashTable.addEmployee(toBeAdded);
         }
 
     }//GEN-LAST:event_addEmployeeActionPerformed
-
-    private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
-        int employeeNumber = Integer.parseInt(deleteTable.getModel().getValueAt(deleteTable.getSelectedRow(), 0).toString());
-        hashTable.removeEmployee(employeeNumber);
-        deleteTableUpdate();
-        //based on the employee number the employee is deleted from the .csv
-    }//GEN-LAST:event_delButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         FileIO file = new FileIO();
@@ -655,45 +648,45 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_saveButtonActionPerformed
     public void resetEdit() {
-        employeeNumField1.setText("Employee number");
-        firstNameField1.setText("First name");
-        lastNameField1.setText("Last name");
-        annualSalaryText1.setText("Annual salary");
-        locationBox1.setSelectedIndex(0);
-        hourlyWageField1.setText("Hourly wage");
-        hPWField1.setText("Hours per week");
-        wPYField1.setText("Weeks per year");
-        dRText1.setText("Deduction Rate");
-        fullTimeRadio1.setVisible(false);
-        partTimeRadio1.setVisible(false);
-        firstNameField1.setVisible(false);
-        lastNameField1.setVisible(false);
-        dRText1.setVisible(false);
-        locationBox1.setVisible(false);
+        employeeNumFieldEdit.setText("Employee number");
+        firstNameFieldEdit.setText("First name");
+        lastNameFieldEdit.setText("Last name");
+        annualSalaryTextEdit.setText("Annual salary");
+        locationBoxEdit.setSelectedIndex(0);
+        hourlyWageFieldEdit.setText("Hourly wage");
+        hPWFieldEdit.setText("Hours per week");
+        wPYFieldEdit.setText("Weeks per year");
+        dRTextEdit.setText("Deduction Rate");
+        fullTimeRadioEdit.setVisible(false);
+        partTimeRadioEdit.setVisible(false);
+        firstNameFieldEdit.setVisible(false);
+        lastNameFieldEdit.setVisible(false);
+        dRTextEdit.setVisible(false);
+        locationBoxEdit.setVisible(false);
         editButton.setVisible(true);
-        hourlyWageField1.setVisible(false);
-        hPWField1.setVisible(false);
-        wPYField1.setVisible(false);
-        annualSalaryText1.setVisible(false);
+        hourlyWageFieldEdit.setVisible(false);
+        hPWFieldEdit.setVisible(false);
+        wPYFieldEdit.setVisible(false);
+        annualSalaryTextEdit.setVisible(false);
 
     }
 
     public void resetAdd() {
-        employeeNumField.setText("Employee number");
-        firstNameField.setText("First name");
-        lastNameField.setText("Last name");
-        annualSalaryText.setText("Annual salary");
-        locationBox.setSelectedIndex(0);
-        hourlyWageField.setText("Hourly wage");
-        hPWField.setText("Hours per week");
-        wPYField.setText("Weeks per year");
-        dRText.setText("Deduction Rate");
-        fullTimeRadio.setSelected(true);
-        partTimeRadio.setSelected(false);
-        hourlyWageField.setVisible(false);
-        hPWField.setVisible(false);
-        wPYField.setVisible(false);
-        annualSalaryText.setVisible(true);
+        employeeNumFieldAdd.setText("Employee number");
+        firstNameFieldAdd.setText("First name");
+        lastNameFieldAdd.setText("Last name");
+        annualSalaryTextAdd.setText("Annual salary");
+        locationBoxAdd.setSelectedIndex(0);
+        hourlyWageFieldAdd.setText("Hourly wage");
+        hPWFieldAdd.setText("Hours per week");
+        wPYFieldAdd.setText("Weeks per year");
+        dRTextAdd.setText("Deduction Rate");
+        fullTimeRadioAdd.setSelected(true);
+        partTimeRadioAdd.setSelected(false);
+        hourlyWageFieldAdd.setVisible(false);
+        hPWFieldAdd.setVisible(false);
+        wPYFieldAdd.setVisible(false);
+        annualSalaryTextAdd.setVisible(true);
     }
 
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
@@ -708,102 +701,102 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         int numberToEdit = -1;
-        numberToEdit = Integer.parseInt(employeeNumField1.getText());
+        numberToEdit = Integer.parseInt(employeeNumFieldEdit.getText());
         //if statement based on parttime/fulltime employee
         int loc = hashTable.searchEmployee(numberToEdit);
         int num = hashTable.calcBucket(numberToEdit);
         if (hashTable.buckets[num].get(loc) instanceof FullTimeEmployee) {
             FullTimeEmployee toBeAdded = (FullTimeEmployee) hashTable.buckets[num].get(loc);
-            fullTimeRadio1.setVisible(true);
-            partTimeRadio1.setVisible(true);
-            fullTimeRadio1.setSelected(true);
-            partTimeRadio1.setSelected(false);
-            employeeNumField1.setVisible(true);
+            fullTimeRadioEdit.setVisible(true);
+            partTimeRadioEdit.setVisible(true);
+            fullTimeRadioEdit.setSelected(true);
+            partTimeRadioEdit.setSelected(false);
+            employeeNumFieldEdit.setVisible(true);
             String numberToDisplay = Integer.toString(numberToEdit);
-            employeeNumField1.setText(numberToDisplay);
-            firstNameField1.setVisible(true);
-            firstNameField1.setText(toBeAdded.getFirstName());
-            lastNameField1.setVisible(true);
-            lastNameField1.setText(toBeAdded.getLastName());
-            locationBox1.setVisible(true);
-            annualSalaryText1.setVisible(true);
-            annualSalaryText1.setText(Double.toString(toBeAdded.getAnnualSalary()));
+            employeeNumFieldEdit.setText(numberToDisplay);
+            firstNameFieldEdit.setVisible(true);
+            firstNameFieldEdit.setText(toBeAdded.getFirstName());
+            lastNameFieldEdit.setVisible(true);
+            lastNameFieldEdit.setText(toBeAdded.getLastName());
+            locationBoxEdit.setVisible(true);
+            annualSalaryTextEdit.setVisible(true);
+            annualSalaryTextEdit.setText(Double.toString(toBeAdded.getAnnualSalary()));
             editButton.setVisible(false);
-            hPWField1.setVisible(false);
-            wPYField1.setVisible(false);
-            hourlyWageField1.setVisible(false);
-            dRText1.setVisible(true);
-            dRText1.setText(Double.toString(toBeAdded.getDeductionRate()));
+            hPWFieldEdit.setVisible(false);
+            wPYFieldEdit.setVisible(false);
+            hourlyWageFieldEdit.setVisible(false);
+            dRTextEdit.setVisible(true);
+            dRTextEdit.setText(Double.toString(toBeAdded.getDeductionRate()));
 
         } else if (hashTable.buckets[num].get(loc) instanceof PartTimeEmployee) {
             PartTimeEmployee toBeAdded = (PartTimeEmployee) hashTable.buckets[num].get(loc);
-            fullTimeRadio1.setVisible(true);
-            partTimeRadio1.setVisible(true);
-            partTimeRadio1.setSelected(true);
-            fullTimeRadio1.setSelected(false);
-            employeeNumField1.setVisible(true);
+            fullTimeRadioEdit.setVisible(true);
+            partTimeRadioEdit.setVisible(true);
+            partTimeRadioEdit.setSelected(true);
+            fullTimeRadioEdit.setSelected(false);
+            employeeNumFieldEdit.setVisible(true);
             String numberToDisplay = Integer.toString(numberToEdit);
-            employeeNumField1.setText(numberToDisplay);
-            firstNameField1.setVisible(true);
-            firstNameField1.setText(toBeAdded.getFirstName());
-            lastNameField1.setVisible(true);
-            lastNameField1.setText(toBeAdded.getLastName());
-            hourlyWageField1.setVisible(true);
-            hourlyWageField1.setText(Double.toString(toBeAdded.getHourlyWage()));
-            hPWField1.setVisible(true);
-            hPWField1.setText(Double.toString(toBeAdded.getHoursPerWeek()));
-            wPYField1.setVisible(true);
-            wPYField1.setText(Double.toString(toBeAdded.getWeeksPerYear()));
-            dRText1.setVisible(true);
-            dRText1.setText(Double.toString(toBeAdded.getDeductionRate()));
+            employeeNumFieldEdit.setText(numberToDisplay);
+            firstNameFieldEdit.setVisible(true);
+            firstNameFieldEdit.setText(toBeAdded.getFirstName());
+            lastNameFieldEdit.setVisible(true);
+            lastNameFieldEdit.setText(toBeAdded.getLastName());
+            hourlyWageFieldEdit.setVisible(true);
+            hourlyWageFieldEdit.setText(Double.toString(toBeAdded.getHourlyWage()));
+            hPWFieldEdit.setVisible(true);
+            hPWFieldEdit.setText(Double.toString(toBeAdded.getHoursPerWeek()));
+            wPYFieldEdit.setVisible(true);
+            wPYFieldEdit.setText(Double.toString(toBeAdded.getWeeksPerYear()));
+            dRTextEdit.setVisible(true);
+            dRTextEdit.setText(Double.toString(toBeAdded.getDeductionRate()));
         }
         hashTable.removeEmployee(numberToEdit);
     }//GEN-LAST:event_editButtonActionPerformed
 
 
-    private void dRText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRText1ActionPerformed
+    private void dRTextEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dRTextEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dRText1ActionPerformed
+    }//GEN-LAST:event_dRTextEditActionPerformed
 
-    private void annualSalaryText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryText1ActionPerformed
+    private void annualSalaryTextEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annualSalaryTextEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_annualSalaryText1ActionPerformed
+    }//GEN-LAST:event_annualSalaryTextEditActionPerformed
 
-    private void locationBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBox1ActionPerformed
+    private void locationBoxEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_locationBox1ActionPerformed
+    }//GEN-LAST:event_locationBoxEditActionPerformed
 
-    private void partTimeRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadio1ActionPerformed
-        annualSalaryText1.setVisible(false);
-        hPWField1.setVisible(true);
-        wPYField1.setVisible(true);
-        hourlyWageField1.setVisible(true);
-    }//GEN-LAST:event_partTimeRadio1ActionPerformed
+    private void partTimeRadioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioEditActionPerformed
+        annualSalaryTextEdit.setVisible(false);
+        hPWFieldEdit.setVisible(true);
+        wPYFieldEdit.setVisible(true);
+        hourlyWageFieldEdit.setVisible(true);
+    }//GEN-LAST:event_partTimeRadioEditActionPerformed
 
-    private void fullTimeRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadio1ActionPerformed
-        annualSalaryText1.setVisible(true);
-        hPWField1.setVisible(false);
-        wPYField1.setVisible(false);
-        hourlyWageField1.setVisible(false);
-    }//GEN-LAST:event_fullTimeRadio1ActionPerformed
+    private void fullTimeRadioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioEditActionPerformed
+        annualSalaryTextEdit.setVisible(true);
+        hPWFieldEdit.setVisible(false);
+        wPYFieldEdit.setVisible(false);
+        hourlyWageFieldEdit.setVisible(false);
+    }//GEN-LAST:event_fullTimeRadioEditActionPerformed
 
     private void editEmployeeConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEmployeeConfirmActionPerformed
-        int numToEdit = Integer.parseInt(employeeNumField1.getText());
-        String location = (String) locationBox1.getSelectedItem();
-        int employeeNumber = Integer.parseInt(employeeNumField1.getText());
-        String firstName = firstNameField1.getText();
-        String lastName = lastNameField1.getText();
-        double deductionRate = Double.parseDouble(dRText1.getText());
-        if (fullTimeRadio1.isSelected()) {
-            double annualSalary = Double.parseDouble(annualSalaryText1.getText());
+        int numToEdit = Integer.parseInt(employeeNumFieldEdit.getText());
+        String location = (String) locationBoxEdit.getSelectedItem();
+        int employeeNumber = Integer.parseInt(employeeNumFieldEdit.getText());
+        String firstName = firstNameFieldEdit.getText();
+        String lastName = lastNameFieldEdit.getText();
+        double deductionRate = Double.parseDouble(dRTextEdit.getText());
+        if (fullTimeRadioEdit.isSelected()) {
+            double annualSalary = Double.parseDouble(annualSalaryTextEdit.getText());
             FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
             hashTable.addEmployee(toBeAdded);
             System.out.println("Full time employee added");
             //this goes into the fileIO class and gets added in to the .csv
-        } else if (partTimeRadio1.isSelected()) {
-            double hoursPerWeek = Double.parseDouble(hPWField1.getText());
-            double hourlyWage = Double.parseDouble(hourlyWageField1.getText());
-            double weeksPerYear = Double.parseDouble(wPYField1.getText());
+        } else if (partTimeRadioEdit.isSelected()) {
+            double hoursPerWeek = Double.parseDouble(hPWFieldEdit.getText());
+            double hourlyWage = Double.parseDouble(hourlyWageFieldEdit.getText());
+            double weeksPerYear = Double.parseDouble(wPYFieldEdit.getText());
             PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
             System.out.println("Part time employee added");
             hashTable.addEmployee(toBeAdded);
@@ -811,18 +804,18 @@ public class MainMenu extends javax.swing.JFrame {
         resetEdit();
     }//GEN-LAST:event_editEmployeeConfirmActionPerformed
 
-    private void employeeNumField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumField1ActionPerformed
+    private void employeeNumFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeNumFieldEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_employeeNumField1ActionPerformed
+    }//GEN-LAST:event_employeeNumFieldEditActionPerformed
 
-    private void lastNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameField1ActionPerformed
+    private void lastNameFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldEditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameField1ActionPerformed
+    }//GEN-LAST:event_lastNameFieldEditActionPerformed
 
-    private void firstNameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameField1ActionPerformed
+    private void firstNameFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameFieldEditActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameField1ActionPerformed
+    }//GEN-LAST:event_firstNameFieldEditActionPerformed
     public void read() {
         FileIO file = new FileIO();
         try {
@@ -861,11 +854,6 @@ public class MainMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_editButtonPanelMouseClicked
 
-    private void delPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delPanelMouseClicked
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_delPanelMouseClicked
-
     private void editPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editPanelMouseClicked
 
     }//GEN-LAST:event_editPanelMouseClicked
@@ -875,85 +863,97 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 
-    private void firstNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldMouseClicked
+    private void firstNameFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldAddMouseClicked
         // TODO add your handling code here:
-        firstNameField.setText("");
-    }//GEN-LAST:event_firstNameFieldMouseClicked
+        firstNameFieldAdd.setText("");
+    }//GEN-LAST:event_firstNameFieldAddMouseClicked
 
-    private void lastNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldMouseClicked
+    private void lastNameFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldAddMouseClicked
         // TODO add your handling code here:
-        lastNameField.setText("");
-    }//GEN-LAST:event_lastNameFieldMouseClicked
+        lastNameFieldAdd.setText("");
+    }//GEN-LAST:event_lastNameFieldAddMouseClicked
 
-    private void employeeNumFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldMouseClicked
+    private void employeeNumFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldAddMouseClicked
         // TODO add your handling code here:
-        employeeNumField.setText("");
-    }//GEN-LAST:event_employeeNumFieldMouseClicked
+        employeeNumFieldAdd.setText("");
+    }//GEN-LAST:event_employeeNumFieldAddMouseClicked
 
-    private void annualSalaryTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextMouseClicked
+    private void annualSalaryTextAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextAddMouseClicked
         // TODO add your handling code here:
-        annualSalaryText.setText("");
-    }//GEN-LAST:event_annualSalaryTextMouseClicked
+        annualSalaryTextAdd.setText("");
+    }//GEN-LAST:event_annualSalaryTextAddMouseClicked
 
-    private void hPWFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldMouseClicked
+    private void hPWFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldAddMouseClicked
         // TODO add your handling code here:
-        hPWField.setText("");
-    }//GEN-LAST:event_hPWFieldMouseClicked
+        hPWFieldAdd.setText("");
+    }//GEN-LAST:event_hPWFieldAddMouseClicked
 
-    private void wPYFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldMouseClicked
+    private void wPYFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldAddMouseClicked
         // TODO add your handling code here:
-        wPYField.setText("");
-    }//GEN-LAST:event_wPYFieldMouseClicked
+        wPYFieldAdd.setText("");
+    }//GEN-LAST:event_wPYFieldAddMouseClicked
 
-    private void dRTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextMouseClicked
+    private void dRTextAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextAddMouseClicked
         // TODO add your handling code here:
-        dRText.setText("");
-    }//GEN-LAST:event_dRTextMouseClicked
+        dRTextAdd.setText("");
+    }//GEN-LAST:event_dRTextAddMouseClicked
 
-    private void hourlyWageFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldMouseClicked
+    private void hourlyWageFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldAddMouseClicked
         // TODO add your handling code here:
-        hourlyWageField.setText("");
-    }//GEN-LAST:event_hourlyWageFieldMouseClicked
+        hourlyWageFieldAdd.setText("");
+    }//GEN-LAST:event_hourlyWageFieldAddMouseClicked
 
-    private void firstNameField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameField1MouseClicked
+    private void firstNameFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldEditMouseClicked
         // TODO add your handling code here:
-        firstNameField1.setText("");
-    }//GEN-LAST:event_firstNameField1MouseClicked
+        firstNameFieldEdit.setText("");
+    }//GEN-LAST:event_firstNameFieldEditMouseClicked
 
-    private void lastNameField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameField1MouseClicked
+    private void lastNameFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldEditMouseClicked
         // TODO add your handling code here:
-        lastNameField1.setText("");
-    }//GEN-LAST:event_lastNameField1MouseClicked
+        lastNameFieldEdit.setText("");
+    }//GEN-LAST:event_lastNameFieldEditMouseClicked
 
-    private void employeeNumField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumField1MouseClicked
+    private void employeeNumFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldEditMouseClicked
         // TODO add your handling code here:
-        employeeNumField1.setText("");
-    }//GEN-LAST:event_employeeNumField1MouseClicked
+        employeeNumFieldEdit.setText("");
+    }//GEN-LAST:event_employeeNumFieldEditMouseClicked
 
-    private void annualSalaryText1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryText1MouseClicked
+    private void annualSalaryTextEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextEditMouseClicked
         // TODO add your handling code here:
-        annualSalaryText1.setText("");
-    }//GEN-LAST:event_annualSalaryText1MouseClicked
+        annualSalaryTextEdit.setText("");
+    }//GEN-LAST:event_annualSalaryTextEditMouseClicked
 
-    private void hourlyWageField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageField1MouseClicked
+    private void hourlyWageFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldEditMouseClicked
         // TODO add your handling code here:
-        hourlyWageField1.setText("");
-    }//GEN-LAST:event_hourlyWageField1MouseClicked
+        hourlyWageFieldEdit.setText("");
+    }//GEN-LAST:event_hourlyWageFieldEditMouseClicked
 
-    private void hPWField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWField1MouseClicked
+    private void hPWFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldEditMouseClicked
         // TODO add your handling code here:
-        hPWField1.setText("");
-    }//GEN-LAST:event_hPWField1MouseClicked
+        hPWFieldEdit.setText("");
+    }//GEN-LAST:event_hPWFieldEditMouseClicked
 
-    private void wPYField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYField1MouseClicked
+    private void wPYFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldEditMouseClicked
         // TODO add your handling code here:
-        wPYField1.setText("");
-    }//GEN-LAST:event_wPYField1MouseClicked
+        wPYFieldEdit.setText("");
+    }//GEN-LAST:event_wPYFieldEditMouseClicked
 
-    private void dRText1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRText1MouseClicked
+    private void dRTextEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextEditMouseClicked
         // TODO add your handling code here:
-        dRText1.setText("");
-    }//GEN-LAST:event_dRText1MouseClicked
+        dRTextEdit.setText("");
+    }//GEN-LAST:event_dRTextEditMouseClicked
+
+    private void delPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delPanelMouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delPanelMouseClicked
+
+    private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
+        int employeeNumber = Integer.parseInt(deleteTable.getModel().getValueAt(deleteTable.getSelectedRow(), 0).toString());
+        hashTable.removeEmployee(employeeNumber);
+        deleteTableUpdate();
+        //based on the employee number the employee is deleted from the .csv
+    }//GEN-LAST:event_delButtonActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -987,10 +987,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup TypeOfEmployee;
     private javax.swing.JButton addEmployee;
     private javax.swing.JPanel addPanel;
-    private javax.swing.JTextField annualSalaryText;
-    private javax.swing.JTextField annualSalaryText1;
-    private javax.swing.JTextField dRText;
-    private javax.swing.JTextField dRText1;
+    private javax.swing.JTextField annualSalaryTextAdd;
+    private javax.swing.JTextField annualSalaryTextEdit;
+    private javax.swing.JTextField dRTextAdd;
+    private javax.swing.JTextField dRTextEdit;
     private javax.swing.JButton delButton;
     private javax.swing.JPanel delPanel;
     private javax.swing.JTable deleteTable;
@@ -998,29 +998,29 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel editButtonPanel;
     private javax.swing.JButton editEmployeeConfirm;
     private javax.swing.JPanel editPanel;
-    private javax.swing.JTextField employeeNumField;
-    private javax.swing.JTextField employeeNumField1;
-    private javax.swing.JTextField firstNameField;
-    private javax.swing.JTextField firstNameField1;
-    private javax.swing.JRadioButton fullTimeRadio;
-    private javax.swing.JRadioButton fullTimeRadio1;
-    private javax.swing.JTextField hPWField;
-    private javax.swing.JTextField hPWField1;
-    private javax.swing.JTextField hourlyWageField;
-    private javax.swing.JTextField hourlyWageField1;
+    private javax.swing.JTextField employeeNumFieldAdd;
+    private javax.swing.JTextField employeeNumFieldEdit;
+    private javax.swing.JTextField firstNameFieldAdd;
+    private javax.swing.JTextField firstNameFieldEdit;
+    private javax.swing.JRadioButton fullTimeRadioAdd;
+    private javax.swing.JRadioButton fullTimeRadioEdit;
+    private javax.swing.JTextField hPWFieldAdd;
+    private javax.swing.JTextField hPWFieldEdit;
+    private javax.swing.JTextField hourlyWageFieldAdd;
+    private javax.swing.JTextField hourlyWageFieldEdit;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField lastNameField;
-    private javax.swing.JTextField lastNameField1;
-    private javax.swing.JComboBox<String> locationBox;
-    private javax.swing.JComboBox<String> locationBox1;
-    private javax.swing.JRadioButton partTimeRadio;
-    private javax.swing.JRadioButton partTimeRadio1;
+    private javax.swing.JTextField lastNameFieldAdd;
+    private javax.swing.JTextField lastNameFieldEdit;
+    private javax.swing.JComboBox<String> locationBoxAdd;
+    private javax.swing.JComboBox<String> locationBoxEdit;
+    private javax.swing.JRadioButton partTimeRadioAdd;
+    private javax.swing.JRadioButton partTimeRadioEdit;
     private javax.swing.JButton saveButton;
     private javax.swing.JTabbedPane viewPane;
     private javax.swing.JPanel viewPanel;
     private javax.swing.JTable viewTable;
-    private javax.swing.JTextField wPYField;
-    private javax.swing.JTextField wPYField1;
+    private javax.swing.JTextField wPYFieldAdd;
+    private javax.swing.JTextField wPYFieldEdit;
     // End of variables declaration//GEN-END:variables
 }
