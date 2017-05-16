@@ -42,7 +42,7 @@ Change the information which needs to be changed for the employee
 
 If changing from from full time to part time, click the associated radio button. If the fields do not change, however your mouse cursor over the ‘Edit’ tab.
 
-When finished confirm the changes
+When finished confirm the changes.
 
 
 
