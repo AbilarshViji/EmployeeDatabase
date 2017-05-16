@@ -18,21 +18,21 @@ To add an employee press the ‘Add’ tab.
   
   b. Enter in the information for the employee into the text fields
   
-    - First name - Text
+    * First name - Text
     
-    - Last name - Text
+    * Last name - Text
     
-    - Employee number - Whole positive number
+    * Employee number - Whole positive number
     
-    - Annual Salary(FT) - Positive Number
+    * Annual Salary(FT) - Positive Number
     
-    - Deduction rate - Positive number
+    * Deduction rate - Positive number
     
-    - Hourly wage (PT) - Positive Number
+    * Hourly wage (PT) - Positive Number
     
-    - Hours per week (PT) - Positive Number
+    * Hours per week (PT) - Positive Number
     
-    - Weeks per year (PT) - Positive Number-
+    * Weeks per year (PT) - Positive Number-
 ## Editing an Employee
 To edit an employee press the ‘Edit’ tab
 
