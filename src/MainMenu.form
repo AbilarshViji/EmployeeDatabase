@@ -12,6 +12,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosing"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -59,17 +62,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="1047" max="32767" attributes="0"/>
+                  <Component id="viewScrollPane" alignment="0" pref="1047" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="529" max="32767" attributes="0"/>
+                  <Component id="viewScrollPane" alignment="0" pref="529" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+            <Container class="javax.swing.JScrollPane" name="viewScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -155,17 +158,17 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="464" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="hPWField" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                          <Component id="hourlyWageField" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="hPWFieldAdd" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="hourlyWageFieldAdd" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="dRText" pref="191" max="32767" attributes="0"/>
+                              <Component id="dRTextAdd" pref="191" max="32767" attributes="0"/>
                               <Component id="addEmployee" pref="191" max="32767" attributes="0"/>
-                              <Component id="annualSalaryText" alignment="0" pref="191" max="32767" attributes="0"/>
-                              <Component id="locationBox" alignment="0" pref="191" max="32767" attributes="0"/>
-                              <Component id="employeeNumField" alignment="0" pref="191" max="32767" attributes="0"/>
-                              <Component id="lastNameField" alignment="0" pref="191" max="32767" attributes="0"/>
-                              <Component id="firstNameField" alignment="0" pref="191" max="32767" attributes="0"/>
-                              <Component id="wPYField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="annualSalaryTextAdd" alignment="0" pref="191" max="32767" attributes="0"/>
+                              <Component id="locationBoxAdd" alignment="0" pref="191" max="32767" attributes="0"/>
+                              <Component id="employeeNumFieldAdd" alignment="0" pref="191" max="32767" attributes="0"/>
+                              <Component id="lastNameFieldAdd" alignment="0" pref="191" max="32767" attributes="0"/>
+                              <Component id="firstNameFieldAdd" alignment="0" pref="191" max="32767" attributes="0"/>
+                              <Component id="wPYFieldAdd" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
@@ -173,14 +176,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="partTimeRadio" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="fullTimeRadio" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                              <Component id="saveButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="partTimeRadioAdd" min="-2" max="-2" attributes="0"/>
+                          <Component id="fullTimeRadioAdd" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="458" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -188,64 +187,58 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="fullTimeRadio" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="fullTimeRadioAdd" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                      <Component id="partTimeRadio" min="-2" max="-2" attributes="0"/>
+                      <Component id="partTimeRadioAdd" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="firstNameField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="firstNameFieldAdd" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lastNameField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="lastNameFieldAdd" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="employeeNumField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="employeeNumFieldAdd" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="locationBox" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="locationBoxAdd" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="annualSalaryText" min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="hourlyWageField" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="annualSalaryTextAdd" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="hourlyWageFieldAdd" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="hPWField" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="hPWFieldAdd" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="wPYField" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="wPYFieldAdd" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="dRText" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="dRTextAdd" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="addEmployee" min="-2" pref="57" max="-2" attributes="0"/>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="firstNameField">
+            <Component class="javax.swing.JTextField" name="firstNameFieldAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="First name"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="firstNameFieldMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameFieldActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="firstNameFieldAddMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="lastNameField">
+            <Component class="javax.swing.JTextField" name="lastNameFieldAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Last name"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lastNameFieldMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastNameFieldActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lastNameFieldAddMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="employeeNumField">
+            <Component class="javax.swing.JTextField" name="employeeNumFieldAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Employee number"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="employeeNumFieldMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="employeeNumFieldActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="employeeNumFieldAddMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="addEmployee">
@@ -256,7 +249,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addEmployeeActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="fullTimeRadio">
+            <Component class="javax.swing.JRadioButton" name="fullTimeRadioAdd">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="TypeOfEmployee"/>
@@ -264,10 +257,10 @@
                 <Property name="text" type="java.lang.String" value="Full Time"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullTimeRadioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullTimeRadioAddActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="partTimeRadio">
+            <Component class="javax.swing.JRadioButton" name="partTimeRadioAdd">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="TypeOfEmployee"/>
@@ -276,10 +269,10 @@
                 <Property name="text" type="java.lang.String" value="Part Time"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="partTimeRadioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="partTimeRadioAddActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="locationBox">
+            <Component class="javax.swing.JComboBox" name="locationBoxAdd">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -290,61 +283,48 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="locationBoxActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="annualSalaryText">
+            <Component class="javax.swing.JTextField" name="annualSalaryTextAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Annual Salary"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="annualSalaryTextMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="annualSalaryTextActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="annualSalaryTextAddMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="dRText">
+            <Component class="javax.swing.JTextField" name="dRTextAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Deduction Rate"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dRTextMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dRTextActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dRTextAddMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="hPWField">
+            <Component class="javax.swing.JTextField" name="hPWFieldAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hours per week"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hPWFieldMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hPWFieldAddMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="hourlyWageField">
+            <Component class="javax.swing.JTextField" name="hourlyWageFieldAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hourly Wage"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hourlyWageFieldMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hourlyWageFieldAddMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="wPYField">
+            <Component class="javax.swing.JTextField" name="wPYFieldAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Weeks per year"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wPYFieldMouseClicked"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="saveButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Save"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wPYFieldAddMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -385,16 +365,16 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="dRText1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="dRTextEdit" alignment="0" max="32767" attributes="0"/>
                               <Component id="editEmployeeConfirm" alignment="0" pref="338" max="32767" attributes="0"/>
-                              <Component id="annualSalaryText1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="employeeNumField1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lastNameField1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="firstNameField1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="wPYField1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="hPWField1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="locationBox1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="hourlyWageField1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="annualSalaryTextEdit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="employeeNumFieldEdit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lastNameFieldEdit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="firstNameFieldEdit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="wPYFieldEdit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="hPWFieldEdit" alignment="1" max="32767" attributes="0"/>
+                              <Component id="locationBoxEdit" alignment="0" max="32767" attributes="0"/>
+                              <Component id="hourlyWageFieldEdit" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
                       </Group>
@@ -405,9 +385,9 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="456" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="partTimeRadio1" min="-2" max="-2" attributes="0"/>
-                              <Component id="fullTimeRadio1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="partTimeRadioEdit" min="-2" max="-2" attributes="0"/>
+                              <Component id="fullTimeRadioEdit" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -416,62 +396,59 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="fullTimeRadio1" min="-2" max="-2" attributes="0"/>
+                          <Component id="fullTimeRadioEdit" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="partTimeRadio1" min="-2" max="-2" attributes="0"/>
+                          <Component id="partTimeRadioEdit" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="firstNameField1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="firstNameFieldEdit" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lastNameField1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="lastNameFieldEdit" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="employeeNumField1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="employeeNumFieldEdit" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="locationBox1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="locationBoxEdit" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="editButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="annualSalaryText1" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="hourlyWageField1" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="annualSalaryTextEdit" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="hourlyWageFieldEdit" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="hPWField1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="hPWFieldEdit" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="wPYField1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="wPYFieldEdit" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="dRText1" min="-2" pref="38" max="-2" attributes="0"/>
-                          <EmptySpace pref="57" max="32767" attributes="0"/>
+                          <Component id="dRTextEdit" min="-2" pref="38" max="-2" attributes="0"/>
+                          <EmptySpace pref="91" max="32767" attributes="0"/>
                           <Component id="editEmployeeConfirm" min="-2" pref="57" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="firstNameField1">
+                <Component class="javax.swing.JTextField" name="firstNameFieldEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="First name"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="firstNameField1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstNameField1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="firstNameFieldEditMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="lastNameField1">
+                <Component class="javax.swing.JTextField" name="lastNameFieldEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Last name"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lastNameField1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastNameField1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lastNameFieldEditMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="employeeNumField1">
+                <Component class="javax.swing.JTextField" name="employeeNumFieldEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Employee number"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="employeeNumField1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="employeeNumField1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="employeeNumFieldEditMouseClicked"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="editEmployeeConfirm">
@@ -482,7 +459,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editEmployeeConfirmActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="fullTimeRadio1">
+                <Component class="javax.swing.JRadioButton" name="fullTimeRadioEdit">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="TypeOfEmployee"/>
@@ -490,10 +467,10 @@
                     <Property name="text" type="java.lang.String" value="Full Time"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullTimeRadio1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fullTimeRadioEditActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="partTimeRadio1">
+                <Component class="javax.swing.JRadioButton" name="partTimeRadioEdit">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="TypeOfEmployee"/>
@@ -501,10 +478,10 @@
                     <Property name="text" type="java.lang.String" value="Part Time"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="partTimeRadio1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="partTimeRadioEditActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="locationBox1">
+                <Component class="javax.swing.JComboBox" name="locationBoxEdit">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -515,53 +492,48 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="locationBox1ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JTextField" name="annualSalaryText1">
+                <Component class="javax.swing.JTextField" name="annualSalaryTextEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Annual Salary"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="annualSalaryText1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="annualSalaryText1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="annualSalaryTextEditMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="dRText1">
+                <Component class="javax.swing.JTextField" name="dRTextEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Deduction Rate"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dRText1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dRText1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dRTextEditMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="hPWField1">
+                <Component class="javax.swing.JTextField" name="hPWFieldEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hours per week"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hPWField1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hPWFieldEditMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="hourlyWageField1">
+                <Component class="javax.swing.JTextField" name="hourlyWageFieldEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Hourly Wage"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hourlyWageField1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hourlyWageFieldEditMouseClicked"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="wPYField1">
+                <Component class="javax.swing.JTextField" name="wPYFieldEdit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Weeks per year"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wPYField1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wPYFieldEditMouseClicked"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="editButton">
@@ -592,37 +564,28 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="delEmployeeNumField" pref="186" max="32767" attributes="0"/>
-                          <Component id="delButton" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="826" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="deleteScrollPane" min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="delButton" min="-2" pref="186" max="-2" attributes="0"/>
+                      <EmptySpace pref="717" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="delEmployeeNumField" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="delButton" min="-2" pref="51" max="-2" attributes="0"/>
-                      <EmptySpace pref="435" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="delButton" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="deleteScrollPane" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="122" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="delEmployeeNumField">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Employee Number"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="delEmployeeNumFieldMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delEmployeeNumFieldActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="delButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete"/>
@@ -631,6 +594,36 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delButtonActionPerformed"/>
               </Events>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="deleteScrollPane">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="deleteTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="1" rowCount="0">
+                        <Column editable="true" title="Employee Number" type="java.lang.Integer"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
