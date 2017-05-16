@@ -14,7 +14,7 @@ A list of all of the employees currently stored in the database are displayed in
 ## Adding an Employee
 To add an employee press the ‘Add’ tab.
   
-  a.  Based on the type of employee (full time or part time), press the associated radio button. The fields for the respective employee will   change. If the correct fields are not displayed, however your mouse cursor over the ‘Add’ tab and the fields will be forced to be           visible.
+  a.  Based on the type of employee (full time or part time), press the associated radio button. The fields for the respective employee will   change. If the correct fields are not displayed, however your mouse cursor over the ‘Add’ tab and the fields will be forced to be visible.
   
   b.  Enter in the information for the employee into the text fields
   
