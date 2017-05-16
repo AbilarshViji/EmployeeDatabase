@@ -16,6 +16,7 @@ public class MainMenu extends javax.swing.JFrame {
         resetAdd();
         read();
         viewUpdate();
+        deleteTableUpdate();
     }
 
     @SuppressWarnings("unchecked")
@@ -57,8 +58,9 @@ public class MainMenu extends javax.swing.JFrame {
         wPYField1 = new javax.swing.JTextField();
         editButton = new javax.swing.JButton();
         delPanel = new javax.swing.JPanel();
-        delEmployeeNumField = new javax.swing.JTextField();
         delButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        deleteTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -501,18 +503,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        delEmployeeNumField.setText("Employee Number");
-        delEmployeeNumField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                delEmployeeNumFieldMouseClicked(evt);
-            }
-        });
-        delEmployeeNumField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delEmployeeNumFieldActionPerformed(evt);
-            }
-        });
-
         delButton.setText("Delete");
         delButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -520,25 +510,43 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        deleteTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Employee Number"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(deleteTable);
+
         javax.swing.GroupLayout delPanelLayout = new javax.swing.GroupLayout(delPanel);
         delPanel.setLayout(delPanelLayout);
         delPanelLayout.setHorizontalGroup(
             delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delPanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(delEmployeeNumField, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                    .addComponent(delButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(826, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(717, Short.MAX_VALUE))
         );
         delPanelLayout.setVerticalGroup(
             delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(delEmployeeNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(435, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addGroup(delPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(delButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         viewPane.addTab("Delete Employee", delPanel);
@@ -556,12 +564,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void delEmployeeNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delEmployeeNumFieldActionPerformed
-        delEmployeeNumField.setText("");
-                // TODO add your handling `code here: 
-        // take numberToDelete into fileio program
-    }//GEN-LAST:event_delEmployeeNumFieldActionPerformed
 
 
     private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
@@ -637,8 +639,9 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_addEmployeeActionPerformed
 
     private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
-        int employeeNumber = Integer.parseInt(delEmployeeNumField.getText());
+        int employeeNumber = Integer.parseInt(deleteTable.getModel().getValueAt(deleteTable.getSelectedRow(), 0).toString());
         hashTable.removeEmployee(employeeNumber);
+        deleteTableUpdate();
         //based on the employee number the employee is deleted from the .csv
     }//GEN-LAST:event_delButtonActionPerformed
 
@@ -672,9 +675,9 @@ public class MainMenu extends javax.swing.JFrame {
         hPWField1.setVisible(false);
         wPYField1.setVisible(false);
         annualSalaryText1.setVisible(false);
-        
+
     }
-    
+
     public void resetAdd() {
         employeeNumField.setText("Employee number");
         firstNameField.setText("First name");
@@ -692,22 +695,20 @@ public class MainMenu extends javax.swing.JFrame {
         wPYField.setVisible(false);
         annualSalaryText.setVisible(true);
     }
-    public void resetDelete() {
-        delEmployeeNumField.setText("Employee Number");
-    }
+
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
         viewUpdate();
         resetEdit();
         resetAdd();
-        resetDelete();
     }//GEN-LAST:event_viewPaneMouseClicked
 
     private void addPanelMouseClicked(java.awt.event.MouseEvent evt) {
-    
+
     }
+
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         int numberToEdit = -1;
-            numberToEdit = Integer.parseInt(employeeNumField1.getText());
+        numberToEdit = Integer.parseInt(employeeNumField1.getText());
         //if statement based on parttime/fulltime employee
         int loc = hashTable.searchEmployee(numberToEdit);
         int num = hashTable.calcBucket(numberToEdit);
@@ -756,7 +757,7 @@ public class MainMenu extends javax.swing.JFrame {
             dRText1.setVisible(true);
             dRText1.setText(Double.toString(toBeAdded.getDeductionRate()));
         }
-    hashTable.removeEmployee(numberToEdit);
+        hashTable.removeEmployee(numberToEdit);
     }//GEN-LAST:event_editButtonActionPerformed
 
 
@@ -845,30 +846,34 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
+    public void deleteTableUpdate() {
+        DefaultTableModel model = (DefaultTableModel) deleteTable.getModel();
+        model.setRowCount(0);
+        for (int i = 0; i < hashTable.buckets.length; i++) {
+            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
+                model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum()});
+            }
+        }
+    }
+
 
     private void editButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonPanelMouseClicked
-        
+
     }//GEN-LAST:event_editButtonPanelMouseClicked
 
     private void delPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delPanelMouseClicked
-        
 
 // TODO add your handling code here:
     }//GEN-LAST:event_delPanelMouseClicked
 
     private void editPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editPanelMouseClicked
-     
+
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
         ;
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
-
-    private void delEmployeeNumFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delEmployeeNumFieldMouseClicked
-        delEmployeeNumField.setText("");
-        // TODO add your handling code here:
-    }//GEN-LAST:event_delEmployeeNumFieldMouseClicked
 
     private void firstNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldMouseClicked
         // TODO add your handling code here:
@@ -987,8 +992,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField dRText;
     private javax.swing.JTextField dRText1;
     private javax.swing.JButton delButton;
-    private javax.swing.JTextField delEmployeeNumField;
     private javax.swing.JPanel delPanel;
+    private javax.swing.JTable deleteTable;
     private javax.swing.JButton editButton;
     private javax.swing.JPanel editButtonPanel;
     private javax.swing.JButton editEmployeeConfirm;
@@ -1003,6 +1008,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField hPWField1;
     private javax.swing.JTextField hourlyWageField;
     private javax.swing.JTextField hourlyWageField1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField lastNameField;
     private javax.swing.JTextField lastNameField1;
