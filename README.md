@@ -1,4 +1,4 @@
-# EmployeeDatabase
+# Employee Database
 A database program for storing employee information.
 
 ## Prerequisites
