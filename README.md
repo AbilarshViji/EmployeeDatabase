@@ -6,7 +6,7 @@ A version of JRE 8. Can be downloaded from https://www.java.com.
 
 Any IDE (Eclipse, Netbeans, IntelliJ, etc.) to compile the source code.
 
-# OR
+### OR
 
 Download the JAR file: [link for jar]
 
