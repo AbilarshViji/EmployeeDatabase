@@ -150,6 +150,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(fullTimeRadioAdd);
+        fullTimeRadioAdd.setSelected(true);
         fullTimeRadioAdd.setText("Full Time");
         fullTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +159,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(partTimeRadioAdd);
-        partTimeRadioAdd.setSelected(true);
         partTimeRadioAdd.setText("Part Time");
         partTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
