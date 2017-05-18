@@ -142,7 +142,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        addEmployee.setText("Add Button");
+        addEmployee.setText("Add Employee");
         addEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEmployeeActionPerformed(evt);
@@ -784,7 +784,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-        ;
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 

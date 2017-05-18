@@ -260,7 +260,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="addEmployee">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add Button"/>
+                <Property name="text" type="java.lang.String" value="Add Employee"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addEmployeeActionPerformed"/>
