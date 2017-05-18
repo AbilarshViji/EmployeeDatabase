@@ -784,7 +784,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-        ;
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 
