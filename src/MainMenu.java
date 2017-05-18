@@ -592,7 +592,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
-    public void resetEdit() {
+    private void resetEdit() {
         employeeNumFieldEdit.setText("Employee number");
         firstNameFieldEdit.setText("First name");
         lastNameFieldEdit.setText("Last name");
@@ -616,7 +616,7 @@ public class MainMenu extends javax.swing.JFrame {
         editErrorTextBox.setVisible(false);
     }
 
-    public void resetAdd() {
+    private void resetAdd() {
         employeeNumFieldAdd.setText("Employee number");
         firstNameFieldAdd.setText("First name");
         lastNameFieldAdd.setText("Last name");
@@ -741,7 +741,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
         resetEdit();
     }//GEN-LAST:event_editEmployeeConfirmActionPerformed
-    public void read() {
+    private void read() {
         FileIO file = new FileIO();
         try {
             file.readFile("data.csv", hashTable);
@@ -750,7 +750,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
-    public void viewUpdate() {
+    private void viewUpdate() {
         DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
         model.setRowCount(0);
         for (int i = 0; i < hashTable.buckets.length; i++) {
@@ -764,7 +764,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
-    public void deleteTableUpdate() {
+    private void deleteTableUpdate() {
         DefaultTableModel model = (DefaultTableModel) deleteTable.getModel();
         model.setRowCount(0);
         for (int i = 0; i < hashTable.buckets.length; i++) {
