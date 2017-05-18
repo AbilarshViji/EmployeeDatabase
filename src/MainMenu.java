@@ -142,7 +142,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        addEmployee.setText("Add Button");
+        addEmployee.setText("Add Employee");
         addEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEmployeeActionPerformed(evt);
