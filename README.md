@@ -50,6 +50,9 @@ If changing from from full time to part time, click the associated radio button.
 
 When finished confirm the changes.
 
+## Deleting an Employee
+![myimage-alt-tag](http://i.imgur.com/TmojlHj.png)
+
 
 
 
