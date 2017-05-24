@@ -37,6 +37,8 @@ To add an employee press the ‘Add’ tab.
     * Hours per week (PT) - Positive Number
     
     * Weeks per year (PT) - Positive Number
+    
+![myimage-alt-tag](http://i.imgur.com/Rq1Dt4a.png)
 ## Editing an Employee
 To edit an employee press the ‘Edit’ tab
 
