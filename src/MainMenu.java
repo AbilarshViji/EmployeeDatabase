@@ -400,13 +400,17 @@ public class MainMenu extends javax.swing.JFrame {
         });
         editButtonPanel.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
 
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(140, 92));
+
         editErrorTextBox.setEditable(false);
         editErrorTextBox.setColumns(20);
         editErrorTextBox.setRows(5);
+        editErrorTextBox.setWrapStyleWord(true);
         editErrorTextBox.setBorder(null);
+        editErrorTextBox.setPreferredSize(new java.awt.Dimension(140, 90));
         jScrollPane2.setViewportView(editErrorTextBox);
 
-        editButtonPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+        editButtonPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 180, -1));
 
         editTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -518,7 +522,7 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_numberToEditActionPerformed
 
@@ -633,11 +637,20 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        boolean editAllowed;
+        editErrorTextBox.setVisible(true);
+        editErrorTextBox.setLineWrap(true);
         try {
-            editErrorTextBox.setVisible(true);
+            int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
+            editAllowed = true;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            editErrorTextBox.setText("There is something wrong with the entry");
+            editAllowed = false;
+        }
+        if (editAllowed == true) {
+            int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
             editTable.setVisible(false);
             editConfirm.setVisible(true);
-            int numberToEdit = -1;
             numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
             //if statement based on parttime/fulltime employee
             int loc = hashTable.searchEmployee(numberToEdit);
@@ -688,8 +701,6 @@ public class MainMenu extends javax.swing.JFrame {
                 dRTextEdit.setText(Double.toString(toBeAdded.getDeductionRate()));
             }
             hashTable.removeEmployee(numberToEdit);
-        } catch (IllegalArgumentException e) {
-            editErrorTextBox.setText("There is something wrong with the entry");
         }
     }//GEN-LAST:event_editButtonActionPerformed
 
@@ -762,6 +773,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         }
     }
+
     private void editTableUpdate() {
         DefaultTableModel model = (DefaultTableModel) editTable.getModel();
         model.setRowCount(0);
@@ -781,7 +793,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 
