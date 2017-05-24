@@ -1,6 +1,7 @@
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -145,7 +146,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        addEmployee.setText("Add Button");
+        addEmployee.setText("Add Employee");
         addEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEmployeeActionPerformed(evt);
@@ -153,6 +154,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(fullTimeRadioAdd);
+        fullTimeRadioAdd.setSelected(true);
         fullTimeRadioAdd.setText("Full Time");
         fullTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +163,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(partTimeRadioAdd);
-        partTimeRadioAdd.setSelected(true);
         partTimeRadioAdd.setText("Part Time");
         partTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +207,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        addErrorTextBox.setEditable(false);
         addErrorTextBox.setColumns(20);
         addErrorTextBox.setRows(5);
         jScrollPane1.setViewportView(addErrorTextBox);
@@ -516,7 +518,7 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
-
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_numberToEditActionPerformed
 
@@ -526,8 +528,6 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldAdd.setVisible(true);
         wPYFieldAdd.setVisible(true);
         hourlyWageFieldAdd.setVisible(true);
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_partTimeRadioAddActionPerformed
 
     private void fullTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioAddActionPerformed
@@ -535,7 +535,6 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldAdd.setVisible(false);
         wPYFieldAdd.setVisible(false);
         hourlyWageFieldAdd.setVisible(false);
-        // TODO add your handling code here:
     }//GEN-LAST:event_fullTimeRadioAddActionPerformed
 
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
@@ -743,12 +742,12 @@ public class MainMenu extends javax.swing.JFrame {
     private void viewUpdate() {
         DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
         model.setRowCount(0);
-        for (int i = 0; i < hashTable.buckets.length; i++) {
-            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
-                if (hashTable.buckets[i].get(x) instanceof FullTimeEmployee) {
-                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(), hashTable.buckets[i].get(x).getDeductionRate(), ((FullTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
+        for (ArrayList<EmployeeInfo> bucket : hashTable.buckets) {
+            for (int x = 0; x < bucket.size(); x++) {
+                if (bucket.get(x) instanceof FullTimeEmployee) {
+                    model.addRow(new Object[]{bucket.get(x).getEmployeeNum(), bucket.get(x).getFirstName(), bucket.get(x).getLastName(), bucket.get(x).getWorkLocation(), ((FullTimeEmployee) bucket.get(x)).getAnnualSalary(), bucket.get(x).getDeductionRate(), ((FullTimeEmployee) bucket.get(x)).getNetSalary(bucket.get(x).getDeductionRate())});
                 } else {
-                    model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum(), hashTable.buckets[i].get(x).getFirstName(), hashTable.buckets[i].get(x).getLastName(), hashTable.buckets[i].get(x).getWorkLocation(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getAnnualSalary(((PartTimeEmployee) hashTable.buckets[i].get(x)).getHourlyWage(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getHoursPerWeek(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getWeeksPerYear()), hashTable.buckets[i].get(x).getDeductionRate(), ((PartTimeEmployee) hashTable.buckets[i].get(x)).getNetSalary(hashTable.buckets[i].get(x).getDeductionRate())});
+                    model.addRow(new Object[]{bucket.get(x).getEmployeeNum(), bucket.get(x).getFirstName(), bucket.get(x).getLastName(), bucket.get(x).getWorkLocation(), ((PartTimeEmployee) bucket.get(x)).getAnnualSalary(((PartTimeEmployee) bucket.get(x)).getHourlyWage(), ((PartTimeEmployee) bucket.get(x)).getHoursPerWeek(), ((PartTimeEmployee) bucket.get(x)).getWeeksPerYear()), bucket.get(x).getDeductionRate(), ((PartTimeEmployee) bucket.get(x)).getNetSalary(bucket.get(x).getDeductionRate())});
                 }
             }
         }
@@ -757,9 +756,9 @@ public class MainMenu extends javax.swing.JFrame {
     private void deleteTableUpdate() {
         DefaultTableModel model = (DefaultTableModel) deleteTable.getModel();
         model.setRowCount(0);
-        for (int i = 0; i < hashTable.buckets.length; i++) {
-            for (int x = 0; x < hashTable.buckets[i].size(); x++) {
-                model.addRow(new Object[]{hashTable.buckets[i].get(x).getEmployeeNum()});
+        for (ArrayList<EmployeeInfo> bucket : hashTable.buckets) {
+            for (int x = 0; x < bucket.size(); x++) {
+                model.addRow(new Object[]{bucket.get(x).getEmployeeNum()});
             }
         }
     }
@@ -782,7 +781,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-        ;
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 
