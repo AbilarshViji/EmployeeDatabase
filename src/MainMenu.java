@@ -145,7 +145,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        addEmployee.setText("Add Button");
+        addEmployee.setText("Add Employee");
         addEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEmployeeActionPerformed(evt);
@@ -153,6 +153,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(fullTimeRadioAdd);
+        fullTimeRadioAdd.setSelected(true);
         fullTimeRadioAdd.setText("Full Time");
         fullTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +162,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         TypeOfEmployee.add(partTimeRadioAdd);
-        partTimeRadioAdd.setSelected(true);
         partTimeRadioAdd.setText("Part Time");
         partTimeRadioAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +206,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        addErrorTextBox.setEditable(false);
         addErrorTextBox.setColumns(20);
         addErrorTextBox.setRows(5);
         jScrollPane1.setViewportView(addErrorTextBox);
@@ -516,7 +517,7 @@ public class MainMenu extends javax.swing.JFrame {
 
 
     private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
-
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_numberToEditActionPerformed
 
@@ -526,8 +527,6 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldAdd.setVisible(true);
         wPYFieldAdd.setVisible(true);
         hourlyWageFieldAdd.setVisible(true);
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_partTimeRadioAddActionPerformed
 
     private void fullTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioAddActionPerformed
@@ -535,7 +534,6 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldAdd.setVisible(false);
         wPYFieldAdd.setVisible(false);
         hourlyWageFieldAdd.setVisible(false);
-        // TODO add your handling code here:
     }//GEN-LAST:event_fullTimeRadioAddActionPerformed
 
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
@@ -782,7 +780,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editPanelMouseClicked
 
     private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-        ;
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 

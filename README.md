@@ -6,6 +6,10 @@ A version of JRE 8. Can be downloaded from https://www.java.com.
 
 Any IDE (Eclipse, Netbeans, IntelliJ, etc.) to compile the source code.
 
+### OR
+
+Download the JAR file: [link for jar]
+
 ## Viewing Employees
 To view the list of current employees press the ‘View Employee’ pane at the top of the program.
 
@@ -43,6 +47,8 @@ Change the information which needs to be changed for the employee
 If changing from from full time to part time, click the associated radio button. If the fields do not change, however your mouse cursor over the ‘Edit’ tab.
 
 When finished confirm the changes.
+
+
 
 
 
