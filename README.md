@@ -37,6 +37,8 @@ To add an employee press the ‘Add’ tab.
     * Hours per week (PT) - Positive Number
     
     * Weeks per year (PT) - Positive Number
+    
+![myimage-alt-tag](http://i.imgur.com/Rq1Dt4a.png)
 ## Editing an Employee
 To edit an employee press the ‘Edit’ tab
 
@@ -47,6 +49,9 @@ Change the information which needs to be changed for the employee
 If changing from from full time to part time, click the associated radio button. If the fields do not change, however your mouse cursor over the ‘Edit’ tab.
 
 When finished confirm the changes.
+
+## Deleting an Employee
+![myimage-alt-tag](http://i.imgur.com/TmojlHj.png)
 
 
 
