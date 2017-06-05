@@ -9,9 +9,9 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainMenu extends javax.swing.JFrame {
 
-    MyHashTable hashTable = new MyHashTable(2);
+    MyHashTable hashTable = new MyHashTable(2); //initialize the hashtable
 
-    public MainMenu() {
+    public MainMenu() { //initialize and reset visual components
         initComponents();
         resetEdit();
         resetAdd();
@@ -540,7 +540,7 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_numberToEditActionPerformed
 
-
+    //change what is visible on the add panel when the part time button is selected
     private void partTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioAddActionPerformed
         annualSalaryTextAdd.setVisible(false);
         hPWFieldAdd.setVisible(true);
@@ -548,6 +548,7 @@ public class MainMenu extends javax.swing.JFrame {
         hourlyWageFieldAdd.setVisible(true);
     }//GEN-LAST:event_partTimeRadioAddActionPerformed
 
+    //change what is visible on the add panel when the full time button is selected
     private void fullTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioAddActionPerformed
         annualSalaryTextAdd.setVisible(true);
         hPWFieldAdd.setVisible(false);
@@ -555,14 +556,17 @@ public class MainMenu extends javax.swing.JFrame {
         hourlyWageFieldAdd.setVisible(false);
     }//GEN-LAST:event_fullTimeRadioAddActionPerformed
 
+    //add the employee to the hashtable
     private void addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeActionPerformed
         try {
             addErrorTextBox.setText("");
+            //parse all the fields
             String location = (String) locationBoxAdd.getSelectedItem();
             int employeeNumber = Integer.parseInt(employeeNumFieldAdd.getText());
             String firstName = firstNameFieldAdd.getText();
             String lastName = lastNameFieldAdd.getText();
             double deductionRate = Double.parseDouble(dRTextAdd.getText());
+            //add to hashtable
             if (fullTimeRadioAdd.isSelected()) {
                 double annualSalary = Double.parseDouble(annualSalaryTextAdd.getText());
                 FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
@@ -582,6 +586,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addEmployeeActionPerformed
 
+    //run the saveFile function from the FileIO class
     public void saveToFile() {
         FileIO file = new FileIO();
         try {
@@ -592,6 +597,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
+    //reset the fields and set visibility in the edit panel
     private void resetEdit() {
         employeeNumFieldEdit.setText("Employee number");
         firstNameFieldEdit.setText("First name");
@@ -620,6 +626,7 @@ public class MainMenu extends javax.swing.JFrame {
         editTableUpdate();
     }
 
+    //reset the fields and set visibility in the add panel
     private void resetAdd() {
         employeeNumFieldAdd.setText("Employee number");
         firstNameFieldAdd.setText("First name");
@@ -638,6 +645,7 @@ public class MainMenu extends javax.swing.JFrame {
         annualSalaryTextAdd.setVisible(true);
     }
 
+    //reset visuals in various pane when pane is switched
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
         viewUpdate();
         resetEdit();
@@ -650,10 +658,12 @@ public class MainMenu extends javax.swing.JFrame {
 
     }
 
+    //edit the employee on button click
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         boolean editAllowed;
         editErrorTextBox.setVisible(true);
         editErrorTextBox.setLineWrap(true);
+        //check if the input is valid
         try {
             int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
             editAllowed = true;
@@ -661,6 +671,7 @@ public class MainMenu extends javax.swing.JFrame {
             editErrorTextBox.setText("There is something wrong with the entry");
             editAllowed = false;
         }
+        //set up interface for employee selected
         if (editAllowed == true) {
             int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
             editTable.setVisible(false);
@@ -683,6 +694,7 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldEdit.setVisible(true);
                 lastNameFieldEdit.setText(toBeAdded.getLastName());
                 locationBoxEdit.setVisible(true);
+                //TODO: field
                 annualSalaryTextEdit.setVisible(true);
                 annualSalaryTextEdit.setText(Double.toString(toBeAdded.getAnnualSalary()));
                 editButton.setVisible(false);
@@ -706,7 +718,7 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldEdit.setVisible(true);
                 lastNameFieldEdit.setText(toBeAdded.getLastName());
                 locationBoxEdit.setVisible(true);
-
+//TODO: field
                 hourlyWageFieldEdit.setVisible(true);
                 hourlyWageFieldEdit.setText(Double.toString(toBeAdded.getHourlyWage()));
                 hPWFieldEdit.setVisible(true);

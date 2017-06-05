@@ -1,5 +1,4 @@
 
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.File;
@@ -16,13 +15,16 @@ public class FileIO {
 
     MyHashTable hashTable = new MyHashTable(2);
 
+    //read the csv to hashtable
     public void readFile(String fileName, MyHashTable hashTable) throws FileNotFoundException, IOException {
+        //init components for reading file
         BufferedReader br = null;
         FileReader fr = null;
         StringBuilder sb = new StringBuilder();
         String data;
         ArrayList dataArray = new ArrayList();
         int i = 0;
+        //load data into array
         try {
             fr = new FileReader(fileName);
             br = new BufferedReader(fr);
@@ -36,6 +38,7 @@ public class FileIO {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //manipulate strings into hashtable
         for (int x = 0; x < i; x++) {
             sb.setLength(0);
             sb.append(dataArray.get(x).toString());
@@ -51,12 +54,15 @@ public class FileIO {
         }
     }
 
+    //write file to csv
     public void writeFile(String fileName, MyHashTable hashTable) throws FileNotFoundException {
         try {
             PrintWriter writer = new PrintWriter(new File(fileName));
             StringBuilder sb = new StringBuilder();
+            //cycle through the hashtable
             for (ArrayList<EmployeeInfo> bucket : hashTable.buckets) {
                 for (int x = 0; x < bucket.size(); x++) {
+                    //build and write a string to the file
                     if (bucket.get(x) instanceof FullTimeEmployee) {
                         sb.setLength(0);
                         sb.append("F");
