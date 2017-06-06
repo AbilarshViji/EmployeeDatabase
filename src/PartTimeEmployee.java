@@ -44,5 +44,4 @@ public class PartTimeEmployee extends EmployeeInfo {
     public void setWeeksPerYear(double weeksPerYear) { //set weeks per year 
         this.weeksPerYear = weeksPerYear;
     }
-
 }

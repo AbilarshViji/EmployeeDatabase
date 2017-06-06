@@ -500,7 +500,6 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     //change what is visible on the add panel when the part time button is selected
     private void partTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioAddActionPerformed
         annualSalaryTextAdd.setVisible(false);
