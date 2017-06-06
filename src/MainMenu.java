@@ -668,10 +668,10 @@ public class MainMenu extends javax.swing.JFrame {
             int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
             editAllowed = true;
         } catch (ArrayIndexOutOfBoundsException e) {
-            editErrorTextBox.setText("There is something wrong with the entry");
+            editErrorTextBox.setText("Please select an option");
             editAllowed = false;
         }
-        //set up interface for employee selected
+        //set up interface for employee selected in the edit pane
         if (editAllowed == true) {
             int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
             editTable.setVisible(false);
@@ -694,7 +694,7 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldEdit.setVisible(true);
                 lastNameFieldEdit.setText(toBeAdded.getLastName());
                 locationBoxEdit.setVisible(true);
-                //TODO: field
+                locationBoxEdit.setSelectedItem(toBeAdded.getWorkLocation());
                 annualSalaryTextEdit.setVisible(true);
                 annualSalaryTextEdit.setText(Double.toString(toBeAdded.getAnnualSalary()));
                 editButton.setVisible(false);
@@ -718,7 +718,7 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldEdit.setVisible(true);
                 lastNameFieldEdit.setText(toBeAdded.getLastName());
                 locationBoxEdit.setVisible(true);
-//TODO: field
+                locationBoxEdit.setSelectedItem(toBeAdded.getWorkLocation());
                 hourlyWageFieldEdit.setVisible(true);
                 hourlyWageFieldEdit.setText(Double.toString(toBeAdded.getHourlyWage()));
                 hPWFieldEdit.setVisible(true);
@@ -732,6 +732,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editButtonActionPerformed
 
+    //change what is visible on the edit panel when the part time button is selected
     private void partTimeRadioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioEditActionPerformed
         annualSalaryTextEdit.setVisible(false);
         hPWFieldEdit.setVisible(true);
@@ -739,6 +740,7 @@ public class MainMenu extends javax.swing.JFrame {
         hourlyWageFieldEdit.setVisible(true);
     }//GEN-LAST:event_partTimeRadioEditActionPerformed
 
+    //change what is visible on the edit panel when the full time button is selected
     private void fullTimeRadioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullTimeRadioEditActionPerformed
         annualSalaryTextEdit.setVisible(true);
         hPWFieldEdit.setVisible(false);
@@ -746,6 +748,7 @@ public class MainMenu extends javax.swing.JFrame {
         hourlyWageFieldEdit.setVisible(false);
     }//GEN-LAST:event_fullTimeRadioEditActionPerformed
 
+    //parse the fields, save the editted employee and reset and pane 
     private void editConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editConfirmActionPerformed
         int numToEdit = Integer.parseInt(employeeNumFieldEdit.getText());
         String location = (String) locationBoxEdit.getSelectedItem();
@@ -769,6 +772,8 @@ public class MainMenu extends javax.swing.JFrame {
         }
         resetEdit();
     }//GEN-LAST:event_editConfirmActionPerformed
+
+    //run the readFile function from the FileIO class
     private void read() {
         FileIO file = new FileIO();
         try {
@@ -778,6 +783,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
+    //update the view table
     private void viewUpdate() {
         DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
         model.setRowCount(0);
@@ -792,6 +798,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
+    //update the delete table
     private void deleteTableUpdate() {
         DefaultTableModel model = (DefaultTableModel) deleteTable.getModel();
         model.setRowCount(0);
@@ -802,6 +809,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
+    //update the edit table
     private void editTableUpdate() {
         DefaultTableModel model = (DefaultTableModel) editTable.getModel();
         model.setRowCount(0);
@@ -825,81 +833,97 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewPanelMouseClicked
 
+    //reset the first name field on click on the add pane
     private void firstNameFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldAddMouseClicked
         // TODO add your handling code here:
         firstNameFieldAdd.setText("");
     }//GEN-LAST:event_firstNameFieldAddMouseClicked
 
+    //reset the last name field on click on the add pane
     private void lastNameFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldAddMouseClicked
         // TODO add your handling code here:
         lastNameFieldAdd.setText("");
     }//GEN-LAST:event_lastNameFieldAddMouseClicked
 
+    //reset the employee number field on click on the add pane
     private void employeeNumFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldAddMouseClicked
         // TODO add your handling code here:
         employeeNumFieldAdd.setText("");
     }//GEN-LAST:event_employeeNumFieldAddMouseClicked
 
+    //reset the annual salary field on click on the add pane
     private void annualSalaryTextAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextAddMouseClicked
         // TODO add your handling code here:
         annualSalaryTextAdd.setText("");
     }//GEN-LAST:event_annualSalaryTextAddMouseClicked
 
+    //reset the hours per week field on click on the add pane
     private void hPWFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldAddMouseClicked
         // TODO add your handling code here:
         hPWFieldAdd.setText("");
     }//GEN-LAST:event_hPWFieldAddMouseClicked
 
+    //reset the weeks per year field on click on the add pane
     private void wPYFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldAddMouseClicked
         // TODO add your handling code here:
         wPYFieldAdd.setText("");
     }//GEN-LAST:event_wPYFieldAddMouseClicked
 
+    //reset the deductions rate field on click on the add pane
     private void dRTextAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextAddMouseClicked
         // TODO add your handling code here:
         dRTextAdd.setText("");
     }//GEN-LAST:event_dRTextAddMouseClicked
 
+    //reset the hourly wage field on click on the add pane
     private void hourlyWageFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldAddMouseClicked
         // TODO add your handling code here:
         hourlyWageFieldAdd.setText("");
     }//GEN-LAST:event_hourlyWageFieldAddMouseClicked
 
+    //reset the first name field on click on the edit pane
     private void firstNameFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldEditMouseClicked
         // TODO add your handling code here:
         firstNameFieldEdit.setText("");
     }//GEN-LAST:event_firstNameFieldEditMouseClicked
 
+    //reset the last name field on click on the edit pane
     private void lastNameFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldEditMouseClicked
         // TODO add your handling code here:
         lastNameFieldEdit.setText("");
     }//GEN-LAST:event_lastNameFieldEditMouseClicked
 
+    //reset the employee number field on click on the edit pane
     private void employeeNumFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldEditMouseClicked
         // TODO add your handling code here:
         employeeNumFieldEdit.setText("");
     }//GEN-LAST:event_employeeNumFieldEditMouseClicked
 
+    //reset the annual salary field on click on the edit pane
     private void annualSalaryTextEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextEditMouseClicked
         // TODO add your handling code here:
         annualSalaryTextEdit.setText("");
     }//GEN-LAST:event_annualSalaryTextEditMouseClicked
 
+    //reset the hourly wage field on click on the edit pane
     private void hourlyWageFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldEditMouseClicked
         // TODO add your handling code here:
         hourlyWageFieldEdit.setText("");
     }//GEN-LAST:event_hourlyWageFieldEditMouseClicked
 
+    //reset the hours per week field on click on the edit pane
     private void hPWFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldEditMouseClicked
         // TODO add your handling code here:
         hPWFieldEdit.setText("");
     }//GEN-LAST:event_hPWFieldEditMouseClicked
 
+    //reset the weeks per year field on click on the edit pane
     private void wPYFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldEditMouseClicked
         // TODO add your handling code here:
         wPYFieldEdit.setText("");
     }//GEN-LAST:event_wPYFieldEditMouseClicked
 
+    //reset the deductions rate field on click on the edit pane
     private void dRTextEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextEditMouseClicked
         // TODO add your handling code here:
         dRTextEdit.setText("");
@@ -910,6 +934,7 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_delPanelMouseClicked
 
+    //delete the employee on button press and reset the delete table
     private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
         int employeeNumber = Integer.parseInt(deleteTable.getModel().getValueAt(deleteTable.getSelectedRow(), 0).toString());
         hashTable.removeEmployee(employeeNumber);
@@ -917,6 +942,7 @@ public class MainMenu extends javax.swing.JFrame {
         //based on the employee number the employee is deleted from the .csv
     }//GEN-LAST:event_delButtonActionPerformed
 
+    //save file on closing of the form
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         saveToFile();
     }//GEN-LAST:event_formWindowClosing
@@ -925,6 +951,7 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_firstNameFieldEditActionPerformed
 
+    //init the ui
     public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
