@@ -6,7 +6,7 @@ public class EmployeeInfo {
     protected String lastName;
     protected String workLocation;
     protected double deductionRate;
-    
+
     //constructor got employee info
     public EmployeeInfo(int eN, String fN, String lN, String wL, double dR) {
         employeeNum = eN;

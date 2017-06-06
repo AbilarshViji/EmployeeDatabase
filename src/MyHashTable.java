@@ -27,7 +27,6 @@ public class MyHashTable {
         int targetBucket = calcBucket(theEmployee.getEmployeeNum());
         buckets[targetBucket].add(theEmployee);
         numInTable++;
-
     }
 
     public int searchEmployee(int employeeNum) {
@@ -62,6 +61,5 @@ public class MyHashTable {
                 System.out.println(buckets[i].get(x).getFirstName());
             }
         }
-
     }
 }
