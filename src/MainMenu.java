@@ -82,12 +82,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        viewPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewPanelMouseClicked(evt);
-            }
-        });
-
         viewTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -125,12 +119,6 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         viewPane.addTab("View Employees", viewPanel);
-
-        addPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addPanelMouseClicked(evt);
-            }
-        });
 
         firstNameFieldAdd.setText("First name");
         firstNameFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -288,28 +276,12 @@ public class MainMenu extends javax.swing.JFrame {
 
         viewPane.addTab("Add Employee", addPanel);
 
-        editPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                editPanelMouseClicked(evt);
-            }
-        });
-
-        editButtonPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                editButtonPanelMouseClicked(evt);
-            }
-        });
         editButtonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         firstNameFieldEdit.setText("First name");
         firstNameFieldEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 firstNameFieldEditMouseClicked(evt);
-            }
-        });
-        firstNameFieldEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameFieldEditActionPerformed(evt);
             }
         });
         editButtonPanel.add(firstNameFieldEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 150, 30));
@@ -459,12 +431,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         viewPane.addTab("Edit Employee", editPanel);
 
-        delPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                delPanelMouseClicked(evt);
-            }
-        });
-
         delButton.setText("Delete");
         delButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -534,11 +500,6 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void numberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberToEditActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numberToEditActionPerformed
 
     //change what is visible on the add panel when the part time button is selected
     private void partTimeRadioAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partTimeRadioAddActionPerformed
@@ -653,10 +614,6 @@ public class MainMenu extends javax.swing.JFrame {
         deleteTableUpdate();
         editTableUpdate();
     }//GEN-LAST:event_viewPaneMouseClicked
-
-    private void addPanelMouseClicked(java.awt.event.MouseEvent evt) {
-
-    }
 
     //edit the employee on button click
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
@@ -820,119 +777,85 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
 
-    private void editButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonPanelMouseClicked
-
-    }//GEN-LAST:event_editButtonPanelMouseClicked
-
-    private void editPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editPanelMouseClicked
-
-    }//GEN-LAST:event_editPanelMouseClicked
-
-    private void viewPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPanelMouseClicked
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_viewPanelMouseClicked
-
     //reset the first name field on click on the add pane
     private void firstNameFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldAddMouseClicked
-        // TODO add your handling code here:
         firstNameFieldAdd.setText("");
     }//GEN-LAST:event_firstNameFieldAddMouseClicked
 
     //reset the last name field on click on the add pane
     private void lastNameFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldAddMouseClicked
-        // TODO add your handling code here:
         lastNameFieldAdd.setText("");
     }//GEN-LAST:event_lastNameFieldAddMouseClicked
 
     //reset the employee number field on click on the add pane
     private void employeeNumFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldAddMouseClicked
-        // TODO add your handling code here:
         employeeNumFieldAdd.setText("");
     }//GEN-LAST:event_employeeNumFieldAddMouseClicked
 
     //reset the annual salary field on click on the add pane
     private void annualSalaryTextAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextAddMouseClicked
-        // TODO add your handling code here:
         annualSalaryTextAdd.setText("");
     }//GEN-LAST:event_annualSalaryTextAddMouseClicked
 
     //reset the hours per week field on click on the add pane
     private void hPWFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldAddMouseClicked
-        // TODO add your handling code here:
         hPWFieldAdd.setText("");
     }//GEN-LAST:event_hPWFieldAddMouseClicked
 
     //reset the weeks per year field on click on the add pane
     private void wPYFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldAddMouseClicked
-        // TODO add your handling code here:
         wPYFieldAdd.setText("");
     }//GEN-LAST:event_wPYFieldAddMouseClicked
 
     //reset the deductions rate field on click on the add pane
     private void dRTextAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextAddMouseClicked
-        // TODO add your handling code here:
         dRTextAdd.setText("");
     }//GEN-LAST:event_dRTextAddMouseClicked
 
     //reset the hourly wage field on click on the add pane
     private void hourlyWageFieldAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldAddMouseClicked
-        // TODO add your handling code here:
         hourlyWageFieldAdd.setText("");
     }//GEN-LAST:event_hourlyWageFieldAddMouseClicked
 
     //reset the first name field on click on the edit pane
     private void firstNameFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameFieldEditMouseClicked
-        // TODO add your handling code here:
         firstNameFieldEdit.setText("");
     }//GEN-LAST:event_firstNameFieldEditMouseClicked
 
     //reset the last name field on click on the edit pane
     private void lastNameFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldEditMouseClicked
-        // TODO add your handling code here:
         lastNameFieldEdit.setText("");
     }//GEN-LAST:event_lastNameFieldEditMouseClicked
 
     //reset the employee number field on click on the edit pane
     private void employeeNumFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeNumFieldEditMouseClicked
-        // TODO add your handling code here:
         employeeNumFieldEdit.setText("");
     }//GEN-LAST:event_employeeNumFieldEditMouseClicked
 
     //reset the annual salary field on click on the edit pane
     private void annualSalaryTextEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annualSalaryTextEditMouseClicked
-        // TODO add your handling code here:
         annualSalaryTextEdit.setText("");
     }//GEN-LAST:event_annualSalaryTextEditMouseClicked
 
     //reset the hourly wage field on click on the edit pane
     private void hourlyWageFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hourlyWageFieldEditMouseClicked
-        // TODO add your handling code here:
         hourlyWageFieldEdit.setText("");
     }//GEN-LAST:event_hourlyWageFieldEditMouseClicked
 
     //reset the hours per week field on click on the edit pane
     private void hPWFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hPWFieldEditMouseClicked
-        // TODO add your handling code here:
         hPWFieldEdit.setText("");
     }//GEN-LAST:event_hPWFieldEditMouseClicked
 
     //reset the weeks per year field on click on the edit pane
     private void wPYFieldEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wPYFieldEditMouseClicked
-        // TODO add your handling code here:
         wPYFieldEdit.setText("");
     }//GEN-LAST:event_wPYFieldEditMouseClicked
 
     //reset the deductions rate field on click on the edit pane
     private void dRTextEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dRTextEditMouseClicked
-        // TODO add your handling code here:
         dRTextEdit.setText("");
     }//GEN-LAST:event_dRTextEditMouseClicked
-
-    private void delPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delPanelMouseClicked
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_delPanelMouseClicked
 
     //delete the employee on button press and reset the delete table
     private void delButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButtonActionPerformed
@@ -946,10 +869,6 @@ public class MainMenu extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         saveToFile();
     }//GEN-LAST:event_formWindowClosing
-
-    private void firstNameFieldEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameFieldEditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameFieldEditActionPerformed
 
     //init the ui
     public static void main(String args[]) {
