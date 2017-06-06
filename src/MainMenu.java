@@ -525,6 +525,9 @@ public class MainMenu extends javax.swing.JFrame {
             int employeeNumber = Integer.parseInt(employeeNumFieldAdd.getText());
             String firstName = firstNameFieldAdd.getText();
             String lastName = lastNameFieldAdd.getText();
+            if (Double.parseDouble(dRTextAdd.getText()) > 100) {
+                throw new IllegalArgumentException();
+            }
             double deductionRate = Double.parseDouble(dRTextAdd.getText());
             //add to hashtable
             if (fullTimeRadioAdd.isSelected()) {
@@ -534,6 +537,9 @@ public class MainMenu extends javax.swing.JFrame {
                 System.out.println("Full time employee added");
                 //this goes into the fileIO class and gets added in to the .csv
             } else if (partTimeRadioAdd.isSelected()) {
+                if (Integer.parseInt(hPWFieldAdd.getText()) > 7 * 24 || Integer.parseInt(wPYFieldAdd.getText()) > 52) {
+                    throw new IllegalArgumentException();
+                }
                 int hoursPerWeek = Integer.parseInt(hPWFieldAdd.getText());
                 double hourlyWage = Double.parseDouble(hourlyWageFieldAdd.getText());
                 int weeksPerYear = Integer.parseInt(wPYFieldAdd.getText());
@@ -706,27 +712,37 @@ public class MainMenu extends javax.swing.JFrame {
 
     //parse the fields, save the editted employee and reset and pane 
     private void editConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editConfirmActionPerformed
-        int numToEdit = Integer.parseInt(employeeNumFieldEdit.getText());
-        String location = (String) locationBoxEdit.getSelectedItem();
-        int employeeNumber = Integer.parseInt(employeeNumFieldEdit.getText());
-        String firstName = firstNameFieldEdit.getText();
-        String lastName = lastNameFieldEdit.getText();
-        double deductionRate = Double.parseDouble(dRTextEdit.getText());
-        if (fullTimeRadioEdit.isSelected()) {
-            double annualSalary = Double.parseDouble(annualSalaryTextEdit.getText());
-            FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
-            hashTable.addEmployee(toBeAdded);
-            System.out.println("Full time employee added");
-            //this goes into the fileIO class and gets added in to the .csv
-        } else if (partTimeRadioEdit.isSelected()) {
-            double hoursPerWeek = Double.parseDouble(hPWFieldEdit.getText());
-            double hourlyWage = Double.parseDouble(hourlyWageFieldEdit.getText());
-            double weeksPerYear = Double.parseDouble(wPYFieldEdit.getText());
-            PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
-            System.out.println("Part time employee added");
-            hashTable.addEmployee(toBeAdded);
+        try {
+            int numToEdit = Integer.parseInt(employeeNumFieldEdit.getText());
+            String location = (String) locationBoxEdit.getSelectedItem();
+            int employeeNumber = Integer.parseInt(employeeNumFieldEdit.getText());
+            String firstName = firstNameFieldEdit.getText();
+            String lastName = lastNameFieldEdit.getText();
+            if (Double.parseDouble(dRTextEdit.getText()) > 100) {
+                throw new NumberFormatException ();
+            }
+            double deductionRate = Double.parseDouble(dRTextEdit.getText());
+            if (fullTimeRadioEdit.isSelected()) {
+                double annualSalary = Double.parseDouble(annualSalaryTextEdit.getText());
+                FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
+                hashTable.addEmployee(toBeAdded);
+                System.out.println("Full time employee added");
+                //this goes into the fileIO class and gets added in to the .csv
+            } else if (partTimeRadioEdit.isSelected()) {
+                if (Double.parseDouble(hPWFieldEdit.getText()) > 7 * 24 || Double.parseDouble(wPYFieldEdit.getText()) > 52) {
+                    throw new NumberFormatException ();
+                }
+                double hoursPerWeek = Double.parseDouble(hPWFieldEdit.getText());
+                double hourlyWage = Double.parseDouble(hourlyWageFieldEdit.getText());
+                double weeksPerYear = Double.parseDouble(wPYFieldEdit.getText());
+                PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
+                System.out.println("Part time employee added");
+                hashTable.addEmployee(toBeAdded);
+            }
+            resetEdit();
+        } catch (NumberFormatException  e) {
+            editErrorTextBox.setText("There is something wrong with the entry");
         }
-        resetEdit();
     }//GEN-LAST:event_editConfirmActionPerformed
 
     //run the readFile function from the FileIO class
