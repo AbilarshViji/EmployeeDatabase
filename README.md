@@ -8,7 +8,7 @@ Any IDE (Eclipse, Netbeans, IntelliJ, etc.) to compile the source code.
 
 ### OR
 
-Download the JAR file: [link for jar]
+Download the JAR file: [link for jar](https://github.com/AbilarshViji/EmployeeDatabase/raw/master/dist/EmployeeDatabase.jar)
 
 ## Viewing Employees
 To view the list of current employees press the ‘View Employee’ pane at the top of the program.
