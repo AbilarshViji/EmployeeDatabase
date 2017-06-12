@@ -120,12 +120,15 @@ public class MainMenu extends javax.swing.JFrame {
 
         viewPane.addTab("View Employees", viewPanel);
 
+        addPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         firstNameFieldAdd.setText("First name");
         firstNameFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 firstNameFieldAddMouseClicked(evt);
             }
         });
+        addPanel.add(firstNameFieldAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 61, 191, 38));
 
         lastNameFieldAdd.setText("Last name");
         lastNameFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,6 +136,7 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameFieldAddMouseClicked(evt);
             }
         });
+        addPanel.add(lastNameFieldAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 105, 191, 38));
 
         employeeNumFieldAdd.setText("Employee number");
         employeeNumFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -140,6 +144,7 @@ public class MainMenu extends javax.swing.JFrame {
                 employeeNumFieldAddMouseClicked(evt);
             }
         });
+        addPanel.add(employeeNumFieldAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 149, 191, 38));
 
         addEmployee.setText("Add Employee");
         addEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +152,7 @@ public class MainMenu extends javax.swing.JFrame {
                 addEmployeeActionPerformed(evt);
             }
         });
+        addPanel.add(addEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 440, 191, 57));
 
         TypeOfEmployee.add(fullTimeRadioAdd);
         fullTimeRadioAdd.setSelected(true);
@@ -156,6 +162,7 @@ public class MainMenu extends javax.swing.JFrame {
                 fullTimeRadioAddActionPerformed(evt);
             }
         });
+        addPanel.add(fullTimeRadioAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 7, -1, -1));
 
         TypeOfEmployee.add(partTimeRadioAdd);
         partTimeRadioAdd.setText("Part Time");
@@ -164,8 +171,10 @@ public class MainMenu extends javax.swing.JFrame {
                 partTimeRadioAddActionPerformed(evt);
             }
         });
+        addPanel.add(partTimeRadioAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 31, -1, -1));
 
         locationBoxAdd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mississauga", "Toronto", "Ottawa", "Vancouver" }));
+        addPanel.add(locationBoxAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 193, 191, 38));
 
         annualSalaryTextAdd.setText("Annual Salary");
         annualSalaryTextAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -173,6 +182,7 @@ public class MainMenu extends javax.swing.JFrame {
                 annualSalaryTextAddMouseClicked(evt);
             }
         });
+        addPanel.add(annualSalaryTextAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 249, 191, 38));
 
         dRTextAdd.setText("Deduction Rate");
         dRTextAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,6 +190,7 @@ public class MainMenu extends javax.swing.JFrame {
                 dRTextAddMouseClicked(evt);
             }
         });
+        addPanel.add(dRTextAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 384, 191, 38));
 
         hPWFieldAdd.setText("Hours per week");
         hPWFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -187,6 +198,7 @@ public class MainMenu extends javax.swing.JFrame {
                 hPWFieldAddMouseClicked(evt);
             }
         });
+        addPanel.add(hPWFieldAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 294, 191, 38));
 
         hourlyWageFieldAdd.setText("Hourly Wage");
         hourlyWageFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,6 +206,7 @@ public class MainMenu extends javax.swing.JFrame {
                 hourlyWageFieldAddMouseClicked(evt);
             }
         });
+        addPanel.add(hourlyWageFieldAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 249, 191, 39));
 
         wPYFieldAdd.setText("Weeks per year");
         wPYFieldAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -201,78 +214,14 @@ public class MainMenu extends javax.swing.JFrame {
                 wPYFieldAddMouseClicked(evt);
             }
         });
+        addPanel.add(wPYFieldAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 338, 191, 40));
 
         addErrorTextBox.setEditable(false);
         addErrorTextBox.setColumns(20);
         addErrorTextBox.setRows(5);
         jScrollPane1.setViewportView(addErrorTextBox);
 
-        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
-        addPanel.setLayout(addPanelLayout);
-        addPanelLayout.setHorizontalGroup(
-            addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addGap(0, 469, Short.MAX_VALUE)
-                        .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(hPWFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(hourlyWageFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dRTextAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(addEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(annualSalaryTextAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(locationBoxAdd, 0, 191, Short.MAX_VALUE)
-                            .addComponent(employeeNumFieldAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(lastNameFieldAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(firstNameFieldAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(wPYFieldAdd))))
-                .addGap(392, 392, 392))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(partTimeRadioAdd)
-                    .addComponent(fullTimeRadioAdd))
-                .addGap(458, 458, 458))
-        );
-        addPanelLayout.setVerticalGroup(
-            addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(fullTimeRadioAdd)
-                .addGap(1, 1, 1)
-                .addComponent(partTimeRadioAdd)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(firstNameFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lastNameFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(employeeNumFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(locationBoxAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(annualSalaryTextAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hourlyWageFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hPWFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(wPYFieldAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dRTextAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
-        );
+        addPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 78, 352, -1));
 
         viewPane.addTab("Add Employee", addPanel);
 
