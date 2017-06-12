@@ -719,7 +719,7 @@ public class MainMenu extends javax.swing.JFrame {
             String firstName = firstNameFieldEdit.getText();
             String lastName = lastNameFieldEdit.getText();
             if (Double.parseDouble(dRTextEdit.getText()) > 100) {
-                throw new NumberFormatException ();
+                throw new NumberFormatException();
             }
             double deductionRate = Double.parseDouble(dRTextEdit.getText());
             if (fullTimeRadioEdit.isSelected()) {
@@ -730,7 +730,7 @@ public class MainMenu extends javax.swing.JFrame {
                 //this goes into the fileIO class and gets added in to the .csv
             } else if (partTimeRadioEdit.isSelected()) {
                 if (Double.parseDouble(hPWFieldEdit.getText()) > 7 * 24 || Double.parseDouble(wPYFieldEdit.getText()) > 52) {
-                    throw new NumberFormatException ();
+                    throw new NumberFormatException();
                 }
                 double hoursPerWeek = Double.parseDouble(hPWFieldEdit.getText());
                 double hourlyWage = Double.parseDouble(hourlyWageFieldEdit.getText());
@@ -740,7 +740,7 @@ public class MainMenu extends javax.swing.JFrame {
                 hashTable.addEmployee(toBeAdded);
             }
             resetEdit();
-        } catch (NumberFormatException  e) {
+        } catch (NumberFormatException e) {
             editErrorTextBox.setText("There is something wrong with the entry");
         }
     }//GEN-LAST:event_editConfirmActionPerformed

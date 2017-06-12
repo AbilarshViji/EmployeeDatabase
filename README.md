@@ -56,6 +56,9 @@ After selecting the employee you wish to delete, press the delete button.
 
 ![myimage-alt-tag](http://i.imgur.com/TmojlHj.png)
 
+## Archiving
+File archiving is done automatically done by the program. When the database is opened, the "data.csv" file that is within the root directory of the project will be opened. The database will be saved when the program is closed.
+
 ## Using the data file
 The data file is stored in the folder that the EmployeeDatabase project is store as well. This is a comma spliced file that can be opened in Microsoft Excel. As there are no headers in the file, please use your judgement when editing the file. The program will update with the new database when it is reopened.
 
