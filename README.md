@@ -8,7 +8,7 @@ Any IDE (Eclipse, Netbeans, IntelliJ, etc.) to compile the source code.
 
 ### OR
 
-Download the JAR file: [link for jar]
+Download the JAR file: [link for jar](https://github.com/AbilarshViji/EmployeeDatabase/raw/master/dist/EmployeeDatabase.jar)
 
 ## Viewing Employees
 To view the list of current employees press the ‘View Employee’ pane at the top of the program.
@@ -37,6 +37,8 @@ To add an employee press the ‘Add’ tab.
     * Hours per week (PT) - Positive Number
     
     * Weeks per year (PT) - Positive Number
+    
+![myimage-alt-tag](http://i.imgur.com/Rq1Dt4a.png)
 ## Editing an Employee
 To edit an employee press the ‘Edit’ tab
 
@@ -48,7 +50,14 @@ If changing from from full time to part time, click the associated radio button.
 
 When finished confirm the changes.
 
+## Deleting an Employee
+To delete an employee select the employee to be deleted from the table.
+After selecting the employee you wish to delete, press the delete button.
 
+![myimage-alt-tag](http://i.imgur.com/TmojlHj.png)
+
+## Using the data file
+The data file is stored in the folder that the EmployeeDatabase project is store as well. This is a comma spliced file that can be opened in Microsoft Excel. As there are no headers in the file, please use your judgement when editing the file. The program will update with the new database when it is reopened.
 
 
 
