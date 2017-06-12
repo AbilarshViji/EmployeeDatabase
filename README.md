@@ -46,7 +46,7 @@ Enter the employee number of the employee which should be edited
 
 Change the information which needs to be changed for the employee
 
-If changing from from full time to part time, click the associated radio button. If the fields do not change, however your mouse cursor over the ‘Edit’ tab.
+If changing from from full time to part time, click the associated radio button.
 
 When finished confirm the changes.
 
@@ -55,6 +55,9 @@ To delete an employee select the employee to be deleted from the table.
 After selecting the employee you wish to delete, press the delete button.
 
 ![myimage-alt-tag](http://i.imgur.com/TmojlHj.png)
+
+## Archiving
+File archiving is done automatically done by the program. When the database is opened, the "data.csv" file that is within the root directory of the project will be opened. The database will be saved when the program is closed.
 
 ## Using the data file
 The data file is stored in the folder that the EmployeeDatabase project is store as well. This is a comma spliced file that can be opened in Microsoft Excel. As there are no headers in the file, please use your judgement when editing the file. The program will update with the new database when it is reopened.
