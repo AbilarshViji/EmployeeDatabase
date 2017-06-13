@@ -33,13 +33,13 @@ To add an employee press the ‘Add’ tab.
     
     * Annual Salary(FT) - Positive Number
     
-    * Deduction rate - Positive number
+    * Deduction rate - Positive number (Maximum value is 100)
     
     * Hourly wage (PT) - Positive Number
     
-    * Hours per week (PT) - Positive Number
+    * Hours per week (PT) - Positive Number (Maximum value is 168)
     
-    * Weeks per year (PT) - Positive Number
+    * Weeks per year (PT) - Positive Number (Maximum value is 52)
     
 ![myimage-alt-tag](http://i.imgur.com/Rq1Dt4a.png)
 ## Editing an Employee
