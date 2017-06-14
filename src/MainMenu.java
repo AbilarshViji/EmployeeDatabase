@@ -572,7 +572,6 @@ public class MainMenu extends javax.swing.JFrame {
     //reset visuals in various pane when pane is switched
     private void viewPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPaneMouseClicked
         viewUpdate();
-        resetEdit();
         resetAdd();
         deleteTableUpdate();
         editTableUpdate();
