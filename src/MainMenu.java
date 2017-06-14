@@ -219,6 +219,7 @@ public class MainMenu extends javax.swing.JFrame {
         addErrorTextBox.setEditable(false);
         addErrorTextBox.setColumns(20);
         addErrorTextBox.setRows(5);
+        addErrorTextBox.setWrapStyleWord(true);
         jScrollPane1.setViewportView(addErrorTextBox);
 
         addPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 78, 352, -1));
@@ -334,8 +335,6 @@ public class MainMenu extends javax.swing.JFrame {
         editErrorTextBox.setColumns(20);
         editErrorTextBox.setRows(5);
         editErrorTextBox.setWrapStyleWord(true);
-        editErrorTextBox.setBorder(null);
-        editErrorTextBox.setPreferredSize(new java.awt.Dimension(140, 90));
         jScrollPane2.setViewportView(editErrorTextBox);
 
         editButtonPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 180, -1));
@@ -470,8 +469,15 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             addErrorTextBox.setText("");
             //parse all the fields
-            String location = (String) locationBoxAdd.getSelectedItem();
             int employeeNumber = Integer.parseInt(employeeNumFieldAdd.getText());
+            String location = (String) locationBoxAdd.getSelectedItem();
+            for (ArrayList<EmployeeInfo> bucket : hashTable.buckets) {
+                for (int x = 0; x < bucket.size(); x++) {
+                    if (bucket.get(x).getEmployeeNum() == employeeNumber) {
+                        throw new IllegalArgumentException();
+                    }
+                }
+            }
             String firstName = firstNameFieldAdd.getText();
             String lastName = lastNameFieldAdd.getText();
             if (Double.parseDouble(dRTextAdd.getText()) > 100) {
@@ -483,7 +489,7 @@ public class MainMenu extends javax.swing.JFrame {
                 double annualSalary = Double.parseDouble(annualSalaryTextAdd.getText());
                 FullTimeEmployee toBeAdded = new FullTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, annualSalary);
                 hashTable.addEmployee(toBeAdded);
-                System.out.println("Full time employee added");
+                addErrorTextBox.setText("Full time employee added");
                 //this goes into the fileIO class and gets added in to the .csv
             } else if (partTimeRadioAdd.isSelected()) {
                 if (Integer.parseInt(hPWFieldAdd.getText()) > 7 * 24 || Integer.parseInt(wPYFieldAdd.getText()) > 52) {
@@ -493,11 +499,11 @@ public class MainMenu extends javax.swing.JFrame {
                 double hourlyWage = Double.parseDouble(hourlyWageFieldAdd.getText());
                 int weeksPerYear = Integer.parseInt(wPYFieldAdd.getText());
                 PartTimeEmployee toBeAdded = new PartTimeEmployee(employeeNumber, firstName, lastName, location, deductionRate, hourlyWage, hoursPerWeek, weeksPerYear);
-                System.out.println("Part time employee added");
+                addErrorTextBox.setText("Part time employee added");
                 hashTable.addEmployee(toBeAdded);
             }
         } catch (IllegalArgumentException e) {
-            addErrorTextBox.setText("There is something wrong with the entry");
+            addErrorTextBox.setText("There is something wrong with the entry. Look at the user guide for more information.");
         }
     }//GEN-LAST:event_addEmployeeActionPerformed
 
@@ -535,7 +541,8 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldEdit.setVisible(false);
         wPYFieldEdit.setVisible(false);
         annualSalaryTextEdit.setVisible(false);
-        editErrorTextBox.setVisible(false);
+        editErrorTextBox.setLineWrap(true);
+        editErrorTextBox.setText("");
         editConfirm.setVisible(false);
         editTable.setVisible(true);
         editTableUpdate();
@@ -558,6 +565,8 @@ public class MainMenu extends javax.swing.JFrame {
         hPWFieldAdd.setVisible(false);
         wPYFieldAdd.setVisible(false);
         annualSalaryTextAdd.setVisible(true);
+        addErrorTextBox.setLineWrap(true);
+        addErrorTextBox.setText("");
     }
 
     //reset visuals in various pane when pane is switched
@@ -572,8 +581,9 @@ public class MainMenu extends javax.swing.JFrame {
     //edit the employee on button click
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         boolean editAllowed;
-        editErrorTextBox.setVisible(true);
         editErrorTextBox.setLineWrap(true);
+        editErrorTextBox.setText("");
+        editButton.setVisible(false);
         //check if the input is valid
         try {
             int numberToEdit = Integer.parseInt(editTable.getModel().getValueAt(editTable.getSelectedRow(), 0).toString());
@@ -581,6 +591,7 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (ArrayIndexOutOfBoundsException e) {
             editErrorTextBox.setText("Please select an option");
             editAllowed = false;
+            editButton.setVisible(true);
         }
         //set up interface for employee selected in the edit pane
         if (editAllowed == true) {
@@ -662,6 +673,7 @@ public class MainMenu extends javax.swing.JFrame {
     //parse the fields, save the editted employee and reset and pane 
     private void editConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editConfirmActionPerformed
         try {
+            editErrorTextBox.setText("");
             int numToEdit = Integer.parseInt(employeeNumFieldEdit.getText());
             String location = (String) locationBoxEdit.getSelectedItem();
             int employeeNumber = Integer.parseInt(employeeNumFieldEdit.getText());
