@@ -57,7 +57,6 @@ F,794,khb,jkb,Toronto,29.0,978.0
 F,796,khb,jkb,Ottawa,29.5,978.0
 F,798,khb,jkb,Mississauga,30.0,978.0
 F,800,khb,jkb,Vancouver,30.5,978.0
-F,802,khb,jkb,Toronto,31.0,978.0
 P,7986,kjefdhsl,fds,Ottawa,0.5,54.0,164.0,43.0
 P,7988,kjefdhsl,fds,Mississauga,1.5,54.0,164.0,43.0
 P,7990,kjefdhsl,fds,Vancouver,2.5,54.0,164.0,43.0
@@ -80,5 +79,5 @@ P,8022,kjefdhsl,fds,Vancouver,18.5,54.0,164.0,43.0
 P,8024,kjefdhsl,fds,Toronto,19.5,54.0,164.0,43.0
 P,8026,kjefdhsl,fds,Ottawa,20.5,54.0,164.0,43.0
 P,8028,kjefdhsl,fds,Mississauga,21.5,54.0,164.0,43.0
-P,8030,kjefdhsl,fds,Vancouver,22.5,54.0,164.0,43.0
 P,680,b,jkb,Toronto,1.0,432.0,23.0,20.0
+F,802,khb,jkb,Toronto,31.0,978.0
