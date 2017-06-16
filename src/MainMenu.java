@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainMenu extends javax.swing.JFrame {
 
-    MyHashTable hashTable = new MyHashTable(2); //initialize the hashtable
+    MyHashTable hashTable = new MyHashTable(1); //initialize the hashtable
 
     public MainMenu() { //initialize and reset visual components
         initComponents();
