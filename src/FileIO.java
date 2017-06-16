@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class FileIO {
 
-    MyHashTable hashTable = new MyHashTable(2);
+    MyHashTable hashTable = new MyHashTable(1);
 
     //read the csv to hashtable
     public void readFile(String fileName, MyHashTable hashTable) throws FileNotFoundException, IOException {
